@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/fondosil2"
+    tools:context="gz.app.comdavid.apprende2.silaba_f">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/relativeLayout2">
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+
+            android:id="@+id/fas"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:background="@drawable/silfa"
+            android:textSize="@dimen/abc_dropdownitem_icon_width"
+            android:visibility="visible" />
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+
+            android:id="@+id/fos"
+            android:layout_below="@+id/fas"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+
+            android:textSize="@dimen/abc_action_button_min_width_overflow_material"
+            android:background="@drawable/silfo"/>
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+
+            android:id="@+id/fus"
+            android:layout_below="@+id/fos"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:textSize="@dimen/abc_action_button_min_width_overflow_material"
+            android:background="@drawable/silfu"
+            />
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:id="@+id/fes"
+
+            android:layout_below="@+id/fus"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:textSize="@dimen/abc_action_button_min_width_overflow_material"
+            android:background="@drawable/silfe"
+            />
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+
+            android:id="@+id/fis"
+            android:layout_below="@+id/fes"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:textSize="@dimen/abc_action_button_min_width_overflow_material"
+            android:background="@drawable/silfi"
+
+            />
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:id="@+id/familias"
+            android:background="@drawable/familia"
+            android:visibility="gone"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="59dp"
+            android:layout_marginEnd="59dp" />
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:id="@+id/faros"
+            android:background="@drawable/faro"
+            android:visibility="gone"
+            android:layout_below="@+id/fus"
+            android:layout_alignLeft="@+id/familias"
+            android:layout_alignStart="@+id/familias" />
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:id="@+id/felices"
+            android:background="@drawable/feliz"
+            android:visibility="gone"
+            android:layout_below="@+id/familias"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="62dp"
+            android:layout_marginEnd="62dp" />
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:id="@+id/ferrocarriles"
+            android:background="@drawable/ferrocarril"
+            android:visibility="gone"
+            android:layout_alignParentBottom="true"
+            android:layout_toLeftOf="@+id/sil_casaf"
+            android:layout_toStartOf="@+id/sil_casaf" />
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:id="@+id/fichas"
+            android:background="@drawable/ficha"
+            android:visibility="gone"
+            android:layout_below="@+id/dados"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="62dp"
+            android:layout_marginEnd="62dp" />
+
+        <ImageButton
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:id="@+id/filetes"
+            android:background="@drawable/filete"
+            android:layout_below="@+id/fus"
+            android:layout_alignLeft="@+id/fichas"
+            android:layout_alignStart="@+id/fichas"
+            android:visibility="gone" />
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:id="@+id/focas"
+            android:background="@drawable/foca"
+            android:visibility="gone"
+            android:layout_marginRight="75dp"
+            android:layout_marginEnd="75dp"
+            android:layout_below="@+id/dus"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:id="@+id/fotografias"
+            android:background="@drawable/fotografia"
+            android:visibility="gone"
+            android:layout_below="@+id/fus"
+            android:layout_toLeftOf="@+id/sil_casaf"
+            android:layout_toStartOf="@+id/sil_casaf" />
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:id="@+id/fuegos"
+            android:background="@drawable/fuego"
+            android:visibility="gone"
+            android:layout_below="@+id/familias"
+            android:layout_alignLeft="@+id/fuentes"
+            android:layout_alignStart="@+id/fuentes" />
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:id="@+id/fuentes"
+            android:background="@drawable/fuente"
+            android:visibility="gone"
+            android:layout_above="@+id/sil_casaf"
+            android:layout_toLeftOf="@+id/sil_casaf"
+            android:layout_toStartOf="@+id/sil_casaf" />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/sil_casaf"
+            android:background="@drawable/home"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+        <Button
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/ant"
+            android:id="@+id/sigf"
+            android:layout_above="@+id/fes"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

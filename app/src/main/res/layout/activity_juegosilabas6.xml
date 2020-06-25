@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/fondosil3"
+    tools:context="gz.app.comdavid.apprende2.juegosilabas6">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:id="@+id/juesilca41"
+            android:background="@drawable/silapi"
+            android:layout_below="@+id/juesilca42"
+            android:layout_toLeftOf="@+id/juesilca42"
+            android:layout_toStartOf="@+id/juesilca42" />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:background="@drawable/silbi"
+            android:id="@+id/juesilca42"
+            android:layout_alignTop="@+id/juesilca43"
+            android:layout_toRightOf="@+id/juesilca43"
+            android:layout_toEndOf="@+id/juesilca43" />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:background="@drawable/silapa"
+            android:id="@+id/juesilca43"
+            android:layout_above="@+id/juesilca45"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:background="@drawable/silaye"
+            android:id="@+id/juesilca44"
+            android:layout_alignTop="@+id/juesilca41"
+            android:layout_alignLeft="@+id/juesilca42"
+            android:layout_alignStart="@+id/juesilca42" />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:background="@drawable/silfo"
+            android:id="@+id/juesilca45"
+            android:layout_above="@+id/casa_juegosil6"
+            android:layout_toRightOf="@+id/juesilca47"
+            android:layout_toEndOf="@+id/juesilca47" />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:background="@drawable/silaya"
+            android:id="@+id/juesilca46"
+            android:layout_alignTop="@+id/juesilca48"
+            android:layout_toRightOf="@+id/juesilca48"
+            android:layout_toEndOf="@+id/juesilca48" />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:background="@drawable/silaso"
+            android:id="@+id/juesilca47"
+            android:layout_below="@+id/juesilca42"
+            android:layout_toRightOf="@+id/juesilca44"
+            android:layout_toEndOf="@+id/juesilca44" />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:background="@drawable/sildu"
+            android:id="@+id/juesilca48"
+            android:layout_above="@+id/juesilca47"
+            android:layout_alignLeft="@+id/juesilca47"
+            android:layout_alignStart="@+id/juesilca47" />
+
+        <Button
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/casa_juegosil6"
+            android:background="@drawable/home"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="170dp"
+            android:background="@drawable/payaso"
+            android:id="@+id/imagencasa6"
+            android:focusableInTouchMode="false"
+            android:visibility="invisible"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_above="@+id/juesilca46" />
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:background="@drawable/silaso"
+            android:id="@+id/imagensa6"
+            android:layout_gravity="center_horizontal"
+            android:visibility="invisible"
+            android:layout_alignParentTop="true"
+            android:layout_toLeftOf="@+id/juesilca45"
+            android:layout_toStartOf="@+id/juesilca45" />
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:background="@drawable/silapa"
+            android:id="@+id/imagenca6"
+            android:visibility="invisible"
+            android:layout_alignParentTop="true"
+            android:layout_toLeftOf="@+id/imagenesss6"
+            android:layout_toStartOf="@+id/imagenesss6" />
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:background="@drawable/error"
+            android:id="@+id/errorjuego6"
+            android:visibility="invisible"
+            android:layout_below="@+id/imagenca6"
+            android:layout_toLeftOf="@+id/juesilca42"
+            android:layout_toStartOf="@+id/juesilca42" />
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:id="@+id/imagenesss6"
+            android:background="@drawable/silaya"
+            android:visibility="invisible"
+            android:layout_alignParentTop="true"
+            android:layout_toLeftOf="@+id/imagensa6"
+            android:layout_toStartOf="@+id/imagensa6" />
+
+
+        <Button
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/sonidosilabas81"
+            android:background="@drawable/sonido"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+    </RelativeLayout>
+</RelativeLayout>

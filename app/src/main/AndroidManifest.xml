@@ -1,0 +1,556 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="gz.app.comdavid.apprende2">
+
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:hardwareAccelerated="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="Apprende"
+        android:largeHeap="true"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        <activity android:name=".MainActivity3"
+            android:screenOrientation="landscape"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".splashscreen"
+            android:screenOrientation="landscape"
+            android:theme="@style/Theme.AppCompat.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".inicio"
+            android:screenOrientation="landscape"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".vocales"
+            android:screenOrientation="landscape"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".vocales_e"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".vocales_i"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".vocales_o"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".vocales_u"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".abc_a"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".abc_d"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".abc_b"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".abc_c"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".abc_e"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".abc_f"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".abc_g"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".abc_h"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".abc_i"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".abc_j"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".abc_k"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".abc_l"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".abc_m"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".abc_n"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".abc_nn"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".abc_o"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".abc_p"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".abc_q"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".abc_r"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".abc_s"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".abc_t"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".abc_u"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".abc_v"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".abc_w"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".abc_x"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".abc_y"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".abc_z"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".juego"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".juego2"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".silabas"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".silaba_c"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".silaba_b"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".silaba_d"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".silaba_f"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".silaba_g"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".silaba_l"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".silaba_m"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".silaba_n"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".silaba_p"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".silaba_r"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".silaba_s"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".silabas_t"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".silaba_v"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".silaba_y"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".silaba_z"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".prueba"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".juego3"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".juego4"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".juego5"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".juego6"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".juego7"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".juego8"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".juego9"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".juego99"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".escribir"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".escribirr2"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".escribirr3_1"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".juegosil"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".juegosil2"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".juegosil3"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".juegosil4"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".juegosil5"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".juegosil6"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".juegosil7"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".juegosil8"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".juegosil9"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".juegosil10"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".juegosil11"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".juegosil12"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".juegosil13"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".juegosil14"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".juegosil15"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".juegosil16"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".juegosil17"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".juegosil18"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".juegosil19"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".juegosil20"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".juegosil21"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".juegosil22"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".juegosil23"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".juegosil24"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".juegosil25"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".juegosil26"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".juegosil27"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".juegosil28"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".juegosil29"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".juegosil30"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".juegosil31"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".juegosil32"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".juegosil33"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".juegosil35"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".juegosil34"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".juegosil36"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".juegosil37"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".juegosil38"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".juegosil39"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".juegosil40"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".juegosil41"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".juegosil42"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".juegosil43"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".juegosil44"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".juegosil45"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".juegosil46"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".juegosil47"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".juegosil48"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".juegosil49"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".juegosil50"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".juegosil51"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".juegosil52"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".juegosil53"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".juegosil54"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".juegosil55"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".juegosil56"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".juegosil57"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".juegosil58"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".juegosil69"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".juegosil59"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".juegosil60"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".juegosil61"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".juegosil62"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".juegosil63"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".juegosil64"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".juegosil65"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".juegosil66"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".juegosil67"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".juegosil68"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".juegosil70"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".juegosil71"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".juegosil72"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".juegosil73"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".juegosil74"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".juegosil75"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".escribir4_1"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".escribirr5_1"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".escribirr6_1"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".juegosilabas1"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".juegosilabas2"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".juegosilabas3"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".juegosilabas4"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".juegosilabas5"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".juegosilabas6"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".juegosilabas7"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".juegosilabas8"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".juegosilabas9"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".juegosilabas10"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".juegos"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".paint"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".paint2"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".lectura2"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".lectura3"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".lectura4"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".lectura5"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".lectura6"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".lectura7"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".lectura8"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".lectura9"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".lectura10"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".inicio2"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".escribirinicio"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".creditos"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".mainactivity2"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".read1"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".read2"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".read3"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".read4"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".read5"
+            android:screenOrientation="landscape" />
+    </application>
+
+</manifest>

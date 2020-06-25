@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="gz.app.comdavid.apprende2.juegosil16">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true">
+
+        <ImageView
+            android:layout_width="300dp"
+            android:layout_height="120dp"
+            android:id="@+id/siljuegofa"
+            android:background="@drawable/silfa"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:id="@+id/siljuegofe"
+            android:background="@drawable/ferrocarril"
+            android:layout_below="@+id/siljuegofa"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+        <ImageButton
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:id="@+id/siljuegofi"
+            android:background="@drawable/faro"
+            android:layout_below="@+id/siljuegofa"
+            android:layout_centerHorizontal="true" />
+
+        <ImageButton
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:id="@+id/siljuegofa2"
+            android:background="@drawable/filete"
+            android:layout_below="@+id/siljuegofa"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <Button
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:id="@+id/casa_sill16"
+            android:background="@drawable/home"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:id="@+id/silerror16"
+            android:background="@drawable/error"
+            android:layout_alignParentTop="true"
+            android:layout_alignRight="@+id/casa_sill16"
+            android:layout_alignEnd="@+id/casa_sill16"
+            android:visibility="gone" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="0.2"
+            android:background="@drawable/faro"
+            android:focusable="true"
+            android:focusableInTouchMode="false"
+            android:visibility="gone"
+            android:id="@+id/vista16"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/silerror16"
+            android:layout_toRightOf="@+id/silerror16"
+            android:layout_above="@+id/casa_sill16"></RelativeLayout>
+        <Button
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/sonidosilabas16"
+            android:background="@drawable/sonido"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+    </RelativeLayout>
+
+</RelativeLayout>
+

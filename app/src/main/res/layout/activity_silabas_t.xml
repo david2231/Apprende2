@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/fondosil2"
+    tools:context="gz.app.comdavid.apprende2.silabas_t">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/relativeLayout2">
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+
+            android:id="@+id/tas"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:background="@drawable/silata"
+
+            android:textSize="@dimen/abc_dropdownitem_icon_width"
+            android:visibility="visible" />
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+
+            android:id="@+id/tos"
+            android:layout_below="@+id/tas"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+
+            android:textSize="@dimen/abc_action_button_min_width_overflow_material"
+            android:background="@drawable/silato"/>
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+
+            android:id="@+id/tus"
+            android:layout_below="@+id/tos"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:textSize="@dimen/abc_action_button_min_width_overflow_material"
+            android:background="@drawable/silatu"
+            />
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:id="@+id/tes"
+
+            android:layout_below="@+id/tus"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:textSize="@dimen/abc_action_button_min_width_overflow_material"
+            android:background="@drawable/silate"
+            />
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+
+            android:id="@+id/tis"
+            android:layout_below="@+id/tes"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:textSize="@dimen/abc_action_button_min_width_overflow_material"
+            android:background="@drawable/silati"
+
+            />
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:id="@+id/tablas"
+            android:background="@drawable/tabla"
+            android:visibility="gone"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="59dp"
+            android:layout_marginEnd="59dp" />
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:id="@+id/tarjetas"
+            android:background="@drawable/tarjeta"
+            android:visibility="gone"
+            android:layout_below="@+id/tus"
+            android:layout_alignLeft="@+id/tablas"
+            android:layout_alignStart="@+id/tablas" />
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:id="@+id/teteros"
+            android:background="@drawable/tetero"
+            android:visibility="gone"
+            android:layout_below="@+id/tablas"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="62dp"
+            android:layout_marginEnd="62dp" />
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:id="@+id/telefonos"
+            android:background="@drawable/telefono"
+            android:visibility="gone"
+            android:layout_below="@+id/tus"
+            android:layout_alignLeft="@+id/teteros"
+            android:layout_alignStart="@+id/teteros" />
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:id="@+id/tiburones"
+            android:background="@drawable/tiburon"
+            android:visibility="gone"
+            android:layout_below="@+id/tablas"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="62dp"
+            android:layout_marginEnd="62dp" />
+
+        <ImageButton
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:id="@+id/tigres"
+            android:background="@drawable/tigre"
+            android:visibility="gone"
+            android:layout_below="@+id/tus"
+            android:layout_alignLeft="@+id/tiburones"
+            android:layout_alignStart="@+id/tiburones" />
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:id="@+id/tomates"
+            android:background="@drawable/tomatee"
+            android:visibility="gone"
+            android:layout_marginRight="75dp"
+            android:layout_marginEnd="75dp"
+            android:layout_below="@+id/tus"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:id="@+id/toros"
+            android:background="@drawable/toro"
+            android:visibility="gone"
+            android:layout_below="@+id/tablas"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="64dp"
+            android:layout_marginEnd="64dp" />
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:id="@+id/tubos"
+            android:background="@drawable/tubo"
+            android:visibility="gone"
+            android:layout_below="@+id/tablas"
+            android:layout_alignLeft="@+id/tucanes"
+            android:layout_alignStart="@+id/tucanes" />
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:id="@+id/tucanes"
+            android:background="@drawable/tucan"
+            android:visibility="gone"
+            android:layout_marginRight="62dp"
+            android:layout_marginEnd="62dp"
+            android:layout_below="@+id/tus"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/sil_casat"
+            android:background="@drawable/home"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+        <Button
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/ant"
+            android:id="@+id/sigrt"
+            android:layout_above="@+id/tes"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+
+
+    </RelativeLayout>
+</RelativeLayout>

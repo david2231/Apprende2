@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/fondosil2"
+    tools:context="gz.app.comdavid.apprende2.silaba_v">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/relativeLayout2">
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+
+            android:id="@+id/vas"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:background="@drawable/silava"
+
+            android:textSize="@dimen/abc_dropdownitem_icon_width"
+            android:visibility="visible" />
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+
+            android:id="@+id/vos"
+            android:layout_below="@+id/vas"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+
+            android:textSize="@dimen/abc_action_button_min_width_overflow_material"
+            android:background="@drawable/silavo"/>
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+
+            android:id="@+id/vus"
+            android:layout_below="@+id/vos"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:textSize="@dimen/abc_action_button_min_width_overflow_material"
+            android:background="@drawable/silavu"
+            />
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:id="@+id/ves"
+
+            android:layout_below="@+id/vus"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:textSize="@dimen/abc_action_button_min_width_overflow_material"
+            android:background="@drawable/silave"
+            />
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+
+            android:id="@+id/vis"
+            android:layout_below="@+id/ves"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:textSize="@dimen/abc_action_button_min_width_overflow_material"
+            android:background="@drawable/silavi"
+
+            />
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:id="@+id/vacas"
+            android:background="@drawable/vaca"
+            android:visibility="gone"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="59dp"
+            android:layout_marginEnd="59dp" />
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:id="@+id/vasos"
+            android:background="@drawable/vaso"
+            android:visibility="gone"
+            android:layout_below="@+id/vus"
+            android:layout_alignLeft="@+id/vacas"
+            android:layout_alignStart="@+id/vacas" />
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:id="@+id/venenos"
+            android:background="@drawable/veneno"
+            android:visibility="gone"
+            android:layout_below="@+id/vacas"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="62dp"
+            android:layout_marginEnd="62dp" />
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:id="@+id/ventanas"
+            android:background="@drawable/ventana"
+            android:visibility="gone"
+            android:layout_alignParentBottom="true"
+            android:layout_alignLeft="@+id/venenos"
+            android:layout_alignStart="@+id/venenos" />
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:id="@+id/viboras"
+            android:background="@drawable/vibora"
+            android:visibility="gone"
+            android:layout_below="@+id/vacas"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="62dp"
+            android:layout_marginEnd="62dp" />
+
+        <ImageButton
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:id="@+id/viruss"
+            android:background="@drawable/virus"
+            android:visibility="gone"
+            android:layout_below="@+id/vus"
+            android:layout_alignLeft="@+id/viboras"
+            android:layout_alignStart="@+id/viboras" />
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:id="@+id/volcanes"
+            android:background="@drawable/volcan"
+            android:visibility="gone"
+            android:layout_marginRight="75dp"
+            android:layout_marginEnd="75dp"
+            android:layout_below="@+id/vus"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:id="@+id/volcaless"
+            android:background="@drawable/vocales"
+            android:visibility="gone"
+            android:layout_below="@+id/vacas"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="64dp"
+            android:layout_marginEnd="64dp" />
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:id="@+id/vuelos"
+            android:background="@drawable/vueloo"
+            android:visibility="gone"
+            android:layout_below="@+id/vacas"
+            android:layout_alignLeft="@+id/vueltas"
+            android:layout_alignStart="@+id/vueltas" />
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:id="@+id/vueltas"
+            android:background="@drawable/vuelta"
+            android:visibility="gone"
+            android:layout_marginRight="62dp"
+            android:layout_marginEnd="62dp"
+            android:layout_below="@+id/vus"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/sil_casav"
+            android:background="@drawable/home"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+        <Button
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/ant"
+            android:id="@+id/sigv"
+            android:layout_above="@+id/ves"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+    </RelativeLayout>
+
+
+
+
+
+</RelativeLayout>

@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/fondosil2"
+    tools:context="gz.app.comdavid.apprende2.silaba_y">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/relativeLayout2">
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+
+            android:id="@+id/yas"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:background="@drawable/silaya"
+
+            android:textSize="@dimen/abc_dropdownitem_icon_width"
+            android:visibility="visible" />
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+
+            android:id="@+id/yos"
+            android:layout_below="@+id/yas"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+
+            android:textSize="@dimen/abc_action_button_min_width_overflow_material"
+            android:background="@drawable/silayo"/>
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+
+            android:id="@+id/yus"
+            android:layout_below="@+id/yos"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:textSize="@dimen/abc_action_button_min_width_overflow_material"
+            android:background="@drawable/silayu"
+            />
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:id="@+id/yes"
+
+            android:layout_below="@+id/yus"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:textSize="@dimen/abc_action_button_min_width_overflow_material"
+            android:background="@drawable/silaye"
+            />
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+
+            android:id="@+id/yis"
+            android:layout_below="@+id/yes"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:textSize="@dimen/abc_action_button_min_width_overflow_material"
+            android:background="@drawable/silayi"
+
+            />
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:id="@+id/yacimientos"
+            android:background="@drawable/yacimiento"
+            android:visibility="gone"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="59dp"
+            android:layout_marginEnd="59dp" />
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:id="@+id/yates"
+            android:background="@drawable/yatee"
+            android:visibility="gone"
+            android:layout_below="@+id/yus"
+            android:layout_alignLeft="@+id/yacimientos"
+            android:layout_alignStart="@+id/yacimientos" />
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:id="@+id/yeguas"
+            android:background="@drawable/yeguaa"
+            android:visibility="gone"
+            android:layout_below="@+id/yacimientos"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="62dp"
+            android:layout_marginEnd="62dp" />
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:id="@+id/yemas"
+            android:background="@drawable/yema"
+            android:visibility="gone"
+            android:layout_below="@+id/yus"
+            android:layout_alignLeft="@+id/yeguas"
+            android:layout_alignStart="@+id/yeguas" />
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:id="@+id/yins"
+            android:background="@drawable/yin"
+            android:visibility="gone"
+            android:layout_below="@+id/yacimientos"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="62dp"
+            android:layout_marginEnd="62dp" />
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:id="@+id/yogures"
+            android:background="@drawable/yogurt"
+            android:visibility="gone"
+            android:layout_marginRight="75dp"
+            android:layout_marginEnd="75dp"
+            android:layout_below="@+id/yus"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:id="@+id/yucas"
+            android:background="@drawable/yuca"
+            android:visibility="gone"
+            android:layout_below="@+id/yacimientos"
+            android:layout_alignLeft="@+id/yunques"
+            android:layout_alignStart="@+id/yunques" />
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:id="@+id/yunques"
+            android:background="@drawable/yunque"
+            android:visibility="gone"
+            android:layout_marginRight="62dp"
+            android:layout_marginEnd="62dp"
+            android:layout_below="@+id/yus"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:id="@+id/yoyos"
+            android:background="@drawable/yoyo"
+            android:visibility="gone"
+            android:layout_below="@+id/yacimientos"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="64dp"
+            android:layout_marginEnd="64dp" />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/sil_casay"
+            android:background="@drawable/home"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+        <Button
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/ant"
+            android:id="@+id/sigy"
+            android:layout_above="@+id/yes"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+
+
+
+    </RelativeLayout>
+
+
+
+
+</RelativeLayout>

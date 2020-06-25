@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/fondosil2"
+    tools:context="gz.app.comdavid.apprende2.silaba_n">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/relativeLayout2">
+
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+
+        android:id="@+id/nas"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:background="@drawable/silana"
+
+        android:textSize="@dimen/abc_dropdownitem_icon_width"
+        android:visibility="visible" />
+
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+
+        android:id="@+id/nos"
+        android:layout_below="@+id/nas"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+
+        android:textSize="@dimen/abc_action_button_min_width_overflow_material"
+        android:background="@drawable/silano"/>
+
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+
+        android:id="@+id/nus"
+        android:layout_below="@+id/nos"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textSize="@dimen/abc_action_button_min_width_overflow_material"
+        android:background="@drawable/silanu"
+        />
+
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:id="@+id/nes"
+
+        android:layout_below="@+id/nus"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textSize="@dimen/abc_action_button_min_width_overflow_material"
+        android:background="@drawable/silane"
+        />
+
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+
+        android:id="@+id/nis"
+        android:layout_below="@+id/nes"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textSize="@dimen/abc_action_button_min_width_overflow_material"
+        android:background="@drawable/silani"
+
+        />
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:id="@+id/narices"
+            android:background="@drawable/nariz"
+            android:visibility="gone"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="59dp"
+            android:layout_marginEnd="59dp" />
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:id="@+id/navidades"
+            android:background="@drawable/navidadd"
+            android:visibility="gone"
+            android:layout_below="@+id/nus"
+            android:layout_alignLeft="@+id/narices"
+            android:layout_alignStart="@+id/narices" />
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:id="@+id/negativos"
+            android:background="@drawable/negativo"
+            android:visibility="gone"
+            android:layout_below="@+id/narices"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="62dp"
+            android:layout_marginEnd="62dp" />
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:id="@+id/neveras"
+            android:background="@drawable/nevera"
+            android:visibility="gone"
+            android:layout_below="@+id/nus"
+            android:layout_alignLeft="@+id/negativos"
+            android:layout_alignStart="@+id/negativos" />
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:id="@+id/nieves"
+            android:background="@drawable/nieve"
+            android:visibility="gone"
+            android:layout_below="@+id/narices"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="62dp"
+            android:layout_marginEnd="62dp" />
+
+        <ImageButton
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:id="@+id/ninnos"
+            android:background="@drawable/ninno"
+            android:visibility="gone"
+            android:layout_below="@+id/nus"
+            android:layout_alignLeft="@+id/nieves"
+            android:layout_alignStart="@+id/nieves" />
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:id="@+id/noches"
+            android:background="@drawable/noche"
+            android:visibility="gone"
+            android:layout_marginRight="75dp"
+            android:layout_marginEnd="75dp"
+            android:layout_below="@+id/nus"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:id="@+id/noticias"
+            android:background="@drawable/noticia"
+            android:visibility="gone"
+            android:layout_below="@+id/narices"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="64dp"
+            android:layout_marginEnd="64dp" />
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:id="@+id/nubes"
+            android:background="@drawable/nube"
+            android:visibility="gone"
+            android:layout_below="@+id/narices"
+            android:layout_alignLeft="@+id/numeros"
+            android:layout_alignStart="@+id/numeros" />
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:id="@+id/numeros"
+            android:background="@drawable/numero"
+            android:visibility="gone"
+            android:layout_marginRight="62dp"
+            android:layout_marginEnd="62dp"
+            android:layout_below="@+id/nus"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/sil_casan"
+            android:background="@drawable/home"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+
+
+        <Button
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/ant"
+            android:id="@+id/sign"
+            android:layout_above="@+id/nes"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+
+    </RelativeLayout>
+</RelativeLayout>

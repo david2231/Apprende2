@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/inicio"
+    tools:context="gz.app.comdavid.apprende2.MainActivity">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:id="@+id/frameLayout"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true">
+
+        <Button
+            android:layout_width="120dp"
+            android:layout_height="100dp"
+            android:id="@+id/vocal"
+            android:layout_gravity="left|top"
+            android:background="@drawable/vocaleess" />
+
+        <Button
+            android:layout_width="120dp"
+            android:layout_height="100dp"
+            android:text=""
+            android:id="@+id/abc"
+            android:background="@drawable/abecedariow"
+            android:layout_gravity="center_horizontal|top" />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="120dp"
+            android:layout_height="100dp"
+            android:id="@+id/silabas"
+            android:background="@drawable/silaba"
+            android:layout_gravity="right|top" />
+
+        <Button
+            android:layout_width="120dp"
+            android:layout_height="100dp"
+            android:text=""
+            android:id="@+id/palabra"
+            android:background="@drawable/palabraa"
+            android:layout_gravity="left|center_vertical" />
+
+        <Button
+            android:layout_width="73dp"
+            android:layout_height="73dp"
+            android:id="@+id/back"
+            android:layout_gravity="left|bottom"
+            android:background="@drawable/sig" />
+
+        <Button
+            android:layout_width="73dp"
+            android:layout_height="73dp"
+            android:id="@+id/sonido"
+            android:visibility="invisible"
+            android:layout_gravity="right|bottom"
+            android:background="@drawable/sonido" />
+
+        <Button
+            android:layout_width="120dp"
+            android:layout_height="100dp"
+            android:id="@+id/juego"
+            android:background="@drawable/videojuegos"
+            android:layout_gravity="right|center_vertical" />
+
+        <ImageButton
+            android:layout_width="73dp"
+            android:layout_height="73dp"
+            android:id="@+id/sonidoo"
+            android:background="@drawable/sonidox"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+
+            android:layout_gravity="right|bottom" />
+
+        <Switch
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/switch1"
+            android:layout_gravity="center"
+            android:checked="false"
+            android:textOn="Ingles"
+            android:textOff="Español"
+            android:textColor="#008F36"
+            android:textSize="25sp"/>
+
+
+
+    </FrameLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Text"
+        android:id="@+id/textView"
+        android:layout_above="@+id/frameLayout"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>

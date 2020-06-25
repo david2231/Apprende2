@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/fondosil2"
+    tools:context="gz.app.comdavid.apprende2.silaba_b">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/relativeLayout2">
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+
+            android:id="@+id/bas"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:background="@drawable/silbas"
+
+            android:textSize="@dimen/abc_dropdownitem_icon_width"/>
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+
+            android:id="@+id/bos"
+            android:layout_below="@+id/bas"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+
+            android:textSize="@dimen/abc_action_button_min_width_overflow_material"
+            android:background="@drawable/silbo"
+            android:visibility="visible" />
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+
+            android:id="@+id/bus"
+            android:layout_below="@+id/bos"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:textSize="@dimen/abc_action_button_min_width_overflow_material"
+            android:background="@drawable/silbu"
+            />
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:id="@+id/bes"
+
+            android:layout_below="@+id/bus"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:textSize="@dimen/abc_action_button_min_width_overflow_material"
+            android:background="@drawable/silbe"
+            />
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+
+            android:id="@+id/bi"
+            android:layout_below="@+id/bes"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:textSize="@dimen/abc_action_button_min_width_overflow_material"
+            android:background="@drawable/silbi"
+
+            />
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:id="@+id/balones"
+            android:background="@drawable/balon"
+            android:visibility="gone"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="90dp"
+            android:layout_marginEnd="90dp" />
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:id="@+id/bebes"
+            android:background="@drawable/bebe"
+            android:visibility="gone"
+            android:layout_below="@+id/balones"
+            android:layout_toLeftOf="@+id/sil_casab"
+            android:layout_toStartOf="@+id/sil_casab" />
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:id="@+id/bebidas"
+            android:background="@drawable/bebida"
+            android:visibility="gone"
+            android:layout_alignParentBottom="true"
+            android:layout_alignLeft="@+id/bebes"
+            android:layout_alignStart="@+id/bebes" />
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:id="@+id/bicis"
+            android:background="@drawable/bici"
+            android:visibility="gone"
+            android:layout_alignParentTop="true"
+            android:layout_toLeftOf="@+id/sil_casab"
+            android:layout_toStartOf="@+id/sil_casab" />
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:id="@+id/billetes"
+            android:background="@drawable/billete"
+            android:visibility="gone"
+            android:layout_alignParentBottom="true"
+            android:layout_alignLeft="@+id/bicis"
+            android:layout_alignStart="@+id/bicis" />
+
+        <ImageButton
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:id="@+id/bocas"
+            android:background="@drawable/boca"
+            android:visibility="gone"
+            android:layout_below="@+id/balones"
+            android:layout_toLeftOf="@+id/sil_casab"
+            android:layout_toStartOf="@+id/sil_casab" />
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:id="@+id/bolsas"
+            android:background="@drawable/bolsa"
+            android:visibility="gone"
+            android:layout_alignParentBottom="true"
+            android:layout_alignLeft="@+id/bocas"
+            android:layout_alignStart="@+id/bocas" />
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:id="@+id/buhos"
+            android:background="@drawable/buho"
+            android:visibility="gone"
+            android:layout_below="@+id/balones"
+            android:layout_toLeftOf="@+id/sil_casab"
+            android:layout_toStartOf="@+id/sil_casab" />
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:id="@+id/burros"
+            android:background="@drawable/burro"
+            android:visibility="gone"
+            android:layout_alignParentBottom="true"
+            android:layout_alignLeft="@+id/buhos"
+            android:layout_alignStart="@+id/buhos" />
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:id="@+id/barcos"
+            android:background="@drawable/barco"
+            android:visibility="gone"
+            android:layout_above="@+id/sil_casab"
+            android:layout_alignLeft="@+id/balones"
+            android:layout_alignStart="@+id/balones" />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/sil_casab"
+            android:background="@drawable/home"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+        <Button
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/ant"
+            android:id="@+id/sigb"
+            android:layout_above="@+id/bes"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+    </RelativeLayout>
+
+</RelativeLayout>

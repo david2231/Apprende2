@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Apprende2</string>
+    <string name="text_1">la casa es azul</string>
+    <string name="text_2">el anillo brilla mucho</string>
+    <string name="text_3">las abejas fabrican miel</string>
+    <string name="text_4">las ballenas viven en el mar</string>
+    <string name="text_5">la camisa tiene tres botones</string>
+    <string name="text_6">Pedro lleva unos pantalones blancos</string>
+    <string name="text_7">el pez es naranja y blanco</string>
+    <string name="text_8">el plátano está maduro</string>
+    <string name="text_9">el Remo está roto</string>
+    <string name="text_10">el Rubí es Rosado</string>
+    <string name="text_11">bees make honey</string>
+    <string name="text_12">the Fish is Orange and White</string>
+    <string name="text_13">the house is Blue</string>
+    <string name="text_14">the Ruby is Pink</string>
+    <string name="text_15">the whales live in the sea</string>
+    <string name="start_new">New</string>
+    <string name="brush">Brush</string>
+    <string name="erase">Erase</string>
+    <string name="save">Save</string>
+    <string name="paint">Paint</string>
+
+    <string name="sml">Small</string>
+    <string name="med">Medium</string>
+    <string name="lrg">Large</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

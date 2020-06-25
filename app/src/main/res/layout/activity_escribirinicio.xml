@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/pincel"
+    tools:context="gz.app.comdavid.apprende2.escribirinicio">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:background="@drawable/vocaleess"
+
+            android:id="@+id/escribirvocales"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/casa_escribe"
+            android:layout_toEndOf="@+id/casa_escribe"
+            android:layout_marginLeft="73dp"
+            android:layout_marginStart="73dp" />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/pintar"
+
+            android:id="@+id/paints"
+            android:layout_marginRight="88dp"
+            android:layout_marginEnd="88dp"
+            android:layout_alignBottom="@+id/escribirvocales"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+        <Button
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/casa_escribe"
+            android:background="@drawable/home"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+    </RelativeLayout>
+</RelativeLayout>
+
