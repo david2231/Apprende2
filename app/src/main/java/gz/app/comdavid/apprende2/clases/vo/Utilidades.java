@@ -29,7 +29,7 @@ public class Utilidades {
     public static void obtenerListaAvatars(){
 
         listaAvatars=new ArrayList<AvatarVo>();
-        listaAvatars.add(new AvatarVo(1,R.drawable.avatar1,"Avatar1"));
+        listaAvatars.add(new AvatarVo(1,R.drawable.logofin,"Avatar1"));
         listaAvatars.add(new AvatarVo(2,R.drawable.avatar2,"Avatar2"));
         listaAvatars.add(new AvatarVo(3,R.drawable.avatar3,"Avatar3"));
         listaAvatars.add(new AvatarVo(4,R.drawable.avatar4,"Avatar4"));

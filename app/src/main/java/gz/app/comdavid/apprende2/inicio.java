@@ -2,7 +2,6 @@ package gz.app.comdavid.apprende2;
 
 import android.content.Intent;
 import android.media.MediaPlayer;
-import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -48,7 +47,7 @@ public class inicio extends AppCompatActivity {
         btnn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(v.getContext(),MainActivity3.class);
+                Intent intent=new Intent(v.getContext(),Registro.class);
                 startActivityForResult(intent,0);
                 overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
 
@@ -63,7 +62,7 @@ public class inicio extends AppCompatActivity {
         credito.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(v.getContext(),creditos.class);
+                Intent intent=new Intent(v.getContext(),MainActivity3.class);
                 startActivityForResult(intent,0);
                 overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
 

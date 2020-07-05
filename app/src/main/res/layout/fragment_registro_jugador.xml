@@ -3,8 +3,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="gz.app.comdavid.apprende2.fragment.RegistroJugadorFragment">
-
-    <!-- TODO: Update blank fragment layout -->
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+   <!-- TODO: Update blank fragment layout -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -43,16 +45,16 @@
 
             <RadioButton
                 android:id="@+id/radioM"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Masculino"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                android:layout_width="20dp"
+                android:layout_height="100dp"
+                android:background="@drawable/avatar16"/>
 
             <RadioButton
                 android:id="@+id/radioF"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Femenino"
+                android:layout_width="20dp"
+                android:layout_height="100dp"
+                android:background="@drawable/avatar27"
                 android:layout_weight="1"/>
 
         </RadioGroup>
@@ -75,7 +77,7 @@
             android:layout_marginBottom="30dp"/>
 
     </LinearLayout>
-
+</ScrollView>
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/idFabRegistro"
@@ -88,4 +90,5 @@
         android:layout_marginRight="7dp"
         android:layout_marginBottom="7dp"
         />
+
 </RelativeLayout>

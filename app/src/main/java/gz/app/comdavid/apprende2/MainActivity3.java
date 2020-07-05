@@ -12,13 +12,16 @@ import gz.app.comdavid.apprende2.clases.vo.ConexionSQLiteHelper;
 import gz.app.comdavid.apprende2.clases.vo.Utilidades;
 import gz.app.comdavid.apprende2.fragment.GestionJugadorFragment;
 import gz.app.comdavid.apprende2.fragment.IncioFragment;
+import gz.app.comdavid.apprende2.fragment.ConsultarListaUsuarioFragment;
 import gz.app.comdavid.apprende2.fragment.RegistroJugadorFragment;
 import gz.app.comdavid.apprende2.interfaces.IComunicaFragments;
 
 
-public class MainActivity3 extends AppCompatActivity implements IComunicaFragments,IncioFragment.OnFragmentInteractionListener,RegistroJugadorFragment.OnFragmentInteractionListener, GestionJugadorFragment.OnFragmentInteractionListener{
+public class MainActivity3 extends AppCompatActivity implements IComunicaFragments,IncioFragment.OnFragmentInteractionListener,RegistroJugadorFragment.OnFragmentInteractionListener,GestionJugadorFragment.OnFragmentInteractionListener,ConsultarListaUsuarioFragment.OnFragmentInteractionListener{
 
-    Fragment fragmentInicio,registroJugadorFragment,gestionJugadorFragment;
+    Fragment fragmentInicio,registroJugadorFragment,gestionJugadorFragment,getRegistroUsuario,fragment_consultar_lista_usuario;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,7 +56,7 @@ public class MainActivity3 extends AppCompatActivity implements IComunicaFragmen
                         new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-                                getSupportFragmentManager().beginTransaction().replace(R.id.contenedorFragments,gestionJugadorFragment).commit();
+                                getSupportFragmentManager().beginTransaction().replace(R.id.contenedorFragments,fragment_consultar_lista_usuario).commit();
                             }
                         });
 
@@ -81,7 +84,8 @@ public class MainActivity3 extends AppCompatActivity implements IComunicaFragmen
 
     @Override
     public void llamarAjustes() {
-        Toast.makeText(getApplicationContext(), "ajustes main",Toast.LENGTH_SHORT).show();
+
+        //getSupportFragmentManager().beginTransaction().replace(R.id.contenedorFragments,RegistroUsuario).commit();
     }
 
     @Override
@@ -103,4 +107,6 @@ public class MainActivity3 extends AppCompatActivity implements IComunicaFragmen
     public void consultarInformacion() {
         Toast.makeText(getApplicationContext(), "informacion main",Toast.LENGTH_SHORT).show();
     }
+
+
 }

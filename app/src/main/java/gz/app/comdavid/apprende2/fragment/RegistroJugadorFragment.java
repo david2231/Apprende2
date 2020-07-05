@@ -18,6 +18,17 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
+import java.util.HashMap;
+import java.util.Map;
+
 import gz.app.comdavid.apprende2.R;
 import gz.app.comdavid.apprende2.adapters.AdaptadorAvatar;
 import gz.app.comdavid.apprende2.clases.vo.ConexionSQLiteHelper;
@@ -92,10 +103,12 @@ public class RegistroJugadorFragment extends Fragment {
         radioM=vista.findViewById(R.id.radioM);
         recyclerAvatars.setLayoutManager(new GridLayoutManager(this.actividad,3));
         recyclerAvatars.setHasFixedSize(true);
+        campoNick=(EditText)vista.findViewById(R.id.campoNickName);
 
         fabregistro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                ejecutarServcio("http://192.168.0.7/BD_Apprende/insertar_jugador.php");
                 registrarJugador();
             }
         });
@@ -105,29 +118,30 @@ public class RegistroJugadorFragment extends Fragment {
         return vista;
     }
 
+
     private void registrarJugador() {
         System.out.println("Registrar");
 
-        String genero="";
+        String genero1="";
 
         if(radioM.isChecked()==true){
-            genero="M";
+            genero1="M";
         }
         else if (radioF.isChecked()==true){
-            genero="F";
+            genero1="F";
         }
         else{
-            genero="No seleccionado";
+            genero1="No seleccionado";
         }
 
-        if (!genero.equals("No seleccionado") && campoNick.getText().toString()!=null && !campoNick.getText().toString().trim().equals("")){
+        if (!genero1.equals("No seleccionado") && campoNick.getText().toString()!=null && !campoNick.getText().toString().trim().equals("")){
 
             int avatarId=Utilidades.avatarSeleccion.getId();
             String nickname=campoNick.getText().toString();
 
 
             String registro="Nombre: "+campoNick.getText().toString()+"\n";
-            registro+="Genero:" +genero+"\n";
+            registro+="Genero:" +genero1+"\n";
             registro+="Avatar Id:" +Utilidades.avatarSeleccion.getId();
 
             ConexionSQLiteHelper conn=new ConexionSQLiteHelper(actividad,Utilidades.NOMBRE_BD, null, 1 );
@@ -136,7 +150,7 @@ public class RegistroJugadorFragment extends Fragment {
 
             ContentValues values=new ContentValues();
             values.put(Utilidades.CAMPO_NOMBRE,nickname);
-            values.put(Utilidades.CAMPO_GENERO,genero);
+            values.put(Utilidades.CAMPO_GENERO,genero1);
             values.put(Utilidades.CAMPO_AVATAR,avatarId);
 
             Long idResultante=db.insert(Utilidades.TABLA_USUARIO,Utilidades.CAMPO_ID,values);
@@ -159,6 +173,49 @@ public class RegistroJugadorFragment extends Fragment {
 
             Toast.makeText(actividad,"Verificar los datos! ",Toast.LENGTH_SHORT).show();
         }
+    }
+
+    private void ejecutarServcio(String URL){
+
+        StringRequest stringRequest=new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
+
+            @Override
+            public void onResponse(String response) {
+                Toast.makeText(actividad.getApplicationContext(), "Registro exitoso", Toast.LENGTH_SHORT).show();
+            }
+
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(actividad.getApplicationContext(), error.toString(), Toast.LENGTH_SHORT).show();
+            }
+        }){
+
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                String genero="";
+
+                if(radioM.isChecked()==true){
+                    genero="M";
+                }
+                else if (radioF.isChecked()==true){
+                    genero="F";
+                }
+                else{
+                    genero="No seleccionado";
+                }
+                int avatarId=Utilidades.avatarSeleccion.getId();
+                Map<String,String> parametros=new HashMap<String, String>();
+                parametros.put("nombre",campoNick.getText().toString());
+                String genero1 = parametros.put("genero",String.valueOf(genero));
+                String avatar = parametros.put("avatar", String.valueOf(avatarId));
+                return parametros;
+
+
+            }
+        };
+        RequestQueue requestQueue= Volley.newRequestQueue( actividad);
+        requestQueue.add(stringRequest);
     }
 
     public void onAttach(Context context) {
