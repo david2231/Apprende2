@@ -25,7 +25,7 @@
             android:id="@+id/campoNickName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="NickName"
+            android:hint="Nombre de Usuario"
             android:layout_margin="10dp"
             android:shadowColor="@color/colorAmarillo"/>
 
@@ -46,18 +46,38 @@
             <RadioButton
                 android:id="@+id/radioM"
                 android:layout_weight="1"
-                android:layout_width="20dp"
+                android:layout_width="0dp"
                 android:layout_height="100dp"
-                android:background="@drawable/avatar16"/>
+                android:background="@drawable/man"/>
 
             <RadioButton
                 android:id="@+id/radioF"
-                android:layout_width="20dp"
+                android:layout_width="0dp"
                 android:layout_height="100dp"
-                android:background="@drawable/avatar27"
+                android:background="@drawable/girl"
                 android:layout_weight="1"/>
 
         </RadioGroup>
+
+        <TextView
+            android:id="@+id/valoredad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:gravity="center"
+            android:text="Selecciona tu Edad"
+            android:paddingTop="40dp"/>
+
+        <SeekBar
+            android:id="@+id/edad"
+            android:max="100"
+            android:min="1"
+            android:progress="2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="40dp"/>
+
+
 
         <TextView
             android:layout_width="wrap_content"

@@ -16,6 +16,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.SeekBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -59,6 +61,8 @@ public class RegistroJugadorFragment extends Fragment {
 
     FloatingActionButton fabregistro;
     EditText campoNick;
+    SeekBar edad;
+    TextView valoredad;
     RadioButton radioM,radioF;
 
     public RegistroJugadorFragment() {
@@ -104,12 +108,29 @@ public class RegistroJugadorFragment extends Fragment {
         recyclerAvatars.setLayoutManager(new GridLayoutManager(this.actividad,3));
         recyclerAvatars.setHasFixedSize(true);
         campoNick=(EditText)vista.findViewById(R.id.campoNickName);
+        edad=(SeekBar)vista.findViewById(R.id.edad);
+        valoredad=(TextView) vista.findViewById(R.id.valoredad);
+edad.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+    @Override
+    public void onProgressChanged(SeekBar seekBar, int progess, boolean b) {
+        valoredad.setText(progess +"");
+    }
 
+    @Override
+    public void onStartTrackingTouch(SeekBar seekBar) {
+
+    }
+
+    @Override
+    public void onStopTrackingTouch(SeekBar seekBar) {
+
+    }
+});
         fabregistro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ejecutarServcio("http://192.168.0.7/BD_Apprende/insertar_jugador.php");
-                registrarJugador();
+                ejecutarServcio("http://192.168.0.9/BD_Apprende/insertar_jugador.php");
+                //registrarJugador();
             }
         });
 
@@ -153,6 +174,7 @@ public class RegistroJugadorFragment extends Fragment {
             values.put(Utilidades.CAMPO_GENERO,genero1);
             values.put(Utilidades.CAMPO_AVATAR,avatarId);
 
+
             Long idResultante=db.insert(Utilidades.TABLA_USUARIO,Utilidades.CAMPO_ID,values);
 
             if(idResultante!=-1){
@@ -176,7 +198,20 @@ public class RegistroJugadorFragment extends Fragment {
     }
 
     private void ejecutarServcio(String URL){
+        String genero="";
 
+        if(radioM.isChecked()==true){
+            genero="M";
+        }
+        else if (radioF.isChecked()==true){
+            genero="F";
+        }
+        else{
+            genero="No";
+        }
+        if (!genero.equals("No")&&!campoNick.getText().toString().trim().equals("")&&!valoredad.getText().toString().trim().equals("Selecciona tu Edad")){
+
+        final String finalGenero = genero;
         StringRequest stringRequest=new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
 
             @Override
@@ -193,22 +228,13 @@ public class RegistroJugadorFragment extends Fragment {
 
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
-                String genero="";
 
-                if(radioM.isChecked()==true){
-                    genero="M";
-                }
-                else if (radioF.isChecked()==true){
-                    genero="F";
-                }
-                else{
-                    genero="No seleccionado";
-                }
                 int avatarId=Utilidades.avatarSeleccion.getId();
                 Map<String,String> parametros=new HashMap<String, String>();
                 parametros.put("nombre",campoNick.getText().toString());
-                String genero1 = parametros.put("genero",String.valueOf(genero));
+                String genero1 = parametros.put("genero",String.valueOf(finalGenero));
                 String avatar = parametros.put("avatar", String.valueOf(avatarId));
+                parametros.put("edad",valoredad.getText().toString());
                 return parametros;
 
 
@@ -216,6 +242,12 @@ public class RegistroJugadorFragment extends Fragment {
         };
         RequestQueue requestQueue= Volley.newRequestQueue( actividad);
         requestQueue.add(stringRequest);
+
+        }
+
+        else {
+            Toast.makeText(actividad.getApplicationContext(), "Verifica los datos", Toast.LENGTH_SHORT).show();
+        }
     }
 
     public void onAttach(Context context) {
@@ -231,6 +263,7 @@ public class RegistroJugadorFragment extends Fragment {
                     + " must implement OnFragmentInteractionListener");
         }
     }
+
 
     public interface OnFragmentInteractionListener {
         void onFragmentInteraction(Uri uri);
