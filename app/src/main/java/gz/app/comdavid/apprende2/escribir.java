@@ -126,7 +126,9 @@ public class escribir extends AppCompatActivity  implements View.OnClickListener
 
 
                 } if(bien.getText().toString().equals(grabar.getText().toString())){
-                Toast.makeText(this,"Bien Hecho",Toast.LENGTH_LONG).show();
+
+
+                Toast.makeText(this,"Bien Hecho"+grabar,Toast.LENGTH_LONG).show();
                 mp.start();
 
 

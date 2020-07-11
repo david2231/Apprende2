@@ -1,12 +1,15 @@
 package gz.app.comdavid.apprende2.fragment;
 
 import android.app.Activity;
+import android.content.ActivityNotFoundException;
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.speech.RecognizerIntent;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
@@ -15,6 +18,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.RadioButton;
 import android.widget.SeekBar;
 import android.widget.TextView;
@@ -28,6 +32,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -36,6 +41,8 @@ import gz.app.comdavid.apprende2.adapters.AdaptadorAvatar;
 import gz.app.comdavid.apprende2.clases.vo.ConexionSQLiteHelper;
 import gz.app.comdavid.apprende2.clases.vo.Utilidades;
 import gz.app.comdavid.apprende2.interfaces.IComunicaFragments;
+
+
 
 
 /**
@@ -56,14 +63,20 @@ public class RegistroJugadorFragment extends Fragment {
     private OnFragmentInteractionListener mListener;
     Activity actividad;
     View vista;
+
     IComunicaFragments iComunicaFragments;
     RecyclerView recyclerAvatars;
 
     FloatingActionButton fabregistro;
+    ImageButton img_btn_Usuarios;
     EditText campoNick;
     SeekBar edad;
-    TextView valoredad;
+    TextView valoredad,grabar;
     RadioButton radioM,radioF;
+
+    private static final int RECOGNIZE_SPEECH_ACTIVITY = 1;
+
+
 
     public RegistroJugadorFragment() {
         // Required empty public constructor
@@ -93,6 +106,7 @@ public class RegistroJugadorFragment extends Fragment {
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
+            
         }
     }
 
@@ -110,6 +124,32 @@ public class RegistroJugadorFragment extends Fragment {
         campoNick=(EditText)vista.findViewById(R.id.campoNickName);
         edad=(SeekBar)vista.findViewById(R.id.edad);
         valoredad=(TextView) vista.findViewById(R.id.valoredad);
+        grabar = (TextView) vista.findViewById(R.id.usuariotext);
+        img_btn_Usuarios=(ImageButton)vista.findViewById(R.id.img_btn_Usuarios);
+
+
+        img_btn_Usuarios.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+
+                Intent intentActionRecognizeSpeech = new Intent(
+                        RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
+
+
+                intentActionRecognizeSpeech.putExtra(
+                        RecognizerIntent.EXTRA_LANGUAGE_MODEL, "es-419");
+                try {
+                    startActivityForResult(intentActionRecognizeSpeech,
+                            RECOGNIZE_SPEECH_ACTIVITY);
+                } catch (ActivityNotFoundException a) {
+                    Toast.makeText(actividad.getApplicationContext(),
+                            "Tú dispositivo no soporta el reconocimiento por voz",
+                            Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
 edad.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
     @Override
     public void onProgressChanged(SeekBar seekBar, int progess, boolean b) {
@@ -137,6 +177,28 @@ edad.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
         final AdaptadorAvatar miAdaptador=new AdaptadorAvatar(Utilidades.listaAvatars);
         recyclerAvatars.setAdapter(miAdaptador);
         return vista;
+    }
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+        super.onActivityResult(requestCode, resultCode, data);
+
+        switch (requestCode) {
+            case RECOGNIZE_SPEECH_ACTIVITY:
+
+                if (resultCode==actividad.RESULT_OK && null != data) {
+
+                    ArrayList<String> speech = data
+                            .getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
+                    String strSpeech2Text = speech.get(0);
+
+                    grabar.setText(strSpeech2Text);
+                    campoNick.setText(strSpeech2Text);
+
+                }
+                break;
+            default:
+                break;
+        }
     }
 
 
@@ -197,6 +259,10 @@ edad.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
         }
     }
 
+
+
+
+
     private void ejecutarServcio(String URL){
         String genero="";
 
@@ -246,7 +312,7 @@ edad.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
         }
 
         else {
-            Toast.makeText(actividad.getApplicationContext(), "Verifica los datos", Toast.LENGTH_SHORT).show();
+            Toast.makeText(actividad.getApplicationContext(), "Verifica los datos"+grabar, Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -262,6 +328,10 @@ edad.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             throw new RuntimeException(context.toString()
                     + " must implement OnFragmentInteractionListener");
         }
+    }
+
+    public void huw(View view) {
+
     }
 
 
