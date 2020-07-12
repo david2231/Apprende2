@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
     tools:context="gz.app.comdavid.apprende2.abc_a"
     android:background="@drawable/fondo3">
 
@@ -19,8 +18,8 @@
 
         <ImageView
             android:id="@+id/imageView2"
-            android:layout_width="500dp"
-            android:layout_height="300dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_above="@+id/casa_aa"
             android:layout_marginBottom="20dp"
             android:background="@drawable/letra1a" />
@@ -38,8 +37,9 @@
             android:id="@+id/siguiente_aa"
             android:layout_width="50dp"
             android:layout_height="50dp"
+            android:layout_centerHorizontal="true"
             android:layout_alignTop="@+id/casa_aa"
-            android:background="@drawable/home"
+            android:background="@drawable/ant"
             android:visibility="visible" />
 
         <Button
@@ -47,15 +47,9 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_alignParentEnd="true"
-
             android:layout_alignParentRight="true"
             android:layout_alignParentBottom="true"
             android:background="@drawable/sonido" />
-
-        <SeekBar
-            android:id="@+id/seekBar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
 
     </RelativeLayout>
 </RelativeLayout>
