@@ -1,5 +1,6 @@
+//Paquete
 package gz.app.comdavid.apprende2;
-
+//Librerias
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
@@ -9,14 +10,17 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 public class abc_b extends AppCompatActivity {
+    //Declaracion de variables
     MediaPlayer mp;
-
+    //Metodo onCreate
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //LLamar la vista asociada
         setContentView(R.layout.activity_abc_b);
-
+        //Llamar el boton
         Button inicio= (Button) findViewById(R.id.casa_b);
+        //Metodo OnClick
         inicio.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -27,6 +31,7 @@ public class abc_b extends AppCompatActivity {
                 finish();
             }
         });
+        // llamar boton
         Button next= (Button) findViewById(R.id.siguiente_b);
         next.setOnClickListener(new View.OnClickListener() {
             @Override
