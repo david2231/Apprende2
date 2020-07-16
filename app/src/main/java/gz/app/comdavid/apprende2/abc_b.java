@@ -44,7 +44,7 @@ public class abc_b extends AppCompatActivity {
             }
         });
 
-
+        //llamar boton
         Button back= (Button) findViewById(R.id.anterioir_b);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,7 +56,7 @@ public class abc_b extends AppCompatActivity {
                 finish();
             }
         });
-
+        //Llamar el audio
         Button sonidoa = (Button)findViewById(R.id.sonido_b);
         mp= MediaPlayer.create(this,R.raw.sonidob);
         sonidoa.setOnClickListener(new View.OnClickListener() {
@@ -64,11 +64,9 @@ public class abc_b extends AppCompatActivity {
             public void onClick(View v) {
 
                 mp.start();
-                
-
             }
         });
-
+        //Llamar la imagen
         ImageView sonidoaa = (ImageView) findViewById(R.id.imageView2);
         mp= MediaPlayer.create(this,R.raw.sonidob);
         sonidoaa.setOnClickListener(new View.OnClickListener() {
