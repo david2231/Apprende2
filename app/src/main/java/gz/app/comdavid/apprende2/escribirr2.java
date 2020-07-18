@@ -59,7 +59,7 @@ public class escribirr2 extends AppCompatActivity implements escribirr.DrawFinis
         LinearLayout llMain = (LinearLayout) findViewById(R.id.llMain);
 
 
-        int drawable = R.drawable.a_t_alpha;
+        int drawable = R.drawable.letra1a;
         Bitmap bitmap = BitmapFactory.decodeResource(getResources(), drawable);
         escribirr image = new escribirr(this, bitmap);
         image.setImageBitmap(bitmap);
