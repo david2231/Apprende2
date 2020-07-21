@@ -1,10 +1,10 @@
 package gz.app.comdavid.apprende2.fragment;
-
 import android.app.Activity;
 import android.content.ActivityNotFoundException;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 import android.os.Bundle;
@@ -40,6 +40,7 @@ import gz.app.comdavid.apprende2.R;
 import gz.app.comdavid.apprende2.adapters.AdaptadorAvatar;
 import gz.app.comdavid.apprende2.clases.vo.ConexionSQLiteHelper;
 import gz.app.comdavid.apprende2.clases.vo.Utilidades;
+import gz.app.comdavid.apprende2.entidades.Usuario;
 import gz.app.comdavid.apprende2.interfaces.IComunicaFragments;
 
 
@@ -73,6 +74,7 @@ public class RegistroJugadorFragment extends Fragment {
     SeekBar edad;
     TextView valoredad,grabar;
     RadioButton radioM,radioF;
+    String usuario;
 
     private static final int RECOGNIZE_SPEECH_ACTIVITY = 1;
 
@@ -80,6 +82,7 @@ public class RegistroJugadorFragment extends Fragment {
 
     public RegistroJugadorFragment() {
         // Required empty public constructor
+
     }
 
     /**
@@ -103,11 +106,14 @@ public class RegistroJugadorFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
-            
+
+
         }
+
     }
 
     @Override
@@ -126,6 +132,7 @@ public class RegistroJugadorFragment extends Fragment {
         valoredad=(TextView) vista.findViewById(R.id.valoredad);
         grabar = (TextView) vista.findViewById(R.id.usuariotext);
         img_btn_Usuarios=(ImageButton)vista.findViewById(R.id.img_btn_Usuarios);
+        recuperarDatos();
 
 
         img_btn_Usuarios.setOnClickListener(new View.OnClickListener() {
@@ -169,6 +176,7 @@ edad.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
         fabregistro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                usuario=campoNick.getText().toString();
                 ejecutarServcio("http://192.168.0.9/BD_Apprende/insertar_jugador.php");
                 //registrarJugador();
             }
@@ -282,6 +290,7 @@ edad.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
 
             @Override
             public void onResponse(String response) {
+                guardarPreferencias();
                 Toast.makeText(actividad.getApplicationContext(), "Registro exitoso", Toast.LENGTH_SHORT).show();
             }
 
@@ -297,7 +306,7 @@ edad.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
 
                 int avatarId=Utilidades.avatarSeleccion.getId();
                 Map<String,String> parametros=new HashMap<String, String>();
-                parametros.put("nombre",campoNick.getText().toString());
+                parametros.put("nombre",usuario);
                 String genero1 = parametros.put("genero",String.valueOf(finalGenero));
                 String avatar = parametros.put("avatar", String.valueOf(avatarId));
                 parametros.put("edad",valoredad.getText().toString());
@@ -329,6 +338,17 @@ edad.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
                     + " must implement OnFragmentInteractionListener");
         }
     }
+    private void guardarPreferencias(){
+        SharedPreferences preferences= actividad.getSharedPreferences("iniciousuario",Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor=preferences.edit();
+        editor.putString("usuario",usuario);
+        editor.commit();
+    }
+
+    private void recuperarDatos(){
+        SharedPreferences preferences= actividad.getSharedPreferences("iniciousuario",Context.MODE_PRIVATE);
+        campoNick.setText(preferences.getString("usuario", "ingrese usuario"));
+    }
 
     public void huw(View view) {
 
@@ -338,4 +358,5 @@ edad.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
     public interface OnFragmentInteractionListener {
         void onFragmentInteraction(Uri uri);
     }
+
 }

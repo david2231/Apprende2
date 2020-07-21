@@ -1,6 +1,7 @@
 package gz.app.comdavid.apprende2;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.net.Uri;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
@@ -95,7 +96,9 @@ public class MainActivity3 extends AppCompatActivity implements IComunicaFragmen
 
     @Override
     public void consultarInstrucciones() {
-        Toast.makeText(getApplicationContext(), "instrucciones main",Toast.LENGTH_SHORT).show();
+        //Toast.makeText(getApplicationContext(), "instrucciones main",Toast.LENGTH_SHORT).show();
+        Intent intent=new Intent(this, ContenedorInstrucciones.class);
+        startActivity(intent);
     }
 
     @Override
@@ -107,6 +110,7 @@ public class MainActivity3 extends AppCompatActivity implements IComunicaFragmen
     public void consultarInformacion() {
         Toast.makeText(getApplicationContext(), "informacion main",Toast.LENGTH_SHORT).show();
     }
+
 
 
 }
