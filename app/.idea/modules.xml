@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/-604081449/Apprende2.iml" filepath="$PROJECT_DIR$/.idea/modules/-604081449/Apprende2.iml" group="Apprende2" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Apprende2-app.iml" filepath="$PROJECT_DIR$/.idea/modules/Apprende2-app.iml" group="Apprende2/app" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-344362947/ENTREGA FINAL-Apprende2.iml" filepath="$PROJECT_DIR$/.idea/modules/-344362947/ENTREGA FINAL-Apprende2.iml" group="Apprende2" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app.iml" filepath="$PROJECT_DIR$/.idea/modules/app.iml" group="Apprende2/app" />
     </modules>
   </component>
