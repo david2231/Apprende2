@@ -22,31 +22,34 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:phoneNumber="false"
-            android:textSize="20dp" />
+            android:textSize="20dp"
+            android:paddingTop="20dp"/>
 
-        <EditText
-            android:id="@+id/campoNickName"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Nombre de Usuario"
-            android:layout_margin="10dp"
-            android:shadowColor="@color/colorAmarillo"/>
+            android:layout_height="match_parent">
 
-        <ImageButton
-            android:id="@+id/img_btn_Usuarios"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="true"
-            android:background="@drawable/mic"
-            android:contentDescription="@string/app_name" />
+            <EditText
+                android:id="@+id/campoNickName"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
 
+                android:shadowColor="@color/colorAmarillo" />
+
+            <ImageButton
+                android:id="@+id/img_btn_Usuarios"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/mic"
+                android:contentDescription="@string/app_name" />
+        </RelativeLayout>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Genero"
-            android:textSize="18sp"
+            android:textSize="20dp"
             android:textColor="@android:color/black"
             android:layout_marginLeft="5dp"/>
 
@@ -84,8 +87,8 @@
         <SeekBar
             android:id="@+id/edad"
             android:max="100"
-            android:min="1"
-            android:progress="2"
+            android:min="4"
+            android:progress="4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="40dp"/>

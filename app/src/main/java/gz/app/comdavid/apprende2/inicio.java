@@ -47,7 +47,7 @@ public class inicio extends AppCompatActivity {
         btnn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(v.getContext(),Registro.class);
+                Intent intent=new Intent(v.getContext(),escribirinicio.class);
                 startActivityForResult(intent,0);
                 overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
 

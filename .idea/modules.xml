@@ -5,6 +5,8 @@
       <module fileurl="file://$PROJECT_DIR$/Apprende2.iml" filepath="$PROJECT_DIR$/Apprende2.iml" group="Apprende2" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Apprende2-app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Apprende2-app.iml" group="Apprende2/app" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/ENTREGA FINAL-Apprende2.iml" filepath="$PROJECT_DIR$/.idea/modules/ENTREGA FINAL-Apprende2.iml" group="Apprende2" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/StudioProjects-Apprende2.iml" filepath="$PROJECT_DIR$/.idea/modules/StudioProjects-Apprende2.iml" group="Apprende2" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/StudioProjects-Apprende2-app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/StudioProjects-Apprende2-app.iml" group="Apprende2/app" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="Apprende2/app" />
     </modules>
   </component>

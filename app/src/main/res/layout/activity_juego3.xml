@@ -85,7 +85,11 @@
                 android:layout_below="@+id/linearLayout"
                 android:layout_centerHorizontal="true"
                 android:layout_alignBottom="@+id/txta6"></LinearLayout>
-
+            <TextView
+                android:id="@+id/puntaje3"
+                android:layout_width="100dp"
+                android:layout_height="60dp"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
         </LinearLayout>
 
     </RelativeLayout>

@@ -1,8 +1,10 @@
 package gz.app.comdavid.apprende2;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Handler;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -27,13 +29,32 @@ public class splashscreen extends AppCompatActivity {
             @Override
             public void run() {
 
-                Intent intent=new Intent(splashscreen.this,inicio2.class);
-                startActivity(intent);
-                overridePendingTransition(R.anim.left_in, R.anim.left_out);
+                SharedPreferences preferences= PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+                SharedPreferences.Editor editor=preferences.edit();
+                int bandera=Integer.parseInt(preferences.getString("bandera","0"));
+                if(bandera==1){
+                    Intent intent=new Intent(splashscreen.this,inicio2.class);
+                    startActivity(intent);
+                    overridePendingTransition(R.anim.left_in, R.anim.left_out);
+                }
+                else{
+                    editor.putString("bandera","1");
+                    editor.commit();
+
+                    Intent intent=new Intent(splashscreen.this,MainActivity3.class);
+                    startActivity(intent);
+                    overridePendingTransition(R.anim.left_in, R.anim.left_out);
+
+                    Intent intent2=new Intent(splashscreen.this,ContenedorInstrucciones.class);
+                    startActivity(intent2);
+                    overridePendingTransition(R.anim.left_in, R.anim.left_out);
+                }
+
                 finish();
 
+
             }
-        },20000);
+        },1000);
 
 
     }
