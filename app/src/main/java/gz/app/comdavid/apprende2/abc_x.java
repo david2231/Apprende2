@@ -84,7 +84,6 @@ public class abc_x extends AppCompatActivity {
             public void onClick(View v) {
                 //Iniciar audio
                 mp.start();
-
             }
         });
     }

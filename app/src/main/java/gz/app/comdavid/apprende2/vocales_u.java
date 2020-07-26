@@ -69,7 +69,6 @@ public class vocales_u extends AppCompatActivity {
             public void onClick(View v) {
                 //Iniciar audio
                 mp.start();
-
             }
         });
     }

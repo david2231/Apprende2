@@ -71,7 +71,6 @@ public class vocales_e extends AppCompatActivity {
             public void onClick(View v) {
                 //Iniciar audio
                 mp.start();
-
             }
         });
         //Llamar la imagen
