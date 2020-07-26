@@ -14,7 +14,7 @@ import android.widget.TextView;
 
 public class juego3 extends AppCompatActivity {
 
-    TextView txta11,txta22,txta33,txta44;
+    TextView txta11,txta22,txta33,txta44,puntaje3;
     MediaPlayer mp;
     MediaPlayer mp2;
     ImageView err;
@@ -51,6 +51,14 @@ public class juego3 extends AppCompatActivity {
         txta22.setOnLongClickListener(longClickListener);
         txta33.setOnLongClickListener(longClickListener);
         txta44.setOnDragListener(dragListenre);
+        recibir2();
+    }
+    public void recibir2(){
+        Bundle extras=getIntent().getExtras();
+        String d1=extras.getString("jugador");
+        puntaje3=(TextView) findViewById(R.id.puntaje3);
+        puntaje3.setText(d1);
+
 
     }
 

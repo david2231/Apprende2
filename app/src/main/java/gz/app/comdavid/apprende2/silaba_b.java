@@ -107,16 +107,6 @@ public class silaba_b extends  AppCompatActivity implements View.OnClickListener
                     });
 
 
-
-
-
-
-
-
-
-
-
-
                 }
                 else{
                     silba.setVisibility(View.GONE);

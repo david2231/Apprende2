@@ -44,7 +44,7 @@ public class GestionJugadorFragment extends Fragment {
 
     RecyclerView recycleAvatars,recyclerJugadores;
 
-    ImageButton btnAtras,btanAyuda;
+
     EditText campoNick;
     RadioButton radioM,radioF;
 

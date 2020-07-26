@@ -3,22 +3,22 @@ package gz.app.comdavid.apprende2;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.widget.Toast;
 
 import gz.app.comdavid.apprende2.clases.vo.ConexionSQLiteHelper;
 import gz.app.comdavid.apprende2.clases.vo.Utilidades;
+import gz.app.comdavid.apprende2.fragment.ConsultarListaUsuarioFragment;
 import gz.app.comdavid.apprende2.fragment.GestionJugadorFragment;
 import gz.app.comdavid.apprende2.fragment.IncioFragment;
-import gz.app.comdavid.apprende2.fragment.ConsultarListaUsuarioFragment;
 import gz.app.comdavid.apprende2.fragment.RegistroJugadorFragment;
 import gz.app.comdavid.apprende2.interfaces.IComunicaFragments;
 
 
-public class MainActivity3 extends AppCompatActivity implements IComunicaFragments,IncioFragment.OnFragmentInteractionListener,RegistroJugadorFragment.OnFragmentInteractionListener,GestionJugadorFragment.OnFragmentInteractionListener,ConsultarListaUsuarioFragment.OnFragmentInteractionListener{
+public class GestionActivity extends AppCompatActivity implements IComunicaFragments,IncioFragment.OnFragmentInteractionListener,RegistroJugadorFragment.OnFragmentInteractionListener,GestionJugadorFragment.OnFragmentInteractionListener,ConsultarListaUsuarioFragment.OnFragmentInteractionListener{
 
     Fragment fragmentInicio,registroJugadorFragment,gestionJugadorFragment,getRegistroUsuario,fragment_consultar_lista_usuario;
 
@@ -34,11 +34,11 @@ public class MainActivity3 extends AppCompatActivity implements IComunicaFragmen
         gestionJugadorFragment=new GestionJugadorFragment();
         ConexionSQLiteHelper conn=new ConexionSQLiteHelper(this,Utilidades.NOMBRE_BD,null,1);
 
-        getSupportFragmentManager().beginTransaction().replace(R.id.contenedorFragments,registroJugadorFragment).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.contenedorFragments,fragmentInicio).commit();
     }
 
     public AlertDialog dialogoGestionUsuarios(){
-        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity3.this);
+        AlertDialog.Builder builder = new AlertDialog.Builder(GestionActivity.this);
 
         builder.setTitle("GESTIONAR JUGADOR")
                 .setMessage("Indique si desea registrar un nuevo jugador o si desea seleccionar uno ya existente.\n\n" +
@@ -57,7 +57,7 @@ public class MainActivity3 extends AppCompatActivity implements IComunicaFragmen
                         new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-                                getSupportFragmentManager().beginTransaction().replace(R.id.contenedorFragments,fragment_consultar_lista_usuario).commit();
+                                getSupportFragmentManager().beginTransaction().replace(R.id.contenedorFragments,gestionJugadorFragment).commit();
                             }
                         });
 

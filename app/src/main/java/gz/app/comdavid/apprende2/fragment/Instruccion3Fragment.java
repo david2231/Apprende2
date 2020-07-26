@@ -7,7 +7,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import gz.app.comdavid.apprende2.R;
 
 /**
@@ -70,6 +72,9 @@ public class Instruccion3Fragment extends Fragment {
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), gz.app.comdavid.apprende2.MainActivity3.class);
                 startActivity(intent);
+
+
+
             }
         });
 

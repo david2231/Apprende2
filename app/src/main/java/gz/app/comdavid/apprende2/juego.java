@@ -94,12 +94,12 @@ public class juego extends AppCompatActivity {
                         new Handler().postDelayed(new Runnable() {
                             @Override
                             public void run() {
-
-                                Intent intent=new Intent(juego.this,juego2.class);
+                                int puntaje=1;
+                                String puntajes=String.valueOf(puntaje);
+                                Intent intent = new Intent(juego.this, juego2.class);
+                                intent.putExtra("jugador",puntajes);
                                 startActivity(intent);
                                 overridePendingTransition(R.anim.left_in, R.anim.left_out);
-                                finish();
-
 
 
                             }

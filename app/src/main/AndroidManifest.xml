@@ -26,6 +26,10 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
            ></activity>
         <activity
+            android:name=".GestionActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
             android:name=".Registro"
             android:screenOrientation="landscape"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />

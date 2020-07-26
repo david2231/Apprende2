@@ -177,8 +177,8 @@ edad.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onClick(View view) {
                 usuario=campoNick.getText().toString();
-                ejecutarServcio("http://192.168.0.9/BD_Apprende/insertar_jugador.php");
-                //registrarJugador();
+                ejecutarServcio("http://192.168.0.3/BD_Apprende/insertar_jugador.php");
+
             }
         });
 
@@ -292,6 +292,8 @@ edad.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             public void onResponse(String response) {
                 guardarPreferencias();
                 Toast.makeText(actividad.getApplicationContext(), "Registro exitoso", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getActivity(), gz.app.comdavid.apprende2.inicio.class);
+                startActivity(intent);
             }
 
         }, new Response.ErrorListener() {
@@ -321,7 +323,7 @@ edad.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
         }
 
         else {
-            Toast.makeText(actividad.getApplicationContext(), "Verifica los datos"+grabar, Toast.LENGTH_SHORT).show();
+            Toast.makeText(actividad.getApplicationContext(), "Verifica los datos", Toast.LENGTH_SHORT).show();
         }
     }
 

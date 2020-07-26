@@ -11,10 +11,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class juego2 extends AppCompatActivity {
 
-    TextView txta1,txta2,txta3,txta4;
+    TextView txta1,txta2,txta3,txta4,puntaje2;
     MediaPlayer mp;
     MediaPlayer mp2;
     ImageView err;
@@ -52,6 +53,15 @@ public class juego2 extends AppCompatActivity {
         txta2.setOnLongClickListener(longClickListener);
         txta3.setOnLongClickListener(longClickListener);
         txta4.setOnDragListener(dragListenre);
+        recibir();
+
+    }
+    public void recibir(){
+        Bundle extras=getIntent().getExtras();
+        String d1=extras.getString("jugador");
+        puntaje2=(TextView) findViewById(R.id.puntaje2);
+        puntaje2.setText(d1);
+
 
     }
 
@@ -95,11 +105,12 @@ public class juego2 extends AppCompatActivity {
                             new Handler().postDelayed(new Runnable() {
                                 @Override
                                 public void run() {
-
-                                    Intent intent=new Intent(juego2.this,juego3.class);
+                                    int puntaje=2;
+                                    String puntajes=String.valueOf(puntaje);
+                                    Intent intent = new Intent(juego2.this, juego3.class);
+                                    intent.putExtra("jugador",puntajes);
                                     startActivity(intent);
                                     overridePendingTransition(R.anim.left_in, R.anim.left_out);
-                                    finish();
 
 
 
