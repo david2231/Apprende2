@@ -2,7 +2,6 @@ package gz.app.comdavid.apprende2;
 
 import android.content.Intent;
 import android.media.MediaPlayer;
-import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -12,6 +11,8 @@ import android.widget.ImageButton;
 import android.widget.Switch;
 
 import java.io.IOException;
+
+import gz.app.comdavid.apprende2.abecedario.abc_a;
 
 public class MainActivity extends AppCompatActivity {
     MediaPlayer mp;
@@ -86,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
         abce.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(v.getContext(),abc_a.class);
+                Intent intent=new Intent(v.getContext(), abc_a.class);
                 startActivityForResult(intent,0);
                 overridePendingTransition(R.anim.zoom_back_in, R.anim.zoom_back_out);
                 mp.stop();

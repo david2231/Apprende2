@@ -49,7 +49,7 @@ public class escribirr extends ImageView {
         mPaint.setStyle(Paint.Style.STROKE);
         mPaint.setStrokeJoin(Paint.Join.ROUND);
         mPaint.setStrokeCap(Paint.Cap.ROUND);
-        mPaint.setStrokeWidth(25);
+        mPaint.setStrokeWidth(40);
 
         drawingArea = percentInnerPart(bitmap);
         Log.e("% ===", "" + drawingArea);

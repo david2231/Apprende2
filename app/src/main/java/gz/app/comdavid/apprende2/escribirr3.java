@@ -45,11 +45,11 @@ public class escribirr3 extends ImageView {
         mPaint = new Paint();
         mPaint.setAntiAlias(true);
         mPaint.setDither(true);
-        mPaint.setColor(Color.BLACK);
+        mPaint.setColor(Color.WHITE);
         mPaint.setStyle(Paint.Style.STROKE);
         mPaint.setStrokeJoin(Paint.Join.ROUND);
         mPaint.setStrokeCap(Paint.Cap.ROUND);
-        mPaint.setStrokeWidth(25);
+        mPaint.setStrokeWidth(30);
 
         drawingArea = percentInnerPart(bitmap);
         Log.e("% ===", "" + drawingArea);
@@ -229,7 +229,7 @@ public class escribirr3 extends ImageView {
         blackPoints = new ArrayList<>();
         for (int x = 0; x < width; x++) {
             for (int y = 0; y < height; y++) {
-                if (bm.getPixel(x, y) == Color.BLACK) {
+                if (bm.getPixel(x, y) == Color.WHITE) {
                     blackPoints.add(new Point(x, y));
                     myColor++;
                 }

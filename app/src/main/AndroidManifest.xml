@@ -72,85 +72,85 @@
             android:name=".vocales_u"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".abc_a"
+            android:name=".abecedario.abc_a"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".abc_d"
+            android:name=".abecedario.abc_d"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".abc_b"
+            android:name=".abecedario.abc_b"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".abc_c"
+            android:name=".abecedario.abc_c"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".abc_e"
+            android:name=".abecedario.abc_e"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".abc_f"
+            android:name=".abecedario.abc_f"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".abc_g"
+            android:name=".abecedario.abc_g"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".abc_h"
+            android:name=".abecedario.abc_h"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".abc_i"
+            android:name=".abecedario.abc_i"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".abc_j"
+            android:name=".abecedario.abc_j"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".abc_k"
+            android:name=".abecedario.abc_k"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".abc_l"
+            android:name=".abecedario.abc_l"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".abc_m"
+            android:name=".abecedario.abc_m"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".abc_n"
+            android:name=".abecedario.abc_n"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".abc_nn"
+            android:name=".abecedario.abc_nn"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".abc_o"
+            android:name=".abecedario.abc_o"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".abc_p"
+            android:name=".abecedario.abc_p"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".abc_q"
+            android:name=".abecedario.abc_q"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".abc_r"
+            android:name=".abecedario.abc_r"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".abc_s"
+            android:name=".abecedario.abc_s"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".abc_t"
+            android:name=".abecedario.abc_t"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".abc_u"
+            android:name=".abecedario.abc_u"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".abc_v"
+            android:name=".abecedario.abc_v"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".abc_w"
+            android:name=".abecedario.abc_w"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".abc_x"
+            android:name=".abecedario.abc_x"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".abc_y"
+            android:name=".abecedario.abc_y"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".abc_z"
+            android:name=".abecedario.abc_z"
             android:screenOrientation="landscape" />
         <activity
             android:name=".juego"

@@ -1,5 +1,5 @@
 //Paquete
-package gz.app.comdavid.apprende2;
+package gz.app.comdavid.apprende2.abecedario;
 //Librerias
 import android.content.Intent;
 import android.media.MediaPlayer;
@@ -8,25 +8,27 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-//prueba
-public class abc_a extends AppCompatActivity {
+
+import gz.app.comdavid.apprende2.MainActivity;
+import gz.app.comdavid.apprende2.R;
+
+public class abc_f extends AppCompatActivity {
     //Declaramos las variables
     MediaPlayer mp;
-
     //Metodo onCreate
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //LLamar la vista asociada
-        setContentView(R.layout.activity_abc_a);
+        setContentView(R.layout.activity_abc_f);
         //Llamar el boton
-        Button inicio= (Button) findViewById(R.id.casa_aa);
+        Button inicio= (Button) findViewById(R.id.casa_f);
         //Metodo OnClick
         inicio.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //Abrir una nueva actividad
-                Intent intent=new Intent(v.getContext(),MainActivity.class);
+                Intent intent=new Intent(v.getContext(), MainActivity.class);
                 startActivityForResult(intent,0);
                 //Transiciones
                 overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
@@ -35,13 +37,13 @@ public class abc_a extends AppCompatActivity {
             }
         });
         //Llamar el boton
-        Button next= (Button) findViewById(R.id.siguiente_aa);
+        Button next= (Button) findViewById(R.id.siguiente_f);
         //Metodo OnClick
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //Abrir una nueva actividad
-                Intent intent=new Intent(v.getContext(),abc_b.class);
+                Intent intent=new Intent(v.getContext(),abc_g.class);
                 startActivityForResult(intent,0);
                 //Transiciones
                 overridePendingTransition(R.anim.left_in, R.anim.left_out);
@@ -50,14 +52,25 @@ public class abc_a extends AppCompatActivity {
             }
         });
         //Llamar el boton
-        Button sonidoa = (Button)findViewById(R.id.sonido_aa);
+        Button back= (Button) findViewById(R.id.anterioir_f);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(v.getContext(),abc_e.class);
+                startActivityForResult(intent,0);
+                overridePendingTransition(R.anim.right_in, R.anim.right_out);
+                mp.stop();
+                finish();
+            }
+        });
         //Llamar el audio
-        mp= MediaPlayer.create(this,R.raw.sonidoa);
+        Button sonidoa = (Button)findViewById(R.id.sonido_f);
+        mp= MediaPlayer.create(this,R.raw.sonidof);
         //Metodo OnClick
         sonidoa.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-            //Iniciar audio
+                //Iniciar audio
                 mp.start();
 
             }
@@ -65,7 +78,7 @@ public class abc_a extends AppCompatActivity {
         //Llamar la imagen
         ImageView sonidoaa = (ImageView) findViewById(R.id.imageView2);
         //Llamar el audio
-        mp= MediaPlayer.create(this,R.raw.sonidoa);
+        mp= MediaPlayer.create(this,R.raw.sonidof);
         sonidoaa.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -74,6 +87,5 @@ public class abc_a extends AppCompatActivity {
 
             }
         });
-
     }
 }

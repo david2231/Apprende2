@@ -1,5 +1,5 @@
 //Paquete
-package gz.app.comdavid.apprende2;
+package gz.app.comdavid.apprende2.abecedario;
 //Librerias
 import android.content.Intent;
 import android.media.MediaPlayer;
@@ -9,7 +9,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
-public class abc_u extends AppCompatActivity {
+import gz.app.comdavid.apprende2.MainActivity;
+import gz.app.comdavid.apprende2.R;
+
+public class abc_nn extends AppCompatActivity {
     //Declaramos las variables
     MediaPlayer mp;
     //Metodo onCreate
@@ -17,15 +20,15 @@ public class abc_u extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //LLamar la vista asociada
-        setContentView(R.layout.activity_abc_u);
+        setContentView(R.layout.activity_abc_nn);
         //Llamar el boton
-        Button inicio= (Button) findViewById(R.id.casa_uu);
+        Button inicio= (Button) findViewById(R.id.casa_nn);
         //Metodo OnClick
         inicio.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //Abrir una nueva actividad
-                Intent intent=new Intent(v.getContext(),MainActivity.class);
+                Intent intent=new Intent(v.getContext(), MainActivity.class);
                 startActivityForResult(intent,0);
                 //Transiciones
                 overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
@@ -34,13 +37,13 @@ public class abc_u extends AppCompatActivity {
             }
         });
         //Llamar el boton
-        Button next= (Button) findViewById(R.id.siguiente_uu);
+        Button next= (Button) findViewById(R.id.siguiente_nn);
         //Metodo OnClick
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //Abrir una nueva actividad
-                Intent intent=new Intent(v.getContext(),abc_v.class);
+                Intent intent=new Intent(v.getContext(),abc_o.class);
                 startActivityForResult(intent,0);
                 //Transiciones
                 overridePendingTransition(R.anim.left_in, R.anim.left_out);
@@ -49,12 +52,13 @@ public class abc_u extends AppCompatActivity {
             }
         });
         //Llamar el boton
-        Button back= (Button) findViewById(R.id.anterioir_uu);
+        Button back= (Button) findViewById(R.id.anterioir_nn);
+        //Metodo OnClick
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //Abrir una nueva actividad
-                Intent intent=new Intent(v.getContext(),abc_t.class);
+                Intent intent=new Intent(v.getContext(),abc_n.class);
                 startActivityForResult(intent,0);
                 //Transiciones
                 overridePendingTransition(R.anim.right_in, R.anim.right_out);
@@ -63,27 +67,25 @@ public class abc_u extends AppCompatActivity {
             }
         });
         //Llamar el boton
-        Button sonidoa = (Button)findViewById(R.id.sonido_uu);
+        Button sonidoa = (Button)findViewById(R.id.sonido_nn);
         //Llamar el audio
-        mp= MediaPlayer.create(this,R.raw.sonidou);
+        mp= MediaPlayer.create(this,R.raw.sonidonn);
         sonidoa.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //Iniciar audio
                 mp.start();
-
             }
         });
-        //Llamar la imagen
+        //Llamar imagen
         ImageView sonidoaa = (ImageView) findViewById(R.id.imageView2);
         //Llamar el audio
-        mp= MediaPlayer.create(this,R.raw.sonidou);
+        mp= MediaPlayer.create(this,R.raw.sonidonn);
         sonidoaa.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //Iniciar audio
                 mp.start();
-
             }
         });
     }

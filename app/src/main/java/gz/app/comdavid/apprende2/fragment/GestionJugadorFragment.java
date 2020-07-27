@@ -93,7 +93,6 @@ public class GestionJugadorFragment extends Fragment {
         radioM=vista.findViewById(R.id.radioM);
         recyclerJugadores.setLayoutManager(new LinearLayoutManager(this.actividad));
         recyclerJugadores.setHasFixedSize(true);
-
         recycleAvatars.setLayoutManager(new GridLayoutManager(this.actividad,3 ));
         recycleAvatars.setHasFixedSize(true);
         llenarAdaptadorAvatars();

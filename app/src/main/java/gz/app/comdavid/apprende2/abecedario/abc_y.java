@@ -1,5 +1,5 @@
 //Paquete
-package gz.app.comdavid.apprende2;
+package gz.app.comdavid.apprende2.abecedario;
 //Librerias
 import android.content.Intent;
 import android.media.MediaPlayer;
@@ -8,6 +8,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+
+import gz.app.comdavid.apprende2.MainActivity;
+import gz.app.comdavid.apprende2.R;
 
 public class abc_y extends AppCompatActivity {
     //Declaramos las variables
@@ -25,7 +28,7 @@ public class abc_y extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //Abrir una nueva actividad
-                Intent intent=new Intent(v.getContext(),MainActivity.class);
+                Intent intent=new Intent(v.getContext(), MainActivity.class);
                 startActivityForResult(intent,0);
                 //Transiciones
                 overridePendingTransition(R.anim.fade_in, R.anim.fade_out);

@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/fondo3"
-    tools:context="gz.app.comdavid.apprende2.abc_n">
+    tools:context="gz.app.comdavid.apprende2.abecedario.abc_n">
 
     <RelativeLayout
         android:layout_width="match_parent"
