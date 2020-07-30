@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/pincel"
-    tools:context="gz.app.comdavid.apprende2.escribirinicio">
+    tools:context="gz.app.comdavid.apprende2.ABC_Drawable.escribirinicio">
 
     <RelativeLayout
         android:layout_width="match_parent"

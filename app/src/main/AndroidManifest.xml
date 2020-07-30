@@ -237,7 +237,7 @@
             android:name=".escribir"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".escribirr2"
+            android:name=".ABC_Drawable.Drawable_letter_aa"
             android:screenOrientation="landscape" />
         <activity
             android:name=".escribirr3_1"
@@ -547,7 +547,7 @@
             android:name=".inicio2"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".escribirinicio"
+            android:name=".ABC_Drawable.escribirinicio"
             android:screenOrientation="landscape" />
         <activity
             android:name=".creditos"

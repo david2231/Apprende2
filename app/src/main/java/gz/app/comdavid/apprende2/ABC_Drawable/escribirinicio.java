@@ -1,4 +1,4 @@
-package gz.app.comdavid.apprende2;
+package gz.app.comdavid.apprende2.ABC_Drawable;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -6,6 +6,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
+
+import gz.app.comdavid.apprende2.R;
+import gz.app.comdavid.apprende2.paint2;
 
 public class escribirinicio extends AppCompatActivity {
 
@@ -18,7 +21,7 @@ public class escribirinicio extends AppCompatActivity {
         inicio.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(v.getContext(),inicio.class);
+                Intent intent=new Intent(v.getContext(), gz.app.comdavid.apprende2.inicio.class);
                 startActivityForResult(intent,0);
                 overridePendingTransition(R.anim.right_in, R.anim.right_out);
                 finish();
@@ -29,7 +32,7 @@ public class escribirinicio extends AppCompatActivity {
         juegosil1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(v.getContext(),escribirr2.class);
+                Intent intent=new Intent(v.getContext(), Drawable_letter_aa.class);
                 startActivityForResult(intent,0);
                 overridePendingTransition(R.anim.left_in, R.anim.left_out);
 
@@ -39,7 +42,7 @@ public class escribirinicio extends AppCompatActivity {
         juegosil2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(v.getContext(),paint2.class);
+                Intent intent=new Intent(v.getContext(), paint2.class);
                 startActivityForResult(intent,0);
                 overridePendingTransition(R.anim.left_in, R.anim.left_out);
 

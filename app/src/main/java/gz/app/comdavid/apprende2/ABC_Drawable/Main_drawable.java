@@ -1,4 +1,4 @@
-package gz.app.comdavid.apprende2;
+package gz.app.comdavid.apprende2.ABC_Drawable;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -13,7 +13,7 @@ import android.widget.ImageView;
 
 import java.util.ArrayList;
 import java.util.List;
-public class escribirr extends ImageView {
+public class Main_drawable extends ImageView {
 
     private Bitmap bitmap;
     private Paint mPaint;
@@ -35,7 +35,7 @@ public class escribirr extends ImageView {
     private Paint circlePaint;
     private Path circlePath;
 
-    public escribirr(Context c, Bitmap bitmap) {
+    public Main_drawable(Context c, Bitmap bitmap) {
         super(c);
         context = c;
         this.bitmap = bitmap;

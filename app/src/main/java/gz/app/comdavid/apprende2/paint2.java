@@ -1,13 +1,10 @@
 package gz.app.comdavid.apprende2;
 
 import android.content.Intent;
-import android.media.Image;
 import android.media.MediaPlayer;
-import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 
@@ -18,6 +15,8 @@ import android.app.Dialog;
 import android.content.DialogInterface;
 import android.view.View.OnClickListener;
 import android.widget.Toast;
+
+import gz.app.comdavid.apprende2.ABC_Drawable.escribirinicio;
 
 public class paint2 extends AppCompatActivity implements OnClickListener{
 
@@ -37,7 +36,7 @@ public class paint2 extends AppCompatActivity implements OnClickListener{
         inicio.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(v.getContext(),escribirinicio.class);
+                Intent intent=new Intent(v.getContext(), escribirinicio.class);
                 startActivityForResult(intent,0);
                 overridePendingTransition(R.anim.left_in, R.anim.left_out);
                 finish();

@@ -1,4 +1,4 @@
-package gz.app.comdavid.apprende2;
+package gz.app.comdavid.apprende2.ABC_Drawable;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -13,7 +13,10 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
-public class escribirr2 extends AppCompatActivity implements escribirr.DrawFinishListener {
+import gz.app.comdavid.apprende2.R;
+import gz.app.comdavid.apprende2.escribirr3_1;
+
+public class Drawable_letter_aa extends AppCompatActivity implements Main_drawable.DrawFinishListener {
     MediaPlayer mp,mp2;
     Button button;
 
@@ -44,7 +47,7 @@ public class escribirr2 extends AppCompatActivity implements escribirr.DrawFinis
                     @Override
                     public void run() {
 
-                        Intent intent=new Intent(escribirr2.this,escribirr2.class);
+                        Intent intent=new Intent(Drawable_letter_aa.this, Drawable_letter_aa.class);
                         startActivity(intent);
                         overridePendingTransition(R.anim.zoom_forward_in, R.anim.zoom_forward_in);
 
@@ -61,7 +64,7 @@ public class escribirr2 extends AppCompatActivity implements escribirr.DrawFinis
 
         int drawable = R.drawable.letra1a;
         Bitmap bitmap = BitmapFactory.decodeResource(getResources(), drawable);
-        escribirr image = new escribirr(this, bitmap);
+        Main_drawable image = new Main_drawable(this, bitmap);
         image.setImageBitmap(bitmap);
         llMain.addView(image);
     }
@@ -79,7 +82,7 @@ public class escribirr2 extends AppCompatActivity implements escribirr.DrawFinis
             @Override
             public void run() {
 
-                Intent intent=new Intent(escribirr2.this,escribirr3_1.class);
+                Intent intent=new Intent(Drawable_letter_aa.this, escribirr3_1.class);
                 startActivity(intent);
 
                 finish();

@@ -8,13 +8,13 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.media.MediaPlayer;
 import android.os.Handler;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.Toast;
+
+import gz.app.comdavid.apprende2.ABC_Drawable.escribirinicio;
 
 public class escribirr3_1 extends AppCompatActivity implements escribirr3.DrawFinishListener {
     MediaPlayer mp,mp2;
@@ -31,7 +31,7 @@ public class escribirr3_1 extends AppCompatActivity implements escribirr3.DrawFi
         inicio.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(v.getContext(),escribirinicio.class);
+                Intent intent=new Intent(v.getContext(), escribirinicio.class);
                 startActivityForResult(intent,0);
                 overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                 finish();
