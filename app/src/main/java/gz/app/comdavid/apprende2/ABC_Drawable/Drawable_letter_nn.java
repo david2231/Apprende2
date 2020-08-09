@@ -62,7 +62,7 @@ public class Drawable_letter_nn extends AppCompatActivity implements Main_drawab
         LinearLayout llMain = (LinearLayout) findViewById(R.id.llMain);
 
 
-        int drawable = R.drawable.letra1a;
+        int drawable = R.drawable.letrann;
         Bitmap bitmap = BitmapFactory.decodeResource(getResources(), drawable);
         Main_drawable image = new Main_drawable(this, bitmap);
         image.setImageBitmap(bitmap);
@@ -82,7 +82,7 @@ public class Drawable_letter_nn extends AppCompatActivity implements Main_drawab
             @Override
             public void run() {
 
-                Intent intent=new Intent(Drawable_letter_nn.this, escribirr3_1.class);
+                Intent intent=new Intent(Drawable_letter_nn.this, Drawable_letter_nn_.class);
                 startActivity(intent);
 
                 finish();
