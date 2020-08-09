@@ -16,8 +16,6 @@ import android.content.DialogInterface;
 import android.view.View.OnClickListener;
 import android.widget.Toast;
 
-import gz.app.comdavid.apprende2.ABC_Drawable.escribirinicio;
-
 public class paint2 extends AppCompatActivity implements OnClickListener{
 
     private paint drawView;

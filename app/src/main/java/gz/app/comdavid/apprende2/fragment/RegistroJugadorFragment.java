@@ -177,7 +177,7 @@ edad.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onClick(View view) {
                 usuario=campoNick.getText().toString();
-                ejecutarServcio("http://192.168.0.3/BD_Apprende/insertar_jugador.php");
+                ejecutarServcio("http://192.168.0.4/BD_Apprende/insertar_jugador.php");
 
             }
         });

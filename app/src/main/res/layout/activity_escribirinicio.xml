@@ -3,8 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/pincel"
-    tools:context="gz.app.comdavid.apprende2.ABC_Drawable.escribirinicio">
+    android:background="@drawable/dibujo"
+    tools:context="gz.app.comdavid.apprende2.escribirinicio">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -14,23 +14,22 @@
         android:layout_alignParentStart="true">
 
         <Button
+            android:id="@+id/escribirvocales"
             android:layout_width="150dp"
             android:layout_height="150dp"
-            android:background="@drawable/vocaleess"
-
-            android:id="@+id/escribirvocales"
             android:layout_alignParentTop="true"
-            android:layout_toRightOf="@+id/casa_escribe"
-            android:layout_toEndOf="@+id/casa_escribe"
+            android:layout_marginStart="73dp"
             android:layout_marginLeft="73dp"
-            android:layout_marginStart="73dp" />
+            android:layout_marginTop="4dp"
+            android:layout_toEndOf="@+id/casa_escribe"
+            android:layout_toRightOf="@+id/casa_escribe"
+            android:background="@drawable/vocales" />
 
         <Button
             style="?android:attr/buttonStyleSmall"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:background="@drawable/pintar"
-
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:background="@drawable/dibujos"
             android:id="@+id/paints"
             android:layout_marginRight="88dp"
             android:layout_marginEnd="88dp"

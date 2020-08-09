@@ -14,8 +14,6 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
-import gz.app.comdavid.apprende2.ABC_Drawable.escribirinicio;
-
 public class escribirr3_1 extends AppCompatActivity implements escribirr3.DrawFinishListener {
     MediaPlayer mp,mp2;
     Button button;

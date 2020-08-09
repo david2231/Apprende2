@@ -13,12 +13,17 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.w3c.dom.Text;
+
+import gz.app.comdavid.apprende2.clases.vo.Utilidades;
+
 public class juego2 extends AppCompatActivity {
 
-    TextView txta1,txta2,txta3,txta4,puntaje2;
+    TextView txta1,txta2,txta3,txta4,puntajes;
     MediaPlayer mp;
     MediaPlayer mp2;
     ImageView err;
+
 
 
     @Override
@@ -42,28 +47,20 @@ public class juego2 extends AppCompatActivity {
         mp= MediaPlayer.create(this,R.raw.bien);
         mp2= MediaPlayer.create(this,R.raw.mal);
         err=(ImageView) findViewById(R.id.errores2);
-
-
-
         txta1=(TextView) findViewById(R.id.txta6);
         txta2=(TextView) findViewById(R.id.txtjb6);
         txta3=(TextView) findViewById(R.id.txtjc2);
         txta4=(TextView) findViewById(R.id.target2);
+        puntajes=(TextView) findViewById(R.id.puntaje2);
         txta1.setOnLongClickListener(longClickListener);
         txta2.setOnLongClickListener(longClickListener);
         txta3.setOnLongClickListener(longClickListener);
         txta4.setOnDragListener(dragListenre);
-        recibir();
+        Utilidades.correctas=Utilidades.correctas;
+        puntajes.setText(Integer.toString(Utilidades.correctas));
 
     }
-    public void recibir(){
-        Bundle extras=getIntent().getExtras();
-        String d1=extras.getString("jugador");
-        puntaje2=(TextView) findViewById(R.id.puntaje2);
-        puntaje2.setText(d1);
 
-
-    }
 
     View.OnLongClickListener longClickListener=new View.OnLongClickListener(){
 
@@ -105,10 +102,9 @@ public class juego2 extends AppCompatActivity {
                             new Handler().postDelayed(new Runnable() {
                                 @Override
                                 public void run() {
-                                    int puntaje=2;
-                                    String puntajes=String.valueOf(puntaje);
+                                    Utilidades.correctas++;
+                                    puntajes.setText(Integer.toString(Utilidades.correctas));
                                     Intent intent = new Intent(juego2.this, juego3.class);
-                                    intent.putExtra("jugador",puntajes);
                                     startActivity(intent);
                                     overridePendingTransition(R.anim.left_in, R.anim.left_out);
 

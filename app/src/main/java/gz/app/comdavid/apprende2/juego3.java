@@ -12,9 +12,11 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import gz.app.comdavid.apprende2.clases.vo.Utilidades;
+
 public class juego3 extends AppCompatActivity {
 
-    TextView txta11,txta22,txta33,txta44,puntaje3;
+    TextView txta11,txta22,txta33,txta44,puntajes;
     MediaPlayer mp;
     MediaPlayer mp2;
     ImageView err;
@@ -40,27 +42,20 @@ public class juego3 extends AppCompatActivity {
         mp= MediaPlayer.create(this,R.raw.bien);
         mp2= MediaPlayer.create(this,R.raw.mal);
         err=(ImageView) findViewById(R.id.errores3);
-
-
-
         txta11=(TextView) findViewById(R.id.txta6);
         txta22=(TextView) findViewById(R.id.txtjb6);
         txta33=(TextView) findViewById(R.id.txtjc3);
         txta44=(TextView) findViewById(R.id.target3);
+        puntajes=(TextView) findViewById(R.id.puntaje3);
+        puntajes.setText(Integer.toString(Utilidades.correctas));
         txta11.setOnLongClickListener(longClickListener);
         txta22.setOnLongClickListener(longClickListener);
         txta33.setOnLongClickListener(longClickListener);
         txta44.setOnDragListener(dragListenre);
-        recibir2();
-    }
-    public void recibir2(){
-        Bundle extras=getIntent().getExtras();
-        String d1=extras.getString("jugador");
-        puntaje3=(TextView) findViewById(R.id.puntaje3);
-        puntaje3.setText(d1);
 
 
     }
+
 
     View.OnLongClickListener longClickListener=new View.OnLongClickListener(){
 
@@ -109,7 +104,8 @@ public class juego3 extends AppCompatActivity {
                             new Handler().postDelayed(new Runnable() {
                                 @Override
                                 public void run() {
-
+                                    Utilidades.correctas++;
+                                    puntajes.setText(Integer.toString(Utilidades.correctas));
                                     Intent intent=new Intent(juego3.this,juego4.class);
                                     startActivity(intent);
                                     overridePendingTransition(R.anim.left_in, R.anim.left_out);

@@ -1,4 +1,4 @@
-package gz.app.comdavid.apprende2.ABC_Drawable;
+package gz.app.comdavid.apprende2;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 
+import gz.app.comdavid.apprende2.ABC_Drawable.Drawable_letter_aa;
 import gz.app.comdavid.apprende2.R;
 import gz.app.comdavid.apprende2.paint2;
 

@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
 
     tools:context="gz.app.comdavid.apprende2.juegos"
-    android:background="@drawable/juego">
+    android:background="@drawable/juegos">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -19,7 +19,7 @@
             android:layout_height="100dp"
 
             android:id="@+id/juegosilabas1"
-            android:background="@drawable/si1"
+            android:background="@drawable/silabas1"
             android:layout_alignParentTop="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true" />
@@ -28,7 +28,7 @@
             style="?android:attr/buttonStyleSmall"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:background="@drawable/si2"
+            android:background="@drawable/silabas2"
             android:id="@+id/juegosilabas2"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true" />
@@ -39,7 +39,7 @@
             android:layout_height="100dp"
             android:id="@+id/juegosvocales"
             android:textColor="@android:color/white"
-            android:background="@drawable/vocalfondo"
+            android:background="@drawable/vocales"
 
             android:textSize="@dimen/abc_action_bar_icon_vertical_padding_material"
             android:layout_alignParentTop="true"

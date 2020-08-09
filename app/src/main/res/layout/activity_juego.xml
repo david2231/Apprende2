@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -14,6 +15,29 @@
         android:layout_alignParentStart="true"
         android:id="@+id/relativeLayout">
 
+        <TextView
+        android:id="@+id/puntaje1"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:gravity="left"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/colorBlanco"
+        android:textSize="40dp"
+        app:fontFamily="sans-serif-black" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:gravity="left"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/colorBlanco"
+            android:textSize="40dp"
+            app:fontFamily="sans-serif-black" />
         <Button
             android:layout_width="50dp"
             android:layout_height="50dp"
@@ -34,36 +58,44 @@
             android:layout_alignParentEnd="true" />
 
         <TextView
-            android:layout_width="100dp"
-            android:layout_height="60dp"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text=""
             android:id="@+id/txta1"
-            android:layout_centerVertical="true"
-            android:layout_alignParentLeft="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
-            android:background="@drawable/letra1a" />
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="103dp"
+            android:layout_marginLeft="103dp"
+            android:text="Aa"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/colorBlanco"
+            android:textSize="50dp" />
 
         <TextView
             android:layout_width="100dp"
             android:layout_height="60dp"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text=""
+            android:text="Ee"
+            android:textSize="50dp"
+            android:textColor="@color/colorBlanco"
             android:id="@+id/txtjb1"
-            android:background="@drawable/letra1e"
             android:layout_below="@+id/linearLayout"
             android:layout_centerHorizontal="true" />
 
         <TextView
+            android:id="@+id/txt1"
             android:layout_width="100dp"
             android:layout_height="60dp"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text=""
-            android:id="@+id/txt1"
-            android:background="@drawable/letra1i"
             android:layout_alignBottom="@+id/txtjb1"
+            android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
+            android:layout_marginEnd="67dp"
+            android:layout_marginRight="67dp"
+            android:layout_marginBottom="0dp"
+            android:text="Ii"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/colorBlanco"
+            android:textSize="50dp" />
 
         <ImageView
             android:id="@+id/errores"
@@ -86,9 +118,11 @@
 
             <TextView
                 android:id="@+id/target"
-                android:layout_width="221dp"
+                android:layout_width="200dp"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
+                android:layout_gravity="center"
+                android:paddingTop="30dp"
+                android:textColor="@color/colorBlanco"
                 android:text="_VIÓN"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textSize="@dimen/notification_large_icon_width" />
@@ -100,6 +134,8 @@
                 android:layout_alignBottom="@+id/txta1"
                 android:layout_centerHorizontal="true"
                 android:orientation="vertical"></LinearLayout>
+
+
 
         </LinearLayout>
 

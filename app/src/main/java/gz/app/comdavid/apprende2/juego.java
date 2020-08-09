@@ -11,10 +11,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import gz.app.comdavid.apprende2.clases.vo.Utilidades;
 
 
 public class juego extends AppCompatActivity {
-    TextView txt1,txt2,txt3,txt4;
+    TextView txt1,txt2,txt3,txt4,puntajes;
     MediaPlayer mp,mp2,mp3;
 
     ImageView err;
@@ -26,6 +29,7 @@ public class juego extends AppCompatActivity {
         setContentView(R.layout.activity_juego);
         mp3= MediaPlayer.create(this,R.raw.audiojuego);
         mp3.start();
+
 
         Button inicio= (Button) findViewById(R.id.casa_aa1);
         inicio.setOnClickListener(new View.OnClickListener() {
@@ -52,10 +56,14 @@ public class juego extends AppCompatActivity {
         txt2=(TextView) findViewById(R.id.txtjb1);
         txt3=(TextView) findViewById(R.id.txt1);
         txt4=(TextView) findViewById(R.id.target);
+        puntajes=(TextView) findViewById(R.id.puntaje1);
         txt1.setOnLongClickListener(longClickListener);
         txt2.setOnLongClickListener(longClickListener);
         txt3.setOnLongClickListener(longClickListener);
         txt4.setOnDragListener(dragListenre);
+        puntajes.setText(Integer.toString(Utilidades.correctas));
+        Utilidades.correctas=0;
+        Utilidades.puntaje=0;
 
     }
 
@@ -87,6 +95,7 @@ public class juego extends AppCompatActivity {
 
                     if(view.getId()==R.id.txta1){
                         err.setVisibility(View.GONE);
+                        puntajes.setText(Utilidades.puntaje+"");
                         txt4.setText("AVIÓN");
 
                         mp.start();
@@ -94,16 +103,18 @@ public class juego extends AppCompatActivity {
                         new Handler().postDelayed(new Runnable() {
                             @Override
                             public void run() {
-                                int puntaje=1;
-                                String puntajes=String.valueOf(puntaje);
+
+
+                                Utilidades.correctas++;
+                                puntajes.setText(Integer.toString(Utilidades.correctas));
+                                Toast.makeText(getApplicationContext(), "menu main"+Utilidades.correctas,Toast.LENGTH_SHORT).show();
                                 Intent intent = new Intent(juego.this, juego2.class);
-                                intent.putExtra("jugador",puntajes);
                                 startActivity(intent);
                                 overridePendingTransition(R.anim.left_in, R.anim.left_out);
 
 
                             }
-                        },4000);
+                        },1000);
 
                     }else {
                         if (view.getId() == R.id.txtjb1) {
