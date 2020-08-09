@@ -16,17 +16,16 @@
         android:id="@+id/relativeLayout">
 
         <TextView
-        android:id="@+id/puntaje1"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:gravity="left"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="@color/colorBlanco"
-        android:textSize="40dp"
-        app:fontFamily="sans-serif-black" />
+            android:id="@+id/puntaje1"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_alignParentTop="true"
+            android:gravity="left"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/colorBlanco"
+            android:textSize="40dp"
+            app:fontFamily="sans-serif-black" />
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="60dp"
@@ -135,6 +134,16 @@
                 android:layout_centerHorizontal="true"
                 android:orientation="vertical"></LinearLayout>
 
+            <TextView
+                android:id="@+id/incorrectas1"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:gravity="left"
+                android:text="dasd"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@color/colorBlanco"
+                android:textSize="40dp"
+                app:fontFamily="sans-serif-black" />
 
 
         </LinearLayout>

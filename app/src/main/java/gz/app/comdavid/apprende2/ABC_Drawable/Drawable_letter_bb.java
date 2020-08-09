@@ -54,7 +54,7 @@ public class Drawable_letter_bb extends AppCompatActivity implements Main_drawab
 
 
                     }
-                },10);
+                },1000);
 
             }
         });

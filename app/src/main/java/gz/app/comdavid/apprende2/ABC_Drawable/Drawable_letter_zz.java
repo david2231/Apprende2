@@ -82,7 +82,7 @@ public class Drawable_letter_zz extends AppCompatActivity implements Main_drawab
             @Override
             public void run() {
 
-                Intent intent=new Intent(Drawable_letter_zz.this, escribirr3_1.class);
+                Intent intent=new Intent(Drawable_letter_zz.this, escribirinicio.class);
                 startActivity(intent);
 
                 finish();

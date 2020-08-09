@@ -570,6 +570,84 @@
         <activity
             android:name=".read5"
             android:screenOrientation="landscape" />
+        <activity
+            android:name=".ABC_Drawable.Drawable_letter_bb"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".ABC_Drawable.Drawable_letter_cc"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".ABC_Drawable.Drawable_letter_dd"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".ABC_Drawable.Drawable_letter_ee"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".ABC_Drawable.Drawable_letter_ff"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".ABC_Drawable.Drawable_letter_gg"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".ABC_Drawable.Drawable_letter_hh"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".ABC_Drawable.Drawable_letter_ii"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".ABC_Drawable.Drawable_letter_jj"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".ABC_Drawable.Drawable_letter_kk"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".ABC_Drawable.Drawable_letter_ll"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".ABC_Drawable.Drawable_letter_mm"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".ABC_Drawable.Drawable_letter_nn"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".ABC_Drawable.Drawable_letter_nn_"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".ABC_Drawable.Drawable_letter_oo"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".ABC_Drawable.Drawable_letter_pp"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".ABC_Drawable.Drawable_letter_qq"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".ABC_Drawable.Drawable_letter_rr"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".ABC_Drawable.Drawable_letter_ss"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".ABC_Drawable.Drawable_letter_tt"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".ABC_Drawable.Drawable_letter_uu"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".ABC_Drawable.Drawable_letter_vv"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".ABC_Drawable.Drawable_letter_ww"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".ABC_Drawable.Drawable_letter_xx"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".ABC_Drawable.Drawable_letter_yy"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".ABC_Drawable.Drawable_letter_zz"
+            android:screenOrientation="landscape" />
     </application>
 
 </manifest>

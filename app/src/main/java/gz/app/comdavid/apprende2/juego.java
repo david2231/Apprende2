@@ -17,7 +17,7 @@ import gz.app.comdavid.apprende2.clases.vo.Utilidades;
 
 
 public class juego extends AppCompatActivity {
-    TextView txt1,txt2,txt3,txt4,puntajes;
+    TextView txt1,txt2,txt3,txt4,puntajes,incorrecta;
     MediaPlayer mp,mp2,mp3;
 
     ImageView err;
@@ -57,12 +57,14 @@ public class juego extends AppCompatActivity {
         txt3=(TextView) findViewById(R.id.txt1);
         txt4=(TextView) findViewById(R.id.target);
         puntajes=(TextView) findViewById(R.id.puntaje1);
+        incorrecta=(TextView) findViewById(R.id.incorrectas1);
         txt1.setOnLongClickListener(longClickListener);
         txt2.setOnLongClickListener(longClickListener);
         txt3.setOnLongClickListener(longClickListener);
         txt4.setOnDragListener(dragListenre);
         puntajes.setText(Integer.toString(Utilidades.correctas));
         Utilidades.correctas=0;
+        Utilidades.incorrectas=0;
         Utilidades.puntaje=0;
 
     }
@@ -120,14 +122,15 @@ public class juego extends AppCompatActivity {
                         if (view.getId() == R.id.txtjb1) {
 
 
-
-
+                            Utilidades.incorrectas++;
+                            incorrecta.setText(Integer.toString(Utilidades.incorrectas));
                             err.setVisibility(View.VISIBLE);
                             mp2.start();
                             mp3.stop();
 
                         } else if (view.getId() == R.id.txt1) {
-
+                            Utilidades.incorrectas++;
+                            incorrecta.setText(Integer.toString(Utilidades.incorrectas));
                             err.setVisibility(View.VISIBLE);
                             mp2.start();
                             mp3.stop();

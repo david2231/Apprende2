@@ -11,6 +11,8 @@ import android.widget.ImageButton;
 
 import java.io.IOException;
 
+import gz.app.comdavid.apprende2.ABC_Drawable.escribirinicio;
+
 public class inicio extends AppCompatActivity {
 
     Button imageButton4;
@@ -47,7 +49,7 @@ public class inicio extends AppCompatActivity {
         btnn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(v.getContext(),gz.app.comdavid.apprende2.escribirinicio.class);
+                Intent intent=new Intent(v.getContext(), escribirinicio.class);
                 startActivityForResult(intent,0);
                 overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
 

@@ -82,8 +82,9 @@ public class Drawable_letter_aa extends AppCompatActivity implements Main_drawab
             @Override
             public void run() {
 
-                Intent intent=new Intent(Drawable_letter_aa.this, Drawable_letter_bb.class);
+                Intent intent=new Intent(Drawable_letter_aa.this, Drawable_letter_zz.class);
                 startActivity(intent);
+                overridePendingTransition(R.anim.zoom_forward_in, R.anim.zoom_forward_in);
 
                 finish();
 

@@ -18,6 +18,7 @@ public class Utilidades {
     public static  int avatarIdSeleccion=0;
     public static int correctas;
     public static int puntaje;
+    public static int incorrectas;
     public static final String NOMBRE_BD="apprende_bd";
 
     //Constantes para la tabla usuario

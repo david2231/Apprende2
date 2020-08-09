@@ -62,7 +62,7 @@ public class Drawable_letter_nn_ extends AppCompatActivity implements Main_drawa
         LinearLayout llMain = (LinearLayout) findViewById(R.id.llMain);
 
 
-        int drawable = R.drawable.letra1nn;
+        int drawable = R.drawable.letrannn;
         Bitmap bitmap = BitmapFactory.decodeResource(getResources(), drawable);
         Main_drawable image = new Main_drawable(this, bitmap);
         image.setImageBitmap(bitmap);
