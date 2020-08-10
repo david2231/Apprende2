@@ -29,7 +29,9 @@ public class juego extends AppCompatActivity {
         setContentView(R.layout.activity_juego);
         mp3= MediaPlayer.create(this,R.raw.audiojuego);
         mp3.start();
-
+        Utilidades.correctas=0;
+        Utilidades.incorrectas=0;
+        Utilidades.puntaje=0;
 
         Button inicio= (Button) findViewById(R.id.casa_aa1);
         inicio.setOnClickListener(new View.OnClickListener() {
@@ -63,9 +65,8 @@ public class juego extends AppCompatActivity {
         txt3.setOnLongClickListener(longClickListener);
         txt4.setOnDragListener(dragListenre);
         puntajes.setText(Integer.toString(Utilidades.correctas));
-        Utilidades.correctas=0;
-        Utilidades.incorrectas=0;
-        Utilidades.puntaje=0;
+        incorrecta.setText(Integer.toString(Utilidades.incorrectas));
+
 
     }
 
@@ -109,7 +110,6 @@ public class juego extends AppCompatActivity {
 
                                 Utilidades.correctas++;
                                 puntajes.setText(Integer.toString(Utilidades.correctas));
-                                Toast.makeText(getApplicationContext(), "menu main"+Utilidades.correctas,Toast.LENGTH_SHORT).show();
                                 Intent intent = new Intent(juego.this, juego2.class);
                                 startActivity(intent);
                                 overridePendingTransition(R.anim.left_in, R.anim.left_out);
@@ -145,6 +145,10 @@ public class juego extends AppCompatActivity {
                     break;
 
                 case DragEvent.ACTION_DROP:
+
+                    break;
+
+                case DragEvent.ACTION_DRAG_ENDED:
 
                     break;
 

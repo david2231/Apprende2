@@ -19,7 +19,7 @@ import gz.app.comdavid.apprende2.clases.vo.Utilidades;
 
 public class juego2 extends AppCompatActivity {
 
-    TextView txta1,txta2,txta3,txta4,puntajes;
+    TextView txta1,txta2,txta3,txta4,puntajes,incorrecta;
     MediaPlayer mp;
     MediaPlayer mp2;
     ImageView err;
@@ -52,12 +52,13 @@ public class juego2 extends AppCompatActivity {
         txta3=(TextView) findViewById(R.id.txtjc2);
         txta4=(TextView) findViewById(R.id.target2);
         puntajes=(TextView) findViewById(R.id.puntaje2);
+        incorrecta=(TextView) findViewById(R.id.incorrectas2);
         txta1.setOnLongClickListener(longClickListener);
         txta2.setOnLongClickListener(longClickListener);
         txta3.setOnLongClickListener(longClickListener);
         txta4.setOnDragListener(dragListenre);
-        Utilidades.correctas=Utilidades.correctas;
         puntajes.setText(Integer.toString(Utilidades.correctas));
+        incorrecta.setText(Integer.toString(Utilidades.incorrectas));
 
     }
 
@@ -87,7 +88,8 @@ public class juego2 extends AppCompatActivity {
                     final View view=(View) event.getLocalState();
 
                     if(view.getId()==R.id.txta6){
-
+                        Utilidades.incorrectas++;
+                        incorrecta.setText(Integer.toString(Utilidades.incorrectas));
                         err.setVisibility(View.VISIBLE);
 
                         mp2.start();
@@ -111,10 +113,11 @@ public class juego2 extends AppCompatActivity {
 
 
                                 }
-                            },4000);
+                            },1000);
 
                         } else if (view.getId() == R.id.txtjc2) {
-
+                            Utilidades.incorrectas++;
+                            incorrecta.setText(Integer.toString(Utilidades.incorrectas));
                             err.setVisibility(View.VISIBLE);
                             mp2.start();
                         }

@@ -1,4 +1,4 @@
-package gz.app.comdavid.apprende2;
+package gz.app.comdavid.apprende2.Silabas;
 
 import android.content.Intent;
 import android.media.MediaPlayer;
@@ -7,6 +7,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+
+import gz.app.comdavid.apprende2.R;
+import gz.app.comdavid.apprende2.juegosil46;
+import gz.app.comdavid.apprende2.silabas;
 
 public class silaba_r extends AppCompatActivity  implements View.OnClickListener{
 
@@ -47,7 +51,7 @@ public class silaba_r extends AppCompatActivity  implements View.OnClickListener
         sig.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(v.getContext(),juegosil46.class);
+                Intent intent=new Intent(v.getContext(), juegosil46.class);
                 startActivityForResult(intent,0);
                 overridePendingTransition(R.anim.left_in, R.anim.left_out);
                 finish();
@@ -59,7 +63,7 @@ public class silaba_r extends AppCompatActivity  implements View.OnClickListener
         inicio.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(v.getContext(),silabas.class);
+                Intent intent=new Intent(v.getContext(), silabas.class);
                 startActivityForResult(intent,0);
                 overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                 finish();

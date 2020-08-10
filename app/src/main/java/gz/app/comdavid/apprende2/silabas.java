@@ -9,6 +9,22 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 
+import gz.app.comdavid.apprende2.Silabas.silaba_b;
+import gz.app.comdavid.apprende2.Silabas.silaba_c;
+import gz.app.comdavid.apprende2.Silabas.silaba_d;
+import gz.app.comdavid.apprende2.Silabas.silaba_f;
+import gz.app.comdavid.apprende2.Silabas.silaba_g;
+import gz.app.comdavid.apprende2.Silabas.silaba_l;
+import gz.app.comdavid.apprende2.Silabas.silaba_m;
+import gz.app.comdavid.apprende2.Silabas.silaba_n;
+import gz.app.comdavid.apprende2.Silabas.silaba_p;
+import gz.app.comdavid.apprende2.Silabas.silaba_r;
+import gz.app.comdavid.apprende2.Silabas.silaba_s;
+import gz.app.comdavid.apprende2.Silabas.silaba_v;
+import gz.app.comdavid.apprende2.Silabas.silaba_y;
+import gz.app.comdavid.apprende2.Silabas.silaba_z;
+import gz.app.comdavid.apprende2.Silabas.silabas_t;
+
 public class silabas extends AppCompatActivity {
     MediaPlayer mp;
     @Override
@@ -43,7 +59,7 @@ public class silabas extends AppCompatActivity {
         ba.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(v.getContext(),silaba_b.class);
+                Intent intent=new Intent(v.getContext(), silaba_b.class);
                 startActivityForResult(intent,0);
                 overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                 mp.stop();
@@ -54,7 +70,7 @@ public class silabas extends AppCompatActivity {
         ca.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(v.getContext(),silaba_c.class);
+                Intent intent=new Intent(v.getContext(), silaba_c.class);
                 startActivityForResult(intent,0);
                 overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                 mp.stop();
@@ -65,7 +81,7 @@ public class silabas extends AppCompatActivity {
         da.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(v.getContext(),silaba_d.class);
+                Intent intent=new Intent(v.getContext(), silaba_d.class);
                 startActivityForResult(intent,0);
                 overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                 mp.stop();
@@ -75,7 +91,7 @@ public class silabas extends AppCompatActivity {
         fa.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(v.getContext(),silaba_f.class);
+                Intent intent=new Intent(v.getContext(), silaba_f.class);
                 startActivityForResult(intent,0);
                 overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                 mp.stop();
@@ -86,7 +102,7 @@ public class silabas extends AppCompatActivity {
         ga.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(v.getContext(),silaba_g.class);
+                Intent intent=new Intent(v.getContext(), silaba_g.class);
                 startActivityForResult(intent,0);
                 overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                 mp.stop();
@@ -98,7 +114,7 @@ public class silabas extends AppCompatActivity {
         la.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(v.getContext(),silaba_l.class);
+                Intent intent=new Intent(v.getContext(), silaba_l.class);
                 startActivityForResult(intent,0);
                 overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                 mp.stop();
@@ -109,7 +125,7 @@ public class silabas extends AppCompatActivity {
         ma.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(v.getContext(),silaba_m.class);
+                Intent intent=new Intent(v.getContext(), silaba_m.class);
                 startActivityForResult(intent,0);
                 overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                 mp.stop();
@@ -119,7 +135,7 @@ public class silabas extends AppCompatActivity {
         na.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(v.getContext(),silaba_n.class);
+                Intent intent=new Intent(v.getContext(), silaba_n.class);
                 startActivityForResult(intent,0);
                 overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                 mp.stop();
@@ -130,7 +146,7 @@ public class silabas extends AppCompatActivity {
         pa.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(v.getContext(),silaba_p.class);
+                Intent intent=new Intent(v.getContext(), silaba_p.class);
                 startActivityForResult(intent,0);
                 overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                 mp.stop();
@@ -141,7 +157,7 @@ public class silabas extends AppCompatActivity {
         ra.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(v.getContext(),silaba_r.class);
+                Intent intent=new Intent(v.getContext(), silaba_r.class);
                 startActivityForResult(intent,0);
                 overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                 mp.stop();
@@ -152,7 +168,7 @@ public class silabas extends AppCompatActivity {
         sa.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(v.getContext(),silaba_s.class);
+                Intent intent=new Intent(v.getContext(), silaba_s.class);
                 startActivityForResult(intent,0);
                 overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                 mp.stop();
@@ -163,7 +179,7 @@ public class silabas extends AppCompatActivity {
         ta.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(v.getContext(),silabas_t.class);
+                Intent intent=new Intent(v.getContext(), silabas_t.class);
                 startActivityForResult(intent,0);
                 overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                 mp.stop();
@@ -174,7 +190,7 @@ public class silabas extends AppCompatActivity {
         va.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(v.getContext(),silaba_v.class);
+                Intent intent=new Intent(v.getContext(), silaba_v.class);
                 startActivityForResult(intent,0);
                 overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                 mp.stop();
@@ -185,7 +201,7 @@ public class silabas extends AppCompatActivity {
         ya.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(v.getContext(),silaba_y.class);
+                Intent intent=new Intent(v.getContext(), silaba_y.class);
                 startActivityForResult(intent,0);
                 overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                 mp.stop();
@@ -196,7 +212,7 @@ public class silabas extends AppCompatActivity {
         za.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(v.getContext(),silaba_z.class);
+                Intent intent=new Intent(v.getContext(), silaba_z.class);
                 startActivityForResult(intent,0);
                 overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                 mp.stop();

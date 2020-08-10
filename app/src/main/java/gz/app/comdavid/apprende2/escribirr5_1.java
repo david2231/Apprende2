@@ -61,7 +61,7 @@ public class escribirr5_1 extends AppCompatActivity implements escribirr3.DrawFi
         LinearLayout llMain = (LinearLayout) findViewById(R.id.l4Main);
 
 
-        int drawable = R.drawable.letteroo;
+        int drawable = R.drawable.letraoo;
         Bitmap bitmap = BitmapFactory.decodeResource(getResources(), drawable);
         escribirr3 image = new escribirr3(this, bitmap);
         image.setImageBitmap(bitmap);
