@@ -14,7 +14,18 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:id="@+id/relativeLayout">
-
+        <TextView
+            android:id="@+id/puntaje8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/colorBlanco"
+            android:textSize="40dp"
+            android:fontFamily="sans-serif-black"/>
         <Button
             android:layout_width="50dp"
             android:layout_height="50dp"
@@ -25,33 +36,46 @@
             android:layout_alignParentStart="true" />
 
         <TextView
-            android:layout_width="100dp"
-            android:layout_height="60dp"
-            android:textAppearance="?android:attr/textAppearanceLarge"
             android:id="@+id/txta6"
-            android:layout_centerVertical="true"
-            android:layout_alignParentLeft="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
-            android:background="@drawable/letra1i" />
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="103dp"
+            android:layout_marginLeft="103dp"
+            android:text="Ii"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/colorBlanco"
+            android:textSize="50dp"/>
 
         <TextView
+
+            android:id="@+id/txtjb6"
             android:layout_width="100dp"
             android:layout_height="60dp"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:id="@+id/txtjb6"
-            android:background="@drawable/letra1e"
+            android:text="Ee"
+            android:gravity="center"
+            android:textSize="50dp"
+            android:textColor="@color/colorBlanco"
             android:layout_below="@+id/linearLayout"
             android:layout_centerHorizontal="true" />
 
         <TextView
+            android:id="@+id/txtjc8"
             android:layout_width="100dp"
             android:layout_height="60dp"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:id="@+id/txtjc8"
-            android:background="@drawable/letra1a"
             android:layout_alignBottom="@+id/txtjb6"
+            android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
+            android:layout_marginEnd="67dp"
+            android:layout_marginRight="67dp"
+            android:layout_marginBottom="0dp"
+            android:text="Aa"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/colorBlanco"
+            android:textSize="50dp"  />
 
         <ImageView
             android:layout_width="100dp"
@@ -71,12 +95,14 @@
             android:id="@+id/linearLayout">
 
             <TextView
+                android:id="@+id/target8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingTop="30dp"
+                android:textColor="@color/colorBlanco"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:text="_RBOL"
-                android:layout_gravity="center_horizontal"
-                android:id="@+id/target8"
                 android:textSize="@dimen/notification_large_icon_width" />
 
             <LinearLayout
@@ -88,7 +114,18 @@
                 android:layout_alignBottom="@+id/txta6"></LinearLayout>
 
         </LinearLayout>
-
+        <TextView
+            android:id="@+id/incorrectas8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="100dp"
+            android:paddingLeft="10dp"
+            android:gravity="left"
+            android:text=""
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/colorBlanco"
+            android:textSize="40dp"
+            android:fontFamily="sans-serif-black" />
     </RelativeLayout>
 
     <TextView

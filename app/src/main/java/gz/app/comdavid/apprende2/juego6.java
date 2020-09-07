@@ -12,9 +12,11 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import gz.app.comdavid.apprende2.clases.vo.Utilidades;
+
 public class juego6 extends AppCompatActivity {
 
-    TextView txta11,txta22,txta33,txta44;
+    TextView txta11,txta22,txta33,txta44,puntajes,incorrecta;
     MediaPlayer mp;
     MediaPlayer mp2;
     ImageView err;
@@ -38,17 +40,18 @@ public class juego6 extends AppCompatActivity {
         mp= MediaPlayer.create(this,R.raw.bien);
         mp2= MediaPlayer.create(this,R.raw.mal);
         err=(ImageView) findViewById(R.id.errores6);
-
-
-
         txta11=(TextView) findViewById(R.id.txta6);
         txta22=(TextView) findViewById(R.id.txtjb6);
         txta33=(TextView) findViewById(R.id.txtjc6);
         txta44=(TextView) findViewById(R.id.target6);
+        puntajes=(TextView) findViewById(R.id.puntaje6);
+        incorrecta=(TextView) findViewById(R.id.incorrectas6);
         txta11.setOnLongClickListener(longClickListener);
         txta22.setOnLongClickListener(longClickListener);
         txta33.setOnLongClickListener(longClickListener);
         txta44.setOnDragListener(dragListenre);
+        puntajes.setText(Integer.toString(Utilidades.correctas));
+        incorrecta.setText(Integer.toString(Utilidades.incorrectas));
 
     }
 
@@ -77,6 +80,8 @@ public class juego6 extends AppCompatActivity {
                     final View view=(View) event.getLocalState();
 
                     if(view.getId()==R.id.txta6){
+                        Utilidades.correctas++;
+                        puntajes.setText(Integer.toString(Utilidades.correctas));
                         err.setVisibility(View.GONE);
                         txta44.setText("UÑA");
 
@@ -91,17 +96,21 @@ public class juego6 extends AppCompatActivity {
 
                                 finish();
                             }
-                        },4000);
+                        },1000);
 
 
                     }else {
                         if (view.getId() == R.id.txtjb6) {
+                            Utilidades.incorrectas++;
+                            incorrecta.setText(Integer.toString(Utilidades.incorrectas));
                             err.setVisibility(View.VISIBLE);
 
                             mp2.start();
 
 
                         } else if (view.getId() == R.id.txtjc6) {
+                            Utilidades.incorrectas++;
+                            incorrecta.setText(Integer.toString(Utilidades.incorrectas));
 
                             err.setVisibility(View.VISIBLE);
                             mp2.start();

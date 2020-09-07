@@ -60,6 +60,7 @@ public class juegosil34 extends AppCompatActivity implements View.OnClickListene
                 overridePendingTransition(R.anim.right_in, R.anim.right_out);
                 mp4.stop();
                 finish();
+
             }
         });
 

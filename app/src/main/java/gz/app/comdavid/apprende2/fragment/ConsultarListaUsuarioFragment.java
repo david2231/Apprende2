@@ -100,7 +100,7 @@ JsonObjectRequest jsonObjectRequest;
 
     private void cargarWebService() {
 
-        String url="http://localhost/BD_Apprende/listar_jugador.php";
+        String url="http://localhost/BD_Apprende/editar_usuario.php";
 
         jsonObjectRequest=new JsonObjectRequest(Request.Method.GET,url,null,this,this);
         request.add(jsonObjectRequest);

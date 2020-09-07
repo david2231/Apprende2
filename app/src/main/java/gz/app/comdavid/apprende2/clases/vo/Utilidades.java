@@ -1,6 +1,8 @@
 package gz.app.comdavid.apprende2.clases.vo;
 
 import android.app.Activity;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
@@ -10,9 +12,10 @@ import gz.app.comdavid.apprende2.R;
 import gz.app.comdavid.apprende2.clases.vo.JugadorVo;
 
 public class Utilidades {
+    //Se crean variables estaticas
     public static ArrayList<AvatarVo> listaAvatars=null;
-
-    //Guardar el objeto del avatar
+    public static String usuario;
+    //Guardar el objeto completo de la lista del avatar
     public static  AvatarVo avatarSeleccion=null;
     public static ArrayList<JugadorVo> listaJugadores=null;
     public static  int avatarIdSeleccion=0;
@@ -28,9 +31,11 @@ public class Utilidades {
     public static final String CAMPO_GENERO="genero";
     public static final String CAMPO_AVATAR="avatar";
     public static final String CREAR_TABLA_JUGADOR="CREATE TABLE "+TABLA_USUARIO+" ("+CAMPO_ID+" INTEGER PRIMARY KEY, "+CAMPO_NOMBRE+" TEXT,"+CAMPO_GENERO+" TEXT,"+CAMPO_AVATAR+" INTEGER)";
+    // Metodo estatico que contiene el listado de los avatars
     public static void obtenerListaAvatars(){
-
+        // Creación de un array de tipo lista
         listaAvatars=new ArrayList<AvatarVo>();
+        // Creación de la estructura ID para el elemento, imagen asociada y el nombre
         listaAvatars.add(new AvatarVo(1,R.drawable.logofin,"Avatar1"));
         listaAvatars.add(new AvatarVo(2,R.drawable.avatar2,"Avatar2"));
         listaAvatars.add(new AvatarVo(3,R.drawable.avatar3,"Avatar3"));
@@ -87,5 +92,6 @@ public class Utilidades {
         db.close();
 
     }
+
 
 }

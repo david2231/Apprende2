@@ -24,11 +24,12 @@ public class PlaceholderFragment extends Fragment {
     private static final String ARG_SECTION_NUMBER = "section_number";
 
     private PageViewModel pageViewModel;
-
+    // Genera una nueva instancia de Fragment cuando el usuario deslice su dedo sobre la pantalla
     public static Fragment newInstance(int sectionNumber) {
         Fragment fragment = null;
-
+        //Se crea un switch case con las diferentes fragmentos creados
         switch (sectionNumber){
+
             case 1: fragment=new Instruccion1Fragment(); break;
             case 2: fragment=new Instruccion2Fragment(); break;
             case 3: fragment=new Instruccion3Fragment(); break;

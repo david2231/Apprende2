@@ -17,9 +17,9 @@ import gz.app.comdavid.apprende2.fragment.ConsultarListaUsuarioFragment;
 import gz.app.comdavid.apprende2.fragment.RegistroJugadorFragment;
 import gz.app.comdavid.apprende2.interfaces.IComunicaFragments;
 
-
+//Desde el Api 15 en adelante es necesario agregar en el implements la referencia al fragmento instanciado
 public class MainActivity3 extends AppCompatActivity implements IComunicaFragments,IncioFragment.OnFragmentInteractionListener,RegistroJugadorFragment.OnFragmentInteractionListener,GestionJugadorFragment.OnFragmentInteractionListener,ConsultarListaUsuarioFragment.OnFragmentInteractionListener{
-
+    //Se crean las referencias a las instancias de los fragmentos
     Fragment fragmentInicio,registroJugadorFragment,gestionJugadorFragment,getRegistroUsuario,fragment_consultar_lista_usuario;
 
 
@@ -27,13 +27,16 @@ public class MainActivity3 extends AppCompatActivity implements IComunicaFragmen
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
+        //Se realiza el llamado a Utilidades con el fin de llenar la lista de avatars
         Utilidades.obtenerListaAvatars();
         Utilidades.consultarListaJugadores(this);
+        //Se genera la instancia del fragmento IncioFragment
         fragmentInicio= new IncioFragment();
+        //Se genera la instancia del fragmento RegistroJugadorFragment
         registroJugadorFragment=new RegistroJugadorFragment();
         gestionJugadorFragment=new GestionJugadorFragment();
         ConexionSQLiteHelper conn=new ConexionSQLiteHelper(this,Utilidades.NOMBRE_BD,null,1);
-
+        //Se ubica el  IncioFragment en el contenedorFragments
         getSupportFragmentManager().beginTransaction().replace(R.id.contenedorFragments,registroJugadorFragment).commit();
     }
 
@@ -49,6 +52,7 @@ public class MainActivity3 extends AppCompatActivity implements IComunicaFragmen
                             public void onClick(DialogInterface dialog, int which) {
 
                                 //Toast.makeText(getApplicationContext(),"Registrar Jugador: ",Toast.LENGTH_SHORT).show();
+                                //Remplaza el fragment de inicio por registroJugadorFragment
                                 getSupportFragmentManager().beginTransaction().replace(R.id.contenedorFragments,registroJugadorFragment).commit();
 
                             }
@@ -62,16 +66,13 @@ public class MainActivity3 extends AppCompatActivity implements IComunicaFragmen
                         });
 
         return builder.create();
-
-
-
     }
-//importar los metodos del fragement
+
     @Override
     public void onFragmentInteraction(Uri uri) {
 
     }
-
+    //Importar los metodos de la intefaz IcomunicaFragments
     @Override
     public void mostrarMenu() {
         Toast.makeText(getApplicationContext(), "menu main",Toast.LENGTH_SHORT).show();
@@ -96,7 +97,7 @@ public class MainActivity3 extends AppCompatActivity implements IComunicaFragmen
 
     @Override
     public void consultarInstrucciones() {
-        //Toast.makeText(getApplicationContext(), "instrucciones main",Toast.LENGTH_SHORT).show();
+        // Se realizaz el llamado de la actividad ContenedorIntrucciones
         Intent intent=new Intent(this, ContenedorInstrucciones.class);
         startActivity(intent);
     }

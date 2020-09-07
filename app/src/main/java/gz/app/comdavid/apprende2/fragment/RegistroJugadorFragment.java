@@ -1,3 +1,4 @@
+//Librerias
 package gz.app.comdavid.apprende2.fragment;
 import android.app.Activity;
 import android.content.ActivityNotFoundException;
@@ -14,6 +15,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,7 +25,6 @@ import android.widget.RadioButton;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -31,11 +32,9 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
-
 import gz.app.comdavid.apprende2.R;
 import gz.app.comdavid.apprende2.adapters.AdaptadorAvatar;
 import gz.app.comdavid.apprende2.clases.vo.ConexionSQLiteHelper;
@@ -62,12 +61,13 @@ public class RegistroJugadorFragment extends Fragment {
     private String mParam1;
     private String mParam2;
     private OnFragmentInteractionListener mListener;
+    //Creamos la variable actuvidad
     Activity actividad;
+    //Creamos una la variable vista para inflar el fragemnto
     View vista;
-
+    //Comunicamos los fragmentos mediante la interfaz IComunicaFragment
     IComunicaFragments iComunicaFragments;
     RecyclerView recyclerAvatars;
-
     FloatingActionButton fabregistro;
     ImageButton img_btn_Usuarios;
     EditText campoNick;
@@ -75,6 +75,7 @@ public class RegistroJugadorFragment extends Fragment {
     TextView valoredad,grabar;
     RadioButton radioM,radioF;
     String usuario;
+    public static String nickName;
 
     private static final int RECOGNIZE_SPEECH_ACTIVITY = 1;
 
@@ -105,13 +106,11 @@ public class RegistroJugadorFragment extends Fragment {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+        // llama a la clase onCreate para completar la creación de una actividad
         super.onCreate(savedInstanceState);
-
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
-
-
         }
 
     }
@@ -119,33 +118,45 @@ public class RegistroJugadorFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        //Se infla el layout con el contenido del fragmento registro_jugador
         vista=inflater.inflate(R.layout.fragment_registro_jugador, container, false);
+        //Se infla la lista de los avatars
         recyclerAvatars=vista.findViewById(R.id.recyclerAvatarsId);
+        //Boton flotante de registro
         fabregistro=vista.findViewById(R.id.idFabRegistro);
+        //Campo Nombre de usuario
         campoNick=vista.findViewById(R.id.campoNickName);
+        campoNick=(EditText)vista.findViewById(R.id.campoNickName);
+        //Radio Button genero del usuario
         radioF=vista.findViewById(R.id.radioF);
         radioM=vista.findViewById(R.id.radioM);
+        //Indicar que el recycler view es de tipo grid layout con 3 columnas
         recyclerAvatars.setLayoutManager(new GridLayoutManager(this.actividad,3));
         recyclerAvatars.setHasFixedSize(true);
-        campoNick=(EditText)vista.findViewById(R.id.campoNickName);
+        //Barra de progreso selección de edad del usuario
         edad=(SeekBar)vista.findViewById(R.id.edad);
         valoredad=(TextView) vista.findViewById(R.id.valoredad);
+        // Campo de texo para almacenar  el nombre de usuario por medio de voz
         grabar = (TextView) vista.findViewById(R.id.usuariotext);
+        // Botón que habilita el microfono en el dispositivo
         img_btn_Usuarios=(ImageButton)vista.findViewById(R.id.img_btn_Usuarios);
+        // Llamamos el método recuperarDatos que contiene las preferencias del nombre del usuario
         recuperarDatos();
 
-
+        // Creamos el evento para el boton img_btn_Usuarios
         img_btn_Usuarios.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
-
+                // Creamos el evento para el boton img_btn_Usuarios
                 Intent intentActionRecognizeSpeech = new Intent(
                         RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
 
-
+                // Intent del Reconocimiento de Voz
                 intentActionRecognizeSpeech.putExtra(
+                        // Se selecciona  el Lenguaje  (Español)
                         RecognizerIntent.EXTRA_LANGUAGE_MODEL, "es-419");
+                // Se crea un try catch que permite validar si el dispositivo soporta el reconocimiento por voz
                 try {
                     startActivityForResult(intentActionRecognizeSpeech,
                             RECOGNIZE_SPEECH_ACTIVITY);
@@ -156,10 +167,11 @@ public class RegistroJugadorFragment extends Fragment {
                 }
             }
         });
-
+// Creamos el evento para la barra de progreso de la edad
 edad.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
     @Override
     public void onProgressChanged(SeekBar seekBar, int progess, boolean b) {
+        // El campo valoredad va incrementándose cada vez que el usuario deslice el dedo sobre la barra
         valoredad.setText(progess +"");
     }
 
@@ -173,17 +185,21 @@ edad.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
 
     }
 });
+        // Creamos el evento para el botón registro
         fabregistro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                // Guardamos la preferencia del nombre usuario
                 usuario=campoNick.getText().toString();
-                ejecutarServcio("http://192.168.0.4/BD_Apprende/insertar_jugador.php");
+                //Llamamos el método ejecutarServicio y colocamos la url del servicio php
+                ejecutarServcio("http://192.168.0.2/BD_Apprende/insertar_jugador.php");
 
             }
         });
-
+        //Se crea un adaptador para asignarlo al adaptador grid y enviamos la lista de avatars de Utilidades
         final AdaptadorAvatar miAdaptador=new AdaptadorAvatar(Utilidades.listaAvatars);
         recyclerAvatars.setAdapter(miAdaptador);
+        //Retorna la vista
         return vista;
     }
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -194,11 +210,12 @@ edad.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             case RECOGNIZE_SPEECH_ACTIVITY:
 
                 if (resultCode==actividad.RESULT_OK && null != data) {
-
+                    //  el Speech en un ArrayList
                     ArrayList<String> speech = data
                             .getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
+                    // Obtiene el reconociento de voz de la Posción 0 siendo el más Preciso
                     String strSpeech2Text = speech.get(0);
-
+                    // Actualiza el valor del campoNick
                     grabar.setText(strSpeech2Text);
                     campoNick.setText(strSpeech2Text);
 
@@ -270,60 +287,91 @@ edad.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
 
 
 
-
+//Metodo encargado de validar los datos ingresados, contiene un parametro de tipo string para almacenar la URL del web service
     private void ejecutarServcio(String URL){
+        // Creación de una variable tipo string para vacia
         String genero="";
-
+        // Opción Masculino marcada
         if(radioM.isChecked()==true){
             genero="M";
         }
+        // Opción Femenino marcada
         else if (radioF.isChecked()==true){
             genero="F";
         }
+        // Ninguna opción seleccionada
         else{
             genero="No";
         }
+        // Validación que los campos no esten vacios Genero, Nombre, Edad
         if (!genero.equals("No")&&!campoNick.getText().toString().trim().equals("")&&!valoredad.getText().toString().trim().equals("Selecciona tu Edad")){
 
+            // Almacena el valor seleccionado en el radio button
         final String finalGenero = genero;
+        // Objeto stringRequest el cual tiene el parametro POST de envio de datos la URL y la clase Response
         StringRequest stringRequest=new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
 
             @Override
+            // En caso de  procesarse la petición al servidor
             public void onResponse(String response) {
-                guardarPreferencias();
-                Toast.makeText(actividad.getApplicationContext(), "Registro exitoso", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(getActivity(), gz.app.comdavid.apprende2.inicio.class);
-                startActivity(intent);
-            }
+                Log.d("Response Value: ", response);
+                // Se valida que el usuario no este registrado en la base de datos
+                if (response.equals("El usuario ya se encuentra registrado")) {
+                    Toast.makeText(actividad.getApplicationContext(), "El usuario ya existe, por favor intenta de nuevo ", Toast.LENGTH_SHORT).show();
 
+                }
+                // En caso de que no exista se guardan los datos
+                else{
+                    // Ejecuta el metodo guardarPreferencias
+                    guardarPreferencias();
+                    //Muestra el mensaje de registro exitoso
+                    Toast.makeText(actividad.getApplicationContext(), "Registro exitoso", Toast.LENGTH_SHORT).show();
+                    //Abrir una nueva actividad
+                    Intent intent = new Intent(getActivity(), gz.app.comdavid.apprende2.inicio.class);
+                    actividad.finish();
+                    startActivity(intent);
+
+                }
+
+            }
+            // En caso de no procesarse la petición al servidor
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(actividad.getApplicationContext(), error.toString(), Toast.LENGTH_SHORT).show();
+                //Muestra el mensaje del codigo de error
+                Toast.makeText(actividad.getApplicationContext(), "Error de conexión por favor intente de nuevo"+error.toString(), Toast.LENGTH_SHORT).show();
             }
         }){
 
             @Override
+            // Metodo getParams que contiene los parametros que el servicio necesita para devolver una respuesta
             protected Map<String, String> getParams() throws AuthFailureError {
 
                 int avatarId=Utilidades.avatarSeleccion.getId();
+                //A través del obejeto Map Se crea una instancia con el nombre parametros
                 Map<String,String> parametros=new HashMap<String, String>();
+                //Mediante el metodo put se ingresan los datos a enviar
+                //En la primera variable se coloca la variable post que se declaro en el insertar_jugador.php
+                //En la segunda variable se coloca el dato que se enviara
                 parametros.put("nombre",usuario);
                 String genero1 = parametros.put("genero",String.valueOf(finalGenero));
                 String avatar = parametros.put("avatar", String.valueOf(avatarId));
                 parametros.put("edad",valoredad.getText().toString());
+                //Se retornan todos los datos mediante la instancia parametros
                 return parametros;
 
 
             }
         };
+        // Se crea una instancia de la actividad
         RequestQueue requestQueue= Volley.newRequestQueue( actividad);
+        // Se instancia el objeto stringRequest la cual ayuda a procesar las peticiones realizadas
         requestQueue.add(stringRequest);
 
         }
-
+        // Mensaje de error solicitando la validación de los datos ingresados
         else {
-            Toast.makeText(actividad.getApplicationContext(), "Verifica los datos", Toast.LENGTH_SHORT).show();
+            Toast.makeText(actividad.getApplicationContext(), "Verifica los datos, no se puede dejar ningún campo vacío", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -340,16 +388,25 @@ edad.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
                     + " must implement OnFragmentInteractionListener");
         }
     }
+    // Declaración de un metodo llamado guardarPreferencias
     private void guardarPreferencias(){
+        // Se crea un objeto llamado preferences y se le asigna un nombre
         SharedPreferences preferences= actividad.getSharedPreferences("iniciousuario",Context.MODE_PRIVATE);
+        //Se define que se quieren almacenar o actualizar datos en la preferencia
         SharedPreferences.Editor editor=preferences.edit();
+        //Se agrega el campo que se almacenara en la preferencia
         editor.putString("usuario",usuario);
+        editor.putBoolean("session",true);
+        //Mediante el metodo commit se guardan todos los cambios
         editor.commit();
     }
-
+    //Metodo que permite recuperar los datos
     private void recuperarDatos(){
+        //Se realiza el llamado de la preferencia como se definio en el metodo guardarPreferencias
         SharedPreferences preferences= actividad.getSharedPreferences("iniciousuario",Context.MODE_PRIVATE);
+        //Se asignan las preferencias guardadas en el activity
         campoNick.setText(preferences.getString("usuario", "ingrese usuario"));
+
     }
 
     public void huw(View view) {

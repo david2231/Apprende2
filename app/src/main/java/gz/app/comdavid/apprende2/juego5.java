@@ -40,9 +40,6 @@ public class juego5 extends AppCompatActivity {
         mp= MediaPlayer.create(this,R.raw.bien);
         mp2= MediaPlayer.create(this,R.raw.mal);
         err=(ImageView) findViewById(R.id.errores5);
-
-
-
         txta11=(TextView) findViewById(R.id.txta6);
         txta22=(TextView) findViewById(R.id.txtjb6);
         txta33=(TextView) findViewById(R.id.txtjc5);
@@ -109,7 +106,7 @@ public class juego5 extends AppCompatActivity {
 
 
                                 }
-                            },4000);
+                            },1000);
 
                         } else if (view.getId() == R.id.txtjc5) {
                             Utilidades.incorrectas++;

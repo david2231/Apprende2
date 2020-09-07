@@ -64,20 +64,22 @@ public class Instruccion3Fragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+        // Se infla el layout fragment_instruccion3
         vista=inflater.inflate(R.layout.fragment_instruccion3, container, false);
+        //Llamar el boton
         Button btnLanzarActivity = (Button) vista.findViewById(R.id.botoninicio);
+        //Evento Onclick
         btnLanzarActivity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //Abrir una nueva actividad
                 Intent intent = new Intent(getActivity(), gz.app.comdavid.apprende2.MainActivity3.class);
                 startActivity(intent);
 
 
-
             }
         });
-
+        // Retorna la vista
         return vista;
     }
 

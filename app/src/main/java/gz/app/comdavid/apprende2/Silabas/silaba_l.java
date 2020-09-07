@@ -31,7 +31,6 @@ public class silaba_l extends AppCompatActivity  implements View.OnClickListener
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_silaba_l);
-
         silla=(ImageView) findViewById(R.id.ladrillos);
         sillas=(ImageView) findViewById(R.id.lamparas);
         sille=(ImageView) findViewById(R.id.leches);

@@ -32,7 +32,9 @@ public class IncioFragment extends Fragment {
     private OnFragmentInteractionListener mListener;
     View vista;
     Activity actividad;
+    //Referenciamos los Cardview
     CardView cardJugar,cardAjustes,cardRanking,cardAyuda,cardUser,cardInfo;
+    //Referenciamos la interfaz
     IComunicaFragments interfaceComunicaFragments;
 
     public IncioFragment() {
@@ -69,22 +71,23 @@ public class IncioFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+        //Se Infla la vista del layout del fragment_inicio
         vista=inflater.inflate(R.layout.fragment_incio, container, false);
-
+        //Se Instancia el cardView correspondiente apuntando al botón correspondiente
         cardJugar=vista.findViewById(R.id.cardJugar);
         cardAjustes=vista.findViewById(R.id.cardAjustes);
         cardRanking=vista.findViewById(R.id.cardRanking);
         cardAyuda=vista.findViewById(R.id.cardAyuda);
         cardUser=vista.findViewById(R.id.cardUser);
         cardInfo=vista.findViewById(R.id.cardInfo);
-
+        // Se realiza el llamado del método eventosMenu
         eventosMenu();
 
-
+        //Retornamos la vista
         return vista;
 
     }
+    // Creación del método que permita actuar como contenedor de todos los eventos
     private void eventosMenu(){
         cardJugar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -130,7 +133,9 @@ public class IncioFragment extends Fragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
+        //Se establece que el contexto es la instancia de una actividad
         if (context instanceof Activity) {
+
             actividad=(Activity) context;
             interfaceComunicaFragments= (IComunicaFragments) actividad;
         }
