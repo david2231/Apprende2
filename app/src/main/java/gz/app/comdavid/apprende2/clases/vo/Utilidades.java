@@ -19,9 +19,12 @@ public class Utilidades {
     public static  AvatarVo avatarSeleccion=null;
     public static ArrayList<JugadorVo> listaJugadores=null;
     public static  int avatarIdSeleccion=0;
+    //Variable estatica que alamacena las respuestas correctas
     public static int correctas;
     public static int puntaje;
+    //Variable estatica que alamacena las respuestas incorrectas
     public static int incorrectas;
+    public static int Nombre_Jugador;
     public static final String NOMBRE_BD="apprende_bd";
 
     //Constantes para la tabla usuario

@@ -103,7 +103,6 @@ public class juego3 extends AppCompatActivity {
                             new Handler().postDelayed(new Runnable() {
                                 @Override
                                 public void run() {
-                                    Utilidades.correctas++;
                                     puntajes.setText(Integer.toString(Utilidades.correctas));
                                     Intent intent=new Intent(juego3.this,juego4.class);
                                     startActivity(intent);

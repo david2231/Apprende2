@@ -149,9 +149,6 @@ public class lectura2 extends AppCompatActivity  implements View.OnClickListener
                 mp2.start();
             }
 
-
-
-
                 break;
             default:
 

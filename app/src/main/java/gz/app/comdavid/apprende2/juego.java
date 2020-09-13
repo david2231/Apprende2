@@ -113,7 +113,7 @@ public class juego extends AppCompatActivity {
                                 Intent intent = new Intent(juego.this, juego2.class);
                                 startActivity(intent);
                                 overridePendingTransition(R.anim.left_in, R.anim.left_out);
-
+                                finish();
 
                             }
                         },1000);

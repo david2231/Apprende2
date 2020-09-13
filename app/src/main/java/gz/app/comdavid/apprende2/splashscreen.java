@@ -12,8 +12,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.VideoView;
 
+
 public class splashscreen extends AppCompatActivity {
     private VideoView azul;
+    public static final String AVATAR_ID="avatarId";
+    public static int jugadorId;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,21 +36,21 @@ public class splashscreen extends AppCompatActivity {
                 //con el fin de determinar si hay una sesión guarda
                 SharedPreferences preferences= getSharedPreferences("iniciousuario", Context.MODE_PRIVATE);
                 boolean session=preferences.getBoolean("session",false);
-                //Mediante un if se valida si la session es verdadera nos muestre el la actividad de inicio
-                if(session){
-                    Intent intent=new Intent(splashscreen.this,inicio2.class);
+                //Mediante un if se valida si la session es verdadera  muestre el la actividad de inicio
+                if(session==true){
+                Intent intent=new Intent(splashscreen.this,inicio2.class);
                     startActivity(intent);
                     overridePendingTransition(R.anim.left_in, R.anim.left_out);
+                    finish();
                 }
-                // Si es falsa nos muestre la actividad con el fragment de registro
+                 //Si es falsa  muestre la actividad con el fragment de registro
                 else{
 
-                    Intent intent=new Intent(splashscreen.this,MainActivity3.class);
-                    startActivity(intent);
-                    overridePendingTransition(R.anim.left_in, R.anim.left_out);
+
                     Intent intent2=new Intent(splashscreen.this,ContenedorInstrucciones.class);
                     startActivity(intent2);
                     overridePendingTransition(R.anim.left_in, R.anim.left_out);
+                    finish();
                 }
 
                 finish();

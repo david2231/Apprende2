@@ -13,6 +13,7 @@ public class inicio2 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inicio2);
+        showOrHideNavBar();
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         Button inicio= (Button) findViewById(R.id.inicio2);
         inicio.setOnClickListener(new View.OnClickListener() {
@@ -26,4 +27,22 @@ public class inicio2 extends AppCompatActivity {
             }
         });
     }
+    /**
+     * Enables the fullscreen immersive mode. Only works on Kitkat and above. Also start a listener
+     * in case the fullscreen mode is deactivated from the settings, so the game layout has to redraw.
+     */
+    private void showOrHideNavBar() {
+
+        View decorView = getWindow().getDecorView();
+        // Hide the status bar.
+        int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN
+                | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                | View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+               | View.SYSTEM_UI_FLAG_FULLSCREEN
+                |View.SYSTEM_UI_FLAG_IMMERSIVE;
+        decorView.setSystemUiVisibility(uiOptions);
+
+    }
+
 }

@@ -91,7 +91,6 @@ public class juego2 extends AppCompatActivity {
                         Utilidades.incorrectas++;
                         incorrecta.setText(Integer.toString(Utilidades.incorrectas));
                         err.setVisibility(View.VISIBLE);
-
                         mp2.start();
 
 
@@ -109,7 +108,7 @@ public class juego2 extends AppCompatActivity {
                                     Intent intent = new Intent(juego2.this, juego3.class);
                                     startActivity(intent);
                                     overridePendingTransition(R.anim.left_in, R.anim.left_out);
-
+                                    finish();
 
 
                                 }

@@ -107,7 +107,7 @@ public class juego99 extends AppCompatActivity {
                                 @Override
                                 public void run() {
 
-                                    Intent intent=new Intent(juego99.this,juegos.class);
+                                    Intent intent=new Intent(juego99.this,ResultadoJuegoActivity.class);
                                     startActivity(intent);
                                     overridePendingTransition(R.anim.left_in, R.anim.left_out);
                                     finish();

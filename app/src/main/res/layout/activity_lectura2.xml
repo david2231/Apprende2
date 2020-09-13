@@ -13,8 +13,6 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentTop="true"
         android:layout_centerInParent="true" >
-
-
     </VideoView>
 
     <ImageButton

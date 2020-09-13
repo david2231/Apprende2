@@ -9,6 +9,7 @@ import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.provider.MediaStore;
 import android.speech.RecognizerIntent;
 import android.support.design.widget.FloatingActionButton;
@@ -30,6 +31,7 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import java.util.ArrayList;
@@ -38,6 +40,7 @@ import java.util.Map;
 import gz.app.comdavid.apprende2.R;
 import gz.app.comdavid.apprende2.adapters.AdaptadorAvatar;
 import gz.app.comdavid.apprende2.clases.vo.ConexionSQLiteHelper;
+import gz.app.comdavid.apprende2.clases.vo.Preferencias;
 import gz.app.comdavid.apprende2.clases.vo.Utilidades;
 import gz.app.comdavid.apprende2.entidades.Usuario;
 import gz.app.comdavid.apprende2.interfaces.IComunicaFragments;
@@ -56,6 +59,8 @@ public class RegistroJugadorFragment extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+
+
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -192,7 +197,8 @@ edad.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
                 // Guardamos la preferencia del nombre usuario
                 usuario=campoNick.getText().toString();
                 //Llamamos el método ejecutarServicio y colocamos la url del servicio php
-                ejecutarServcio("http://192.168.0.2/BD_Apprende/insertar_jugador.php");
+                ejecutarServcio("https://appprende02.000webhostapp.com/insertar_jugador.php");
+
 
             }
         });
@@ -357,16 +363,25 @@ edad.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
                 String genero1 = parametros.put("genero",String.valueOf(finalGenero));
                 String avatar = parametros.put("avatar", String.valueOf(avatarId));
                 parametros.put("edad",valoredad.getText().toString());
+                SharedPreferences preferences= actividad.getSharedPreferences("avatar",Context.MODE_PRIVATE);
+                //Se define que se quieren almacenar o actualizar datos en la preferencia
+                SharedPreferences.Editor editor=preferences.edit();
+                //Se agrega el campo que se almacenara en la preferencia
+                editor.putString("avatar",String.valueOf(avatarId));
                 //Se retornan todos los datos mediante la instancia parametros
+
                 return parametros;
 
 
             }
         };
+
         // Se crea una instancia de la actividad
         RequestQueue requestQueue= Volley.newRequestQueue( actividad);
         // Se instancia el objeto stringRequest la cual ayuda a procesar las peticiones realizadas
         requestQueue.add(stringRequest);
+       // stringRequest.setRetryPolicy(new DefaultRetryPolicy(DefaultRetryPolicy.DEFAULT_TIMEOUT_MS * 2, DefaultRetryPolicy.DEFAULT_MAX_RETRIES, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+
 
         }
         // Mensaje de error solicitando la validación de los datos ingresados
