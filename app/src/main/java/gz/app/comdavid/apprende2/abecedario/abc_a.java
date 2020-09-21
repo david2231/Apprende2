@@ -12,7 +12,7 @@ import android.widget.ImageView;
 import gz.app.comdavid.apprende2.MainActivity;
 import gz.app.comdavid.apprende2.R;
 
-//prueba
+
 public class abc_a extends AppCompatActivity {
     //Declaramos las variables
     MediaPlayer mp;
@@ -25,7 +25,7 @@ public class abc_a extends AppCompatActivity {
         setContentView(R.layout.activity_abc_a);
         //Llamar el boton
         Button inicio= (Button) findViewById(R.id.casa_aa);
-        //Metodo OnClick
+        //Evento OnClick
         inicio.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

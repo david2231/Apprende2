@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/fondo3"
     tools:context="gz.app.comdavid.apprende2.juego3">
-
+    <!-- Relative Layout que contiene los objetos visuales -->
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -15,10 +15,12 @@
         android:layout_alignParentStart="true"
         android:id="@+id/relativeLayout">
 
+        <!-- Puntaje preguntas correctas-->
         <TextView
             android:id="@+id/puntaje3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingTop="100dp"
             android:paddingLeft="10dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
@@ -27,6 +29,8 @@
             android:textColor="@color/colorBlanco"
             android:textSize="40dp"
             app:fontFamily="sans-serif-black" />
+
+        <!--Botón de regresar al inicio-->
         <Button
             android:layout_width="50dp"
             android:layout_height="50dp"
@@ -36,6 +40,7 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true" />
 
+        <!--Campo de texto que tiene la letra U-->
         <TextView
             android:id="@+id/txta6"
             android:layout_width="wrap_content"
@@ -50,8 +55,8 @@
             android:textColor="@color/colorBlanco"
             android:textSize="50dp"/>
 
+        <!--Campo de texto que tiene la letra I-->
         <TextView
-
             android:id="@+id/txtjb6"
             android:layout_width="100dp"
             android:layout_height="60dp"
@@ -63,6 +68,7 @@
             android:layout_below="@+id/linearLayout"
             android:layout_centerHorizontal="true"/>
 
+        <!--Campo de texto que tiene la letra O-->
         <TextView
             android:id="@+id/txtjc3"
             android:layout_width="100dp"
@@ -78,6 +84,7 @@
             android:textColor="@color/colorBlanco"
             android:textSize="50dp"  />
 
+        <!--Imagen de Error-->
         <ImageView
             android:layout_width="100dp"
             android:layout_height="60dp"
@@ -85,6 +92,7 @@
             android:background="@drawable/error"
             android:visibility="gone" />
 
+        <!--Contenedor que tiene la palabra completa-->
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
@@ -95,6 +103,7 @@
             android:weightSum="1"
             android:id="@+id/linearLayout">
 
+            <!--Palabra Incompleta-->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -106,20 +115,14 @@
                 android:id="@+id/target3"
                 android:textSize="@dimen/notification_large_icon_width" />
 
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/linearLayout"
-                android:layout_centerHorizontal="true"
-                android:layout_alignBottom="@+id/txta6"></LinearLayout>
-
         </LinearLayout>
+
+        <!--Contador Incorrectas-->
         <TextView
             android:id="@+id/incorrectas3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingTop="100dp"
+            android:paddingTop="200dp"
             android:paddingLeft="10dp"
             android:gravity="left"
             android:text=""
@@ -129,18 +132,7 @@
             app:fontFamily="sans-serif-black" />
     </RelativeLayout>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="Small Text"
-        android:id="@+id/textView2"
-        android:layout_below="@+id/relativeLayout"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="99dp"
-        android:layout_marginStart="99dp" />
-
+    <!--Botón Avatar-->
     <Button
         android:layout_width="50dp"
         android:layout_height="50dp"

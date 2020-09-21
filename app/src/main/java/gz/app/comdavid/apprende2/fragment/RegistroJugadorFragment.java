@@ -178,6 +178,7 @@ edad.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
     public void onProgressChanged(SeekBar seekBar, int progess, boolean b) {
         // El campo valoredad va incrementándose cada vez que el usuario deslice el dedo sobre la barra
         valoredad.setText(progess +"");
+
     }
 
     @Override
@@ -231,66 +232,6 @@ edad.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
                 break;
         }
     }
-
-
-    private void registrarJugador() {
-        System.out.println("Registrar");
-
-        String genero1="";
-
-        if(radioM.isChecked()==true){
-            genero1="M";
-        }
-        else if (radioF.isChecked()==true){
-            genero1="F";
-        }
-        else{
-            genero1="No seleccionado";
-        }
-
-        if (!genero1.equals("No seleccionado") && campoNick.getText().toString()!=null && !campoNick.getText().toString().trim().equals("")){
-
-            int avatarId=Utilidades.avatarSeleccion.getId();
-            String nickname=campoNick.getText().toString();
-
-
-            String registro="Nombre: "+campoNick.getText().toString()+"\n";
-            registro+="Genero:" +genero1+"\n";
-            registro+="Avatar Id:" +Utilidades.avatarSeleccion.getId();
-
-            ConexionSQLiteHelper conn=new ConexionSQLiteHelper(actividad,Utilidades.NOMBRE_BD, null, 1 );
-
-            SQLiteDatabase db=conn.getWritableDatabase();
-
-            ContentValues values=new ContentValues();
-            values.put(Utilidades.CAMPO_NOMBRE,nickname);
-            values.put(Utilidades.CAMPO_GENERO,genero1);
-            values.put(Utilidades.CAMPO_AVATAR,avatarId);
-
-
-            Long idResultante=db.insert(Utilidades.TABLA_USUARIO,Utilidades.CAMPO_ID,values);
-
-            if(idResultante!=-1){
-
-                System.out.println("Registrar:" +registro);
-                Toast.makeText(actividad,"El Usuario fue registrado con exito \n"+idResultante+" - "+registro,Toast.LENGTH_SHORT).show();
-                campoNick.setText("");
-            }
-            else{
-
-                Toast.makeText(actividad,"No se pudo registar ",Toast.LENGTH_SHORT).show();
-            }
-            db.close();
-        }
-
-        else
-        {
-
-            Toast.makeText(actividad,"Verificar los datos! ",Toast.LENGTH_SHORT).show();
-        }
-    }
-
-
 
 
 //Metodo encargado de validar los datos ingresados, contiene un parametro de tipo string para almacenar la URL del web service
@@ -363,13 +304,12 @@ edad.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
                 String genero1 = parametros.put("genero",String.valueOf(finalGenero));
                 String avatar = parametros.put("avatar", String.valueOf(avatarId));
                 parametros.put("edad",valoredad.getText().toString());
-                SharedPreferences preferences= actividad.getSharedPreferences("avatar",Context.MODE_PRIVATE);
-                //Se define que se quieren almacenar o actualizar datos en la preferencia
-                SharedPreferences.Editor editor=preferences.edit();
-                //Se agrega el campo que se almacenara en la preferencia
-                editor.putString("avatar",String.valueOf(avatarId));
+                SharedPreferences preferencias= actividad.getSharedPreferences("avatars",Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor=preferencias.edit();
+                editor.putString("avatar", String.valueOf(avatarId));
+                //Mediante el metodo commit se guardan todos los cambios
+                editor.commit();
                 //Se retornan todos los datos mediante la instancia parametros
-
                 return parametros;
 
 

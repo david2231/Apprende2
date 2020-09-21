@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--Aqui se establece el contenedor principa y se establece un color predeterminado-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,35 +8,46 @@
     android:orientation="vertical"
     tools:context="gz.app.comdavid.apprende2.paint2">
 
+    <!--Contenedor de la botonera superior-->
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:layout_gravity="center"
         android:orientation="horizontal">
+
+        <!--Nuevo dibujo-->
         <ImageButton
             android:id="@+id/new_btn"
             android:layout_width="wrap_content"
             android:layout_height="fill_parent"
             android:contentDescription="@string/start_new"
             android:src="@drawable/new_pic"/>
+
+        <!--Pincel-->
         <ImageButton
             android:id="@+id/draw_btn"
             android:layout_width="wrap_content"
             android:layout_height="fill_parent"
             android:contentDescription="@string/brush"
             android:src="@drawable/brush"/>
+
+        <!--Borrador-->
         <ImageButton
             android:id="@+id/erase_btn"
             android:layout_width="wrap_content"
             android:layout_height="fill_parent"
             android:contentDescription="@string/erase"
             android:src ="@drawable/eraser"/>
+
+        <!--Guardar-->
         <ImageButton
             android:id="@+id/save_btn"
             android:layout_width="wrap_content"
             android:layout_height="fill_parent"
             android:contentDescription="@string/save"
             android:src="@drawable/save"/>
+
+        <!--Inicio-->
         <ImageButton
             android:id="@+id/casa_paint"
             android:layout_width="45dp"
@@ -43,6 +55,7 @@
             android:contentDescription="@string/save"
             android:background="@drawable/home"/>
     </LinearLayout>
+    <!--Se realiza el llamado a los tamaños del pincel que se encuentran en la actividad paint-->
     <gz.app.comdavid.apprende2.paint
         android:id="@+id/drawing"
         android:layout_width="fill_parent"
@@ -53,17 +66,22 @@
         android:layout_marginTop="3dp"
         android:layout_weight="1"
         android:background="#FFFFFFFF"/>
+
+    <!--Contenedor el cual almacena los colores-->
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:orientation="vertical">
-        <!-- Top Row -->
+
+        <!-- Fila superior -->
         <LinearLayout
             android:id="@+id/paint_colors"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
+
+            <!--Color Marron-->
             <ImageButton
                 android:layout_width="@dimen/large_brush"
                 android:layout_height="@dimen/large_brush"
@@ -76,6 +94,7 @@
                 android:tag="#FF660000">
             </ImageButton>
 
+            <!--Color Rojo-->
             <ImageButton
                 android:layout_width="@dimen/large_brush"
                 android:layout_height="@dimen/large_brush"
@@ -87,6 +106,7 @@
                 android:tag="#FFFF0000">
             </ImageButton>
 
+            <!--Color Naranja-->
             <ImageButton
                 android:layout_width="@dimen/large_brush"
                 android:layout_height="@dimen/large_brush"
@@ -98,6 +118,7 @@
                 android:tag="#FFFF6600">
             </ImageButton>
 
+            <!--Color Amarillo-->
             <ImageButton
                 android:layout_width="@dimen/large_brush"
                 android:layout_height="@dimen/large_brush"
@@ -109,6 +130,7 @@
                 android:tag="#FFFFCC00">
             </ImageButton>
 
+            <!--Color Verde-->
             <ImageButton
                 android:layout_width="@dimen/large_brush"
                 android:layout_height="@dimen/large_brush"
@@ -120,6 +142,7 @@
                 android:tag="#FF009900">
             </ImageButton>
 
+            <!--Color Azul claro-->
             <ImageButton
                 android:layout_width="@dimen/large_brush"
                 android:layout_height="@dimen/large_brush"
@@ -131,11 +154,14 @@
                 android:tag="#FF009999">
             </ImageButton>
         </LinearLayout>
-        <!-- Botton Row -->
+
+        <!-- Fila inferior  -->
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
+
+            <!-- Azul -->
             <ImageButton
                 android:layout_width="@dimen/large_brush"
                 android:layout_height="@dimen/large_brush"
@@ -147,6 +173,7 @@
                 android:tag="#FF0000FF">
             </ImageButton>
 
+            <!--Morado-->
             <ImageButton
                 android:layout_width="@dimen/large_brush"
                 android:layout_height="@dimen/large_brush"
@@ -158,6 +185,7 @@
                 android:tag="#FF990099">
             </ImageButton>
 
+            <!--Rosa-->
             <ImageButton
                 android:layout_width="@dimen/large_brush"
                 android:layout_height="@dimen/large_brush"
@@ -169,6 +197,7 @@
                 android:tag="#FFFF6666">
             </ImageButton>
 
+            <!--Blanco-->
             <ImageButton
                 android:layout_width="@dimen/large_brush"
                 android:layout_height="@dimen/large_brush"
@@ -180,6 +209,7 @@
                 android:tag="#FFFFFFFF">
             </ImageButton>
 
+            <!--Gris-->
             <ImageButton
                 android:layout_width="@dimen/large_brush"
                 android:layout_height="@dimen/large_brush"
@@ -191,6 +221,7 @@
                 android:tag="#FF787878">
             </ImageButton>
 
+            <!--Negro-->
             <ImageButton
                 android:layout_width="@dimen/large_brush"
                 android:layout_height="@dimen/large_brush"

@@ -1,22 +1,17 @@
 package gz.app.comdavid.apprende2;
-
-import android.content.ContentValues;
+//Librerias
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.database.sqlite.SQLiteDatabase;
-import android.graphics.drawable.Drawable;
-import android.os.Build;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -34,12 +29,12 @@ import gz.app.comdavid.apprende2.fragment.RegistroJugadorFragment;
 
 public class ResultadoJuegoActivity extends AppCompatActivity {
 
-    TextView txtResCorrectas,txtResIncorrectas,txtCorrectas,txtIncorrectas,txtResultados,txtPuntaje,txtResPuntaje;
-    FloatingActionButton btnInicio;
+    TextView txtResCorrectas,txtResIncorrectas,txtCorrectas,txtIncorrectas,txtResultados,txtPuntaje;
+    Button btnInicio;
     RelativeLayout layoutFondo;
     TextView textNickName;
     ImageView imagenAvatar;
-    String usuario;
+    String avatar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,22 +47,26 @@ public class ResultadoJuegoActivity extends AppCompatActivity {
         txtResCorrectas =findViewById(R.id.txtResPalabrasCorrectas);
         txtResIncorrectas=findViewById(R.id.txtResPalabrasIncorrectas);
         txtPuntaje =findViewById(R.id.txtPuntajeTitulo);
-        txtResPuntaje=findViewById(R.id.txtPuntaje);
         layoutFondo=findViewById(R.id.idLayoutFondo);
         textNickName=findViewById(R.id.textNickName);
         imagenAvatar=findViewById(R.id.avatarImage);
         txtResCorrectas.setText(Utilidades.correctas+"");
         txtResIncorrectas.setText(Utilidades.incorrectas+"");
-        txtResPuntaje.setText(Utilidades.puntaje+"");
+
 
         ejecutarServcios("https://appprende02.000webhostapp.com/insertar_puntaje.php");
         asignarValoresPreferencias();
-        btnInicio=findViewById(R.id.btnHome);
+        btnInicio=findViewById(R.id.inicioJuego1);
         btnInicio.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //Abrir una nueva actividad
+                Intent intent=new Intent(v.getContext(),juegos.class);
+                startActivityForResult(intent,0);
+                //Transiciones
+                overridePendingTransition(R.anim.right_in, R.anim.right_out);
+                //Finaliza la actividad
                 finish();
-
             }
         });
 
@@ -77,11 +76,45 @@ public class ResultadoJuegoActivity extends AppCompatActivity {
     private void asignarValoresPreferencias() {
 
         SharedPreferences preferences= getSharedPreferences("iniciousuario", Context.MODE_PRIVATE);
-        SharedPreferences preferencia= getSharedPreferences("avatar", Context.MODE_PRIVATE);
+        SharedPreferences preferencias= getSharedPreferences("avatars", Context.MODE_PRIVATE);
         textNickName.setText(preferences.getString("usuario", "ingrese usuario"));
-        txtPuntaje.setText(preferencia.getString("avatar", "ingrese usuario"));
-        usuario=textNickName.getText().toString();
+        txtPuntaje.setText(preferencias.getString("avatar", "sin avatar"));
+        txtPuntaje.setVisibility(View.GONE);
+        avatar=txtPuntaje.getText().toString();
 
+        if(avatar=="1"){
+            imagenAvatar.setImageResource(R.drawable.logofin);
+}
+        if(avatar=="2"){
+            imagenAvatar.setImageResource(R.drawable.avatar2);
+        }
+
+        if(avatar=="3"){
+            imagenAvatar.setImageResource(R.drawable.avatar3);
+        }
+
+        if(avatar=="4"){
+            imagenAvatar.setImageResource(R.drawable.avatar4);
+        }
+        if(avatar=="5"){
+            imagenAvatar.setImageResource(R.drawable.avatar5);
+        }
+        if(avatar=="6"){
+            imagenAvatar.setImageResource(R.drawable.avatar6);
+        }
+        if(avatar=="7"){
+            imagenAvatar.setImageResource(R.drawable.avatar7);
+        }
+        if(avatar=="8"){
+            imagenAvatar.setImageResource(R.drawable.avatar8);
+        }
+        if(avatar=="9"){
+            imagenAvatar.setImageResource(R.drawable.avatar9);
+        }
+
+        if(avatar=="10"){
+            imagenAvatar.setImageResource(R.drawable.avatar10);
+        }
     }
 
     private void registrarResultados() {
@@ -105,6 +138,7 @@ public class ResultadoJuegoActivity extends AppCompatActivity {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
+                Toast.makeText(ResultadoJuegoActivity.this,error.toString(),Toast.LENGTH_SHORT).show();
                 Toast.makeText(ResultadoJuegoActivity.this,error.toString(),Toast.LENGTH_SHORT).show();
             }
         }){

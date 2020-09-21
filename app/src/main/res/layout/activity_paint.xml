@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     android:gravity="center">
 
+    <!--Imagen con el punto mas pequeño-->
     <ImageButton
         android:id="@+id/small_brush"
         android:layout_width="wrap_content"
@@ -13,6 +14,7 @@
         android:contentDescription="@string/sml"
         android:src="@drawable/small"/>
 
+    <!--Imagen con el punto mediano-->
     <ImageButton
         android:id="@+id/medium_brush"
         android:layout_width="wrap_content"
@@ -21,6 +23,7 @@
         android:contentDescription="@string/med"
         android:src="@drawable/medium"/>
 
+    <!--Imagen con el punto mas grande-->
     <ImageButton
         android:id="@+id/large_brush"
         android:layout_width="wrap_content"
