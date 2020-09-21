@@ -1,5 +1,6 @@
+//Paquete
 package gz.app.comdavid.apprende2.Silabas;
-
+//Librerias
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
@@ -7,12 +8,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-
 import gz.app.comdavid.apprende2.R;
 import gz.app.comdavid.apprende2.juegosil6;
 import gz.app.comdavid.apprende2.silabas;
 
+//Metodo OnClick
 public class silaba_b extends  AppCompatActivity implements View.OnClickListener  {
+    //Declaramos las variables
     ImageView silba,silbas,silbe,silbes,silbo,silbos,silbis,silbi,silbu,silbus;
     MediaPlayer mpba;
     MediaPlayer mpbaa;
