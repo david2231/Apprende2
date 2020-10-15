@@ -50,7 +50,7 @@ public class Instruccion2Fragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-    private VideoView fragment1;
+    private VideoView fragment2;
 
 
     // TODO: Rename and change types of parameters
@@ -90,14 +90,14 @@ public class Instruccion2Fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        vista=inflater.inflate(R.layout.fragment_instruccion1,container, false);
+        vista=inflater.inflate(R.layout.fragment_instruccion2,container, false);
         // permite que no se bloquee el dispositivo //
         getActivity().getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
-        fragment1=(VideoView) vista.findViewById(R.id.Fragment1) ;
+        fragment2=(VideoView) vista.findViewById(R.id.Fragment2) ;
 
         String path=("android.resource://"+getActivity().getPackageName()+"/"+R.raw.fragment2);
-        fragment1.setVideoURI(Uri.parse(path));
-        fragment1.start();
+        fragment2.setVideoURI(Uri.parse(path));
+        fragment2.start();
 
 
         // Se infla el layout fragment_instruccion 3

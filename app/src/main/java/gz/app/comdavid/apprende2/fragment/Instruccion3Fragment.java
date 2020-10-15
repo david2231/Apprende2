@@ -92,7 +92,7 @@ public class Instruccion3Fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        vista=inflater.inflate(R.layout.fragment_instruccion1,container, false);
+        vista=inflater.inflate(R.layout.fragment_instruccion3,container, false);
         // permite que no se bloquee el dispositivo //
         getActivity().getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         fragment3=(VideoView) vista.findViewById(R.id.Fragment3) ;
@@ -100,8 +100,6 @@ public class Instruccion3Fragment extends Fragment {
         String path=("android.resource://"+getActivity().getPackageName()+"/"+R.raw.fragment3);
         fragment3.setVideoURI(Uri.parse(path));
         fragment3.start();
-        // Se infla el layout fragment_instruccion3
-        vista=inflater.inflate(R.layout.fragment_instruccion3, container, false);
         //Llamar el boton
         Button btnLanzarActivity = (Button) vista.findViewById(R.id.botoninicio);
         //Evento Onclick

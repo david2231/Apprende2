@@ -90,7 +90,7 @@ public class Instruccion1Fragment extends Fragment {
         getActivity().getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         fragment1=(VideoView) vista.findViewById(R.id.Fragment1) ;
 
-        String path=("android.resource://"+getActivity().getPackageName()+"/"+R.raw.fragment2);
+        String path=("android.resource://"+getActivity().getPackageName()+"/"+R.raw.fragment1);
         fragment1.setVideoURI(Uri.parse(path));
         fragment1.start();
 
