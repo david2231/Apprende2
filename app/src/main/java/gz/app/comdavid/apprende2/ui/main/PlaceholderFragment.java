@@ -30,8 +30,13 @@ public class PlaceholderFragment extends Fragment {
         //Se crea un switch case con las diferentes fragmentos creados
         switch (sectionNumber){
 
-            case 1: fragment=new Instruccion1Fragment(); break;
-            case 2: fragment=new Instruccion2Fragment(); break;
+            case 1: fragment=new Instruccion1Fragment(
+
+
+            ); break;
+            case 2: fragment=new Instruccion2Fragment(
+
+            ); break;
             case 3: fragment=new Instruccion3Fragment(); break;
 
         }

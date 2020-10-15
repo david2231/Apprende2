@@ -11,6 +11,30 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import gz.app.comdavid.apprende2.R;
+import android.media.MediaPlayer;
+import android.net.Uri;
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TextView;
+import android.widget.VideoView;
+import android.content.ActivityNotFoundException;
+import android.content.Intent;
+import android.media.MediaPlayer;
+import android.net.Uri;
+import android.speech.RecognizerIntent;
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.view.WindowManager;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
+import android.widget.VideoView;
+import gz.app.comdavid.apprende2.R;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -27,6 +51,9 @@ public class Instruccion3Fragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    MediaPlayer mp;
+    MediaPlayer mp2,mp4;
+    private VideoView fragment3;
     View vista;
     Button botoninicio;
 
@@ -64,6 +91,15 @@ public class Instruccion3Fragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+        vista=inflater.inflate(R.layout.fragment_instruccion1,container, false);
+        // permite que no se bloquee el dispositivo //
+        getActivity().getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+        fragment3=(VideoView) vista.findViewById(R.id.Fragment3) ;
+
+        String path=("android.resource://"+getActivity().getPackageName()+"/"+R.raw.fragment3);
+        fragment3.setVideoURI(Uri.parse(path));
+        fragment3.start();
         // Se infla el layout fragment_instruccion3
         vista=inflater.inflate(R.layout.fragment_instruccion3, container, false);
         //Llamar el boton
