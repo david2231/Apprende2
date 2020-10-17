@@ -1,4 +1,4 @@
-package gz.app.comdavid.apprende2;
+package gz.app.comdavid.apprende2.lectura;
 //Librerias
 import android.content.Context;
 import android.content.Intent;
@@ -20,12 +20,13 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import java.util.HashMap;
 import java.util.Map;
+
+import gz.app.comdavid.apprende2.R;
 import gz.app.comdavid.apprende2.clases.vo.Utilidades;
+import gz.app.comdavid.apprende2.juegos;
 
-
-// Clase ResultadoJuego
-public class ResultadoJuegoActivity extends AppCompatActivity {
-
+// Clase ResultadoJuegoLectura
+public class ResultadoJuegoLectura extends AppCompatActivity {
     // Se realiza la declaración de los textview
     TextView txtResCorrectas,txtResIncorrectas,txtCorrectas,txtIncorrectas,txtResultados,txtPuntaje,textNickName;
     // Se realiza la declaración del botón
@@ -39,25 +40,25 @@ public class ResultadoJuegoActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_resultado_juego);
+        setContentView(R.layout.activity_resultado_juego_lectura);
         //Se mantiene la pantalla activa
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         //Llamado a la texto resultado
-        txtResultados =findViewById(R.id.txtResultados);
+        txtResultados =findViewById(R.id.txtResultadosLectura);
         //Llamado al campo variables correctas
-        txtCorrectas =findViewById(R.id.txtPalabrasCorrectas);
+        txtCorrectas =findViewById(R.id.txtPalabrasCorrectasLectura);
         //Llamado al campo variables incorrectas
-        txtIncorrectas=findViewById(R.id.txtPalabrasIncorrectas);
+        txtIncorrectas=findViewById(R.id.txtPalabrasIncorrectasLectura);
         //Llamado al texto Incorrectas
-        txtResCorrectas =findViewById(R.id.txtResPalabrasCorrectas);
+        txtResCorrectas =findViewById(R.id.txtResPalabrasCorrectasLectura);
         //Llamado al campo variables incorrectas
-        txtResIncorrectas=findViewById(R.id.txtResPalabrasIncorrectas);
+        txtResIncorrectas=findViewById(R.id.txtResPalabrasIncorrectasLectura);
         //Permite almacenar el id del avatar
-        txtPuntaje =findViewById(R.id.txtPuntajeTitulo);
+        txtPuntaje =findViewById(R.id.txtPuntajeTituloLectura);
         //Permite almacenar el nombre del usuario
-        textNickName=findViewById(R.id.textNickName);
+        textNickName=findViewById(R.id.textNickNameLectura);
         //llama la Imagen del usuario
-        imagenAvatar=findViewById(R.id.avatarImage);
+        imagenAvatar=findViewById(R.id.avatarImageLectura);
         //Actualiza el campo correctas
         txtResCorrectas.setText(Utilidades.correctas+"");
         //Actualiza el campo incorrectas
@@ -67,16 +68,20 @@ public class ResultadoJuegoActivity extends AppCompatActivity {
         ejecutarServcios("https://appprende02.000webhostapp.com/insertar_puntaje.php");
         //Llamado al metodo asignarValoresPreferencias
         asignarValoresPreferencias();
+
         //evento del botón inicio
-        btnInicio=findViewById(R.id.inicioJuego1);
+        btnInicio=findViewById(R.id.inicioJuego1Lectura);
         btnInicio.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //Abrir una nueva actividad
-                Intent intent=new Intent(v.getContext(),juegos.class);
+                Intent intent=new Intent(v.getContext(), juegos.class);
                 startActivityForResult(intent,0);
                 //Transiciones
                 overridePendingTransition(R.anim.right_in, R.anim.right_out);
+                //Reinicia las variables globales
+                Utilidades.correctas=0;
+                Utilidades.incorrectas=0;
                 //Finaliza la actividad
                 finish();
             }
@@ -86,6 +91,7 @@ public class ResultadoJuegoActivity extends AppCompatActivity {
 
     //Metodo que almacena las preferencias
     private void asignarValoresPreferencias() {
+
         //Llamado a la preferencia nombre de uusario
         SharedPreferences preferences= getSharedPreferences("iniciousuario", Context.MODE_PRIVATE);
         //Llamado a la preferencia id de avatar
@@ -95,9 +101,9 @@ public class ResultadoJuegoActivity extends AppCompatActivity {
         //Se actualiza el campo con el ID del avatar
         txtPuntaje.setText(preferencias.getString("avatar", "sin avatar"));
         txtPuntaje.setVisibility(View.GONE);
-
         //Creación de una variable para almacenar el campo
         avatar=txtPuntaje.getText().toString();
+
         //Se convierte la variable a entero
         int  avatars= Integer.parseInt(avatar);
 
@@ -189,43 +195,41 @@ public class ResultadoJuegoActivity extends AppCompatActivity {
 
     }
 
-
     //Metodo encargado de validar los datos ingresados, contiene un parametro de tipo string para almacenar la URL del web service
     private void ejecutarServcios(String URL){
         StringRequest stringRequest=new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-            Toast.makeText(ResultadoJuegoActivity.this,"exito",Toast.LENGTH_SHORT).show();
+                Toast.makeText(ResultadoJuegoLectura.this,"exito",Toast.LENGTH_SHORT).show();
 
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(ResultadoJuegoActivity.this,error.toString(),Toast.LENGTH_SHORT).show();
-                Toast.makeText(ResultadoJuegoActivity.this,error.toString(),Toast.LENGTH_SHORT).show();
+                Toast.makeText(ResultadoJuegoLectura.this,error.toString(),Toast.LENGTH_SHORT).show();
+                Toast.makeText(ResultadoJuegoLectura.this,error.toString(),Toast.LENGTH_SHORT).show();
             }
         }){
 
 
-                // Metodo getParams que contiene los parametros que el servicio necesita para devolver una respuesta
-                protected Map<String, String> getParams() throws AuthFailureError {
+            // Metodo getParams que contiene los parametros que el servicio necesita para devolver una respuesta
+            protected Map<String, String> getParams() throws AuthFailureError {
 
-                    Map<String,String> parametros=new HashMap<String, String>();
-                    String Correctas = parametros.put("Correctas",String.valueOf(Utilidades.correctas));
-                    String Incorrectas = parametros.put("Incorrectas",String.valueOf(Utilidades.incorrectas));
-                    parametros.put("nombre_usuario",textNickName.getText().toString());
-                    //Se retornan todos los datos mediante la instancia parametros
+                Map<String,String> parametros=new HashMap<String, String>();
+                String Correctas = parametros.put("Correctas",String.valueOf(Utilidades.correctas));
+                String Incorrectas = parametros.put("Incorrectas",String.valueOf(Utilidades.incorrectas));
+                parametros.put("nombre_usuario",textNickName.getText().toString());
+                //Se retornan todos los datos mediante la instancia parametros
 
-                    return parametros;
+                return parametros;
 
 
-                }
-            };
-            // Haciendo uso de la clase RequestQueue Se crea una instancia de la actividad
-            RequestQueue requestQueue= Volley.newRequestQueue(this);
-            // Se instancia el objeto stringRequest la cual ayuda a procesar las peticiones realizadas
-            requestQueue.add(stringRequest);
-
-        }
+            }
+        };
+        // Haciendo uso de la clase RequestQueue Se crea una instancia de la actividad
+        RequestQueue requestQueue= Volley.newRequestQueue(this);
+        // Se instancia el objeto stringRequest la cual ayuda a procesar las peticiones realizadas
+        requestQueue.add(stringRequest);
+    }
 
 }

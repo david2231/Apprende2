@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="gz.app.comdavid.apprende2" >
+    package="gz.app.comdavid.apprende2">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
@@ -17,13 +17,17 @@
         android:networkSecurityConfig="@xml/network_security_config"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-        android:usesCleartextTraffic="true" >
-        <activity android:name=".ResultadoJuegoActivity"
+        android:usesCleartextTraffic="true">
+
+        <activity android:name=".lectura.ResultadoJuegoLectura"
             android:screenOrientation="landscape"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
-        </activity>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
         <activity
-            android:name=".ContenedorInstrucciones"
+            android:name=".ResultadoJuegoActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".ui.ContenedorInstrucciones"
             android:label="@string/title_activity_contenedor_instrucciones"
             android:screenOrientation="landscape"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
@@ -46,7 +50,7 @@
         <activity
             android:name=".splashscreen"
             android:screenOrientation="landscape"
-            android:theme="@style/Theme.AppCompat.NoActionBar" >
+            android:theme="@style/Theme.AppCompat.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -58,20 +62,20 @@
             android:screenOrientation="landscape"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".vocales"
+            android:name=".vocales.vocales"
             android:screenOrientation="landscape"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".vocales_e"
+            android:name=".vocales.vocales_e"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".vocales_i"
+            android:name=".vocales.vocales_i"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".vocales_o"
+            android:name=".vocales.vocales_o"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".vocales_u"
+            android:name=".vocales.vocales_u"
             android:screenOrientation="landscape" />
         <activity
             android:name=".abecedario.abc_a"
@@ -236,7 +240,7 @@
             android:name=".juego99"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".escribir"
+            android:name=".lectura.lectura1"
             android:screenOrientation="landscape" />
         <activity
             android:name=".ABC_Drawable.Drawable_letter_aa"
@@ -519,31 +523,31 @@
             android:name=".paint2"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".lectura2"
+            android:name=".lectura.lectura2"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".lectura3"
+            android:name=".lectura.lectura3"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".lectura4"
+            android:name=".lectura.lectura4"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".lectura5"
+            android:name=".lectura.lectura5"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".lectura6"
+            android:name=".lectura.lectura6"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".lectura7"
+            android:name=".lectura.lectura7"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".lectura8"
+            android:name=".lectura.lectura8"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".lectura9"
+            android:name=".lectura.lectura9"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".lectura10"
+            android:name=".lectura.lectura10"
             android:screenOrientation="landscape" />
         <activity
             android:name=".inicio2"

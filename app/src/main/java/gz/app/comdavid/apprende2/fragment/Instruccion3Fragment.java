@@ -10,6 +10,8 @@ import android.widget.Button;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.widget.VideoView;
+
 import gz.app.comdavid.apprende2.R;
 import android.media.MediaPlayer;
 import android.net.Uri;
@@ -55,6 +57,7 @@ public class Instruccion3Fragment extends Fragment {
     MediaPlayer mp2,mp4;
     private VideoView fragment3;
     View vista;
+    private VideoView azul;
     Button botoninicio;
 
     public Instruccion3Fragment() {

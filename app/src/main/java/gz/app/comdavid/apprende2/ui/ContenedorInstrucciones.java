@@ -1,4 +1,4 @@
-package gz.app.comdavid.apprende2;
+package gz.app.comdavid.apprende2.ui;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -15,6 +15,7 @@ import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
+import gz.app.comdavid.apprende2.R;
 import gz.app.comdavid.apprende2.fragment.Instruccion1Fragment;
 import gz.app.comdavid.apprende2.fragment.Instruccion2Fragment;
 import gz.app.comdavid.apprende2.fragment.Instruccion3Fragment;

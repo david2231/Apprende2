@@ -42,4 +42,5 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
         // Muestra la cantidad total de paginas
         return 3;
     }
+
 }

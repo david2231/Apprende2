@@ -16,6 +16,7 @@ import gz.app.comdavid.apprende2.fragment.IncioFragment;
 import gz.app.comdavid.apprende2.fragment.ConsultarListaUsuarioFragment;
 import gz.app.comdavid.apprende2.fragment.RegistroJugadorFragment;
 import gz.app.comdavid.apprende2.interfaces.IComunicaFragments;
+import gz.app.comdavid.apprende2.ui.ContenedorInstrucciones;
 
 //Desde el Api 15 en adelante es necesario agregar en el implements la referencia al fragmento instanciado
 public class MainActivity3 extends AppCompatActivity implements IComunicaFragments,IncioFragment.OnFragmentInteractionListener,RegistroJugadorFragment.OnFragmentInteractionListener,GestionJugadorFragment.OnFragmentInteractionListener,ConsultarListaUsuarioFragment.OnFragmentInteractionListener{

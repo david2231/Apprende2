@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="gz.app.comdavid.apprende2.ContenedorInstrucciones">
+    tools:context="gz.app.comdavid.apprende2.ui.ContenedorInstrucciones">
 <RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent">

@@ -9,16 +9,16 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="gz.app.comdavid.apprende2.inicio"
     android:background="@drawable/inicio1">
-
+    <!-- Contenedor principal-->
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_centerVertical="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-
         android:id="@+id/relativeLayout3">
 
+        <!-- Botón modulo lectura-->
         <ImageButton
             android:layout_width="70dp"
             android:layout_height="70dp"
@@ -30,6 +30,7 @@
             android:layout_toLeftOf="@+id/imageButton4"
             android:layout_toStartOf="@+id/imageButton4" />
 
+        <!-- Botón modulo escritura-->
         <ImageButton
             android:layout_width="70dp"
             android:layout_height="70dp"
@@ -39,6 +40,7 @@
             android:layout_alignLeft="@+id/imageButton"
             android:layout_alignStart="@+id/imageButton" />
 
+        <!-- Botón avatar-->
         <ImageButton
             android:layout_width="50dp"
             android:layout_height="50dp"
@@ -48,6 +50,7 @@
             android:layout_alignParentEnd="true"
             android:background="@drawable/sonido" />
 
+        <!-- Botón avatar silenciado-->
         <ImageButton
             android:layout_width="50dp"
             android:layout_height="50dp"
@@ -58,11 +61,11 @@
             android:layout_alignParentEnd="true"
             android:visibility="invisible" />
 
+        <!-- Opción instrucciones-->
         <Button
             android:id="@+id/button18"
             style="?android:attr/buttonStyleSmall"
             android:layout_width="40dp"
-
             android:layout_height="40dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
@@ -70,6 +73,7 @@
             android:background="@drawable/info" />
     </RelativeLayout>
 
+    <!-- Botón salida-->
     <ImageButton
         android:layout_width="50dp"
         android:layout_height="50dp"

@@ -19,7 +19,7 @@ import gz.app.comdavid.apprende2.clases.vo.Utilidades;
 
 // Clase de la actividad juego
 public class juego2 extends AppCompatActivity {
-    // Se realiza la declaración de los TexView declarados en la interfaz
+    // Se realiza la declaración de los TexView de la interfaz
     TextView txta1,txta2,txta3,txta4,puntajes,incorrecta;
     // Se realiza la declaración de los sonidos
     MediaPlayer mp,mp2,sonidoavatar;

@@ -3,10 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
 
-    tools:context="gz.app.comdavid.apprende2.lectura10">
+    tools:context="gz.app.comdavid.apprende2.lectura.lectura10">
 
-
+    <!-- Contenedor del video-->
     <VideoView
         android:id="@+id/rubirosado"
         android:layout_width="match_parent"
@@ -14,10 +15,24 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentTop="true"
         android:layout_centerInParent="true" >
-
-
     </VideoView>
 
+    <!-- Puntaje preguntas correctas-->
+    <TextView
+        android:id="@+id/puntajeLectura10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="50dp"
+        android:paddingLeft="10dp"
+        android:layout_alignParentTop="true"
+        android:gravity="left"
+        android:text="0"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/colorBlanco"
+        android:textSize="40dp"
+        app:fontFamily="sans-serif-black" />
+
+    <!-- Botón microfono-->
     <ImageButton
         android:id="@+id/img_btn_hablar10"
         android:layout_width="50dp"
@@ -29,6 +44,7 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 
+    <!-- Texto actualizado luego de la grabación-->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -39,6 +55,7 @@
         android:phoneNumber="false"
         android:textSize="30dp" />
 
+    <!-- Texto actualizado luego de la grabación-->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -50,6 +67,7 @@
         android:textSize="30dp"
         android:visibility="gone" />
 
+    <!-- Botón inicio-->
     <Button
         android:layout_width="50dp"
         android:layout_height="50dp"
@@ -59,6 +77,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
+    <!-- Botón play-->
     <Button
         android:layout_width="50dp"
         android:layout_height="50dp"
@@ -69,6 +88,7 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 
+    <!-- Botón Anterior-->
     <Button
         android:layout_width="50dp"
         android:layout_height="50dp"
@@ -77,6 +97,7 @@
         android:layout_alignBottom="@+id/img_btn_hablar10"
         android:layout_centerHorizontal="true" />
 
+    <!-- Botón volver a reproducir el video-->
     <Button
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -85,5 +106,19 @@
         android:layout_above="@+id/anterior_lectura10"
         android:layout_below="@+id/txtGrabarVoz10"
         android:background="@android:color/transparent" />
+
+    <!--Contador de palabras incorrectas-->
+    <TextView
+        android:id="@+id/incorrectasLectura10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="150dp"
+        android:paddingLeft="10dp"
+        android:gravity="left"
+        android:text="0"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/colorBlanco"
+        android:textSize="40dp"
+        app:fontFamily="sans-serif-black" />
 
 </RelativeLayout>

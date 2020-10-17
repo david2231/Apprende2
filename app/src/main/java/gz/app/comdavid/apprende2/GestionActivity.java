@@ -16,6 +16,7 @@ import gz.app.comdavid.apprende2.fragment.GestionJugadorFragment;
 import gz.app.comdavid.apprende2.fragment.IncioFragment;
 import gz.app.comdavid.apprende2.fragment.RegistroJugadorFragment;
 import gz.app.comdavid.apprende2.interfaces.IComunicaFragments;
+import gz.app.comdavid.apprende2.ui.ContenedorInstrucciones;
 
 
 public class GestionActivity extends AppCompatActivity implements IComunicaFragments,IncioFragment.OnFragmentInteractionListener,RegistroJugadorFragment.OnFragmentInteractionListener,GestionJugadorFragment.OnFragmentInteractionListener,ConsultarListaUsuarioFragment.OnFragmentInteractionListener{
