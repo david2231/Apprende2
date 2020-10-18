@@ -23,7 +23,7 @@ public class splashscreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splashscreen);
         azul=(VideoView) findViewById(R.id.intros) ;
-        String path=("android.resource://"+getPackageName()+"/"+R.raw.introporfin);
+        String path=("android.resource://"+getPackageName()+"/"+R.raw.splash);
         azul.setVideoURI(Uri.parse(path));
         azul.start();
         //A través de la clase Handler y luego de 2 segundos se pasara a una actividad
@@ -56,7 +56,7 @@ public class splashscreen extends AppCompatActivity {
 
 
             }
-        },1000);
+        },6000);
 
 
     }
