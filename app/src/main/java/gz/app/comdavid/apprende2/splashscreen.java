@@ -1,5 +1,5 @@
 package gz.app.comdavid.apprende2;
-
+// Librerias
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -8,23 +8,24 @@ import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.VideoView;
-
 import gz.app.comdavid.apprende2.ui.ContenedorInstrucciones;
 
-
+// Clase splashscreen
 public class splashscreen extends AppCompatActivity {
+    // Declaración de la vista del video
     private VideoView azul;
-    public static final String AVATAR_ID="avatarId";
-    public static int jugadorId;
-
 
     @Override
+    // Metodo onCreate
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splashscreen);
+        // Llamado al video declarado en la vista
         azul=(VideoView) findViewById(R.id.intros) ;
+        // Llamado al video en la carpeta de recuros
         String path=("android.resource://"+getPackageName()+"/"+R.raw.splash);
         azul.setVideoURI(Uri.parse(path));
+        // Reproduce el video
         azul.start();
         //A través de la clase Handler y luego de 2 segundos se pasara a una actividad
         new Handler().postDelayed(new Runnable() {
@@ -44,8 +45,6 @@ public class splashscreen extends AppCompatActivity {
                 }
                  //Si es falsa  muestre la actividad con el fragment de registro
                 else{
-
-
                     Intent intent2=new Intent(splashscreen.this, ContenedorInstrucciones.class);
                     startActivity(intent2);
                     overridePendingTransition(R.anim.left_in, R.anim.left_out);
@@ -54,10 +53,8 @@ public class splashscreen extends AppCompatActivity {
 
                 finish();
 
-
             }
         },6000);
-
 
     }
 

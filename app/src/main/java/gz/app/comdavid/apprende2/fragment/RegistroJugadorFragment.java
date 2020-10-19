@@ -2,15 +2,12 @@
 package gz.app.comdavid.apprende2.fragment;
 import android.app.Activity;
 import android.content.ActivityNotFoundException;
-import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.database.sqlite.SQLiteDatabase;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
-import android.provider.MediaStore;
 import android.speech.RecognizerIntent;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
@@ -20,6 +17,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.RadioButton;
@@ -31,7 +29,6 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import java.util.ArrayList;
@@ -39,10 +36,7 @@ import java.util.HashMap;
 import java.util.Map;
 import gz.app.comdavid.apprende2.R;
 import gz.app.comdavid.apprende2.adapters.AdaptadorAvatar;
-import gz.app.comdavid.apprende2.clases.vo.ConexionSQLiteHelper;
-import gz.app.comdavid.apprende2.clases.vo.Preferencias;
 import gz.app.comdavid.apprende2.clases.vo.Utilidades;
-import gz.app.comdavid.apprende2.entidades.Usuario;
 import gz.app.comdavid.apprende2.interfaces.IComunicaFragments;
 
 
@@ -72,14 +66,24 @@ public class RegistroJugadorFragment extends Fragment {
     View vista;
     //Comunicamos los fragmentos mediante la interfaz IComunicaFragment
     IComunicaFragments iComunicaFragments;
+    // Declaracion de la vista de avatars
     RecyclerView recyclerAvatars;
+    // Botón Flotante
     FloatingActionButton fabregistro;
+    // Botón Microfono
     ImageButton img_btn_Usuarios;
+    // Nombre de usuario
     EditText campoNick;
+    // Barra de progresoEdad
     SeekBar edad;
-    TextView valoredad,grabar;
+    // Texto que trae valores ingresados por el usuario
+    TextView valoredad,grabar,TxtRol;
+    // Radio Button
     RadioButton radioM,radioF;
+    // Nombre Usuario
     String usuario;
+    // Sonido Avatar
+    MediaPlayer mp;
     public static String nickName;
 
     private static final int RECOGNIZE_SPEECH_ACTIVITY = 1;
@@ -132,6 +136,7 @@ public class RegistroJugadorFragment extends Fragment {
         //Campo Nombre de usuario
         campoNick=vista.findViewById(R.id.campoNickName);
         campoNick=(EditText)vista.findViewById(R.id.campoNickName);
+        TxtRol=(TextView) vista.findViewById(R.id.TxtRol);
         //Radio Button genero del usuario
         radioF=vista.findViewById(R.id.radioF);
         radioM=vista.findViewById(R.id.radioM);
@@ -145,9 +150,23 @@ public class RegistroJugadorFragment extends Fragment {
         grabar = (TextView) vista.findViewById(R.id.usuariotext);
         // Botón que habilita el microfono en el dispositivo
         img_btn_Usuarios=(ImageButton)vista.findViewById(R.id.img_btn_Usuarios);
+        Button sonidoavatar = (Button)vista.findViewById(R.id.Avatar_Registro);
+        mp.start();
         // Llamamos el método recuperarDatos que contiene las preferencias del nombre del usuario
         recuperarDatos();
 
+
+        //Se declara una variable para llamar el audio
+        mp= MediaPlayer.create(getContext(),R.raw.sonidoa);
+        //evento del botón avatar
+        sonidoavatar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Iniciar audio
+                mp.start();
+
+            }
+        });
         // Creamos el evento para el boton img_btn_Usuarios
         img_btn_Usuarios.setOnClickListener(new View.OnClickListener() {
 
@@ -303,6 +322,7 @@ edad.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
                 parametros.put("nombre",usuario);
                 String genero1 = parametros.put("genero",String.valueOf(finalGenero));
                 String avatar = parametros.put("avatar", String.valueOf(avatarId));
+                parametros.put("rol",TxtRol.getText().toString());
                 parametros.put("edad",valoredad.getText().toString());
                 SharedPreferences preferencias= actividad.getSharedPreferences("avatars",Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor=preferencias.edit();

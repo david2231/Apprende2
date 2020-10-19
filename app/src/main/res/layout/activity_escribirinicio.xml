@@ -21,6 +21,8 @@
             android:layout_marginStart="73dp"
             android:layout_marginLeft="73dp"
             android:layout_marginTop="4dp"
+            android:text="102"
+            android:textColor="@color/colorTransparente"
             android:layout_toEndOf="@+id/casa_escribe"
             android:layout_toRightOf="@+id/casa_escribe"
             android:background="@drawable/vocales" />

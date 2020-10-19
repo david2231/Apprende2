@@ -9,12 +9,14 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="gz.app.comdavid.apprende2.juegosil">
 
+    <!--Contenedor Principal-->
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true">
 
+        <!--Imagén  de la silaba -->
         <ImageView
             android:layout_width="300dp"
             android:layout_height="120dp"
@@ -23,6 +25,7 @@
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true" />
 
+        <!--Imagén  cerebro-->
         <ImageView
             android:layout_width="100dp"
             android:layout_height="100dp"
@@ -32,6 +35,7 @@
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true" />
 
+        <!--Imagén  casa-->
         <ImageButton
             android:layout_width="100dp"
             android:layout_height="100dp"
@@ -40,6 +44,7 @@
             android:layout_alignTop="@+id/siljuegocuc"
             android:layout_centerHorizontal="true" />
 
+        <!--Imagén  cucaracha-->
         <ImageButton
             android:layout_width="100dp"
             android:layout_height="100dp"
@@ -49,6 +54,7 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true" />
 
+        <!--Botón inicio-->
         <Button
             android:layout_width="50dp"
             android:layout_height="50dp"
@@ -58,6 +64,7 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true" />
 
+        <!--Imagén  error-->
         <ImageView
             android:layout_width="100dp"
             android:layout_height="100dp"
@@ -68,6 +75,7 @@
             android:layout_alignEnd="@+id/casa_sil1"
             android:visibility="gone" />
 
+        <!--Imagén cuando la opción este correcta-->
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -81,13 +89,11 @@
             android:layout_toEndOf="@+id/silerror"
             android:layout_toRightOf="@+id/silerror"
             android:layout_above="@+id/casa_sil1">
-
-
-
         </RelativeLayout>
 
-
     </RelativeLayout>
+
+    <!--Botón avatar-->
     <Button
         android:layout_width="50dp"
         android:layout_height="50dp"

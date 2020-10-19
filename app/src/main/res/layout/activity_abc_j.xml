@@ -5,6 +5,8 @@
     android:layout_height="match_parent"
     android:background="@drawable/fondo3"
     tools:context="gz.app.comdavid.apprende2.abecedario.abc_j">
+
+    <!-- Declaración del contenedor principal-->
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -12,6 +14,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true">
 
+        <!-- Se declara la imagen -->
         <ImageView
             android:layout_width="500dp"
             android:layout_height="300dp"
@@ -20,6 +23,7 @@
             android:layout_above="@+id/casa_j"
             android:layout_centerHorizontal="true" />
 
+        <!-- Botón inicio-->
         <Button
             android:layout_width="50dp"
             android:layout_height="50dp"
@@ -29,6 +33,7 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true" />
 
+        <!-- Botón siguiente-->
         <Button
             android:layout_width="50dp"
             android:layout_height="50dp"
@@ -38,16 +43,17 @@
             android:layout_toRightOf="@+id/anterioir_j"
             android:layout_toEndOf="@+id/anterioir_j" />
 
+        <!-- Botón avatar-->
         <Button
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:id="@+id/sonido_j"
             android:background="@drawable/sonido"
-
             android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true" />
 
+        <!-- Botón anterior-->
         <Button
             android:layout_width="50dp"
             android:layout_height="50dp"

@@ -1,16 +1,10 @@
 package gz.app.comdavid.apprende2.clases.vo;
 
-import android.app.Activity;
-import android.content.Context;
-import android.content.SharedPreferences;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
-
+//Librerias
 import java.util.ArrayList;
-
 import gz.app.comdavid.apprende2.R;
-import gz.app.comdavid.apprende2.clases.vo.JugadorVo;
 
+//Clase que puede ser accedida desde cualquier lugar de la aplicación
 public class Utilidades {
     //Se crean variables estaticas
     public static ArrayList<AvatarVo> listaAvatars=null;
@@ -24,16 +18,9 @@ public class Utilidades {
     public static int puntaje;
     //Variable estatica que alamacena las respuestas incorrectas
     public static int incorrectas;
-    public static int Nombre_Jugador;
-    public static final String NOMBRE_BD="apprende_bd";
 
-    //Constantes para la tabla usuario
-    public static final String TABLA_USUARIO="jugador";
-    public static final String CAMPO_ID="id";
-    public static final String CAMPO_NOMBRE="nombre";
-    public static final String CAMPO_GENERO="genero";
-    public static final String CAMPO_AVATAR="avatar";
-    public static final String CREAR_TABLA_JUGADOR="CREATE TABLE "+TABLA_USUARIO+" ("+CAMPO_ID+" INTEGER PRIMARY KEY, "+CAMPO_NOMBRE+" TEXT,"+CAMPO_GENERO+" TEXT,"+CAMPO_AVATAR+" INTEGER)";
+
+
     // Metodo estatico que contiene el listado de los avatars
     public static void obtenerListaAvatars(){
         // Creación de un array de tipo lista
@@ -70,31 +57,4 @@ public class Utilidades {
         avatarSeleccion=listaAvatars.get(0);
 
     }
-
-    public static void consultarListaJugadores(Activity actividad){
-
-        ConexionSQLiteHelper conn=new ConexionSQLiteHelper(actividad,NOMBRE_BD, null, 1);
-        SQLiteDatabase db=conn.getReadableDatabase();
-
-        JugadorVo jugador=null;
-        listaJugadores=new ArrayList<JugadorVo>();
-
-        Cursor cursor=db.rawQuery("SELECT * FROM "+Utilidades.TABLA_USUARIO,null);
-
-
-        while (cursor.moveToNext()){
-            jugador=new JugadorVo();
-            jugador.setId(cursor.getInt(0));
-            jugador.setNombre(cursor.getString(1));
-            jugador.setGenero(cursor.getString(2));
-            jugador.setAvatar(cursor.getInt(3));
-
-            listaJugadores.add(jugador);
-        }
-
-        db.close();
-
-    }
-
-
 }

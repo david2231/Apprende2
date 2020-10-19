@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#FFCCCCCC"
     android:orientation="vertical"
-    tools:context="gz.app.comdavid.apprende2.paint2">
+    tools:context="gz.app.comdavid.apprende2.Paint.paint2">
 
     <!--Contenedor de la botonera superior-->
     <LinearLayout
@@ -56,7 +56,7 @@
             android:background="@drawable/home"/>
     </LinearLayout>
     <!--Se realiza el llamado a los tamaños del pincel que se encuentran en la actividad paint-->
-    <gz.app.comdavid.apprende2.paint
+    <gz.app.comdavid.apprende2.Paint.paint
         android:id="@+id/drawing"
         android:layout_width="fill_parent"
         android:layout_height="0dp"

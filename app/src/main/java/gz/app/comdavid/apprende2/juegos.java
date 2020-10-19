@@ -11,6 +11,8 @@ import android.widget.ImageButton;
 
 import java.io.IOException;
 
+import gz.app.comdavid.apprende2.Juegos.Vocales.juego;
+
 // Clase juegos
 public class juegos extends AppCompatActivity {
     // Se realiza el llamado de los sonidos
@@ -18,7 +20,7 @@ public class juegos extends AppCompatActivity {
     ImageButton silencio;
     // Se realiza el llamado a la imagen sonido activo
     Button silbos;
-    // switch que permite cambiar de español a ingles
+
 
     //Metodo onCreate
     @Override
@@ -82,7 +84,7 @@ public class juegos extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //Abrir una nueva actividad
-                Intent intent=new Intent(v.getContext(),juego.class);
+                Intent intent=new Intent(v.getContext(), juego.class);
                 startActivityForResult(intent,0);
                 //Transiciones
                 overridePendingTransition(R.anim.left_in, R.anim.left_out);

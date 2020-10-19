@@ -71,8 +71,18 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
             android:background="@drawable/info" />
-    </RelativeLayout>
 
+        <!-- Almacena el nombre de usuario-->
+        <TextView
+            android:id="@+id/Nombre_user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:visibility="gone">
+        </TextView>
+
+
+    </RelativeLayout>
     <!-- Botón salida-->
     <ImageButton
         android:layout_width="50dp"

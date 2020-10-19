@@ -4,10 +4,9 @@
     android:layout_height="fill_parent"
     android:background="@color/colorPrimaryDark"
     android:orientation="horizontal"
-
     tools:context="gz.app.comdavid.apprende2.fragment.Instruccion1Fragment">
 
-    <!-- TODO: Update blank fragment layout -->
+    <!-- Declaración de la vista del video -->
     <VideoView
         android:id="@+id/Fragment3"
         android:layout_width="fill_parent"

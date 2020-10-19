@@ -9,17 +9,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Toast;
 
-import gz.app.comdavid.apprende2.clases.vo.ConexionSQLiteHelper;
 import gz.app.comdavid.apprende2.clases.vo.Utilidades;
 import gz.app.comdavid.apprende2.fragment.GestionJugadorFragment;
 import gz.app.comdavid.apprende2.fragment.IncioFragment;
-import gz.app.comdavid.apprende2.fragment.ConsultarListaUsuarioFragment;
 import gz.app.comdavid.apprende2.fragment.RegistroJugadorFragment;
 import gz.app.comdavid.apprende2.interfaces.IComunicaFragments;
 import gz.app.comdavid.apprende2.ui.ContenedorInstrucciones;
 
 //Desde el Api 15 en adelante es necesario agregar en el implements la referencia al fragmento instanciado
-public class MainActivity3 extends AppCompatActivity implements IComunicaFragments,IncioFragment.OnFragmentInteractionListener,RegistroJugadorFragment.OnFragmentInteractionListener,GestionJugadorFragment.OnFragmentInteractionListener,ConsultarListaUsuarioFragment.OnFragmentInteractionListener{
+public class MainActivity3 extends AppCompatActivity implements IComunicaFragments,IncioFragment.OnFragmentInteractionListener,RegistroJugadorFragment.OnFragmentInteractionListener,GestionJugadorFragment.OnFragmentInteractionListener{
     //Se crean las referencias a las instancias de los fragmentos
     Fragment fragmentInicio,registroJugadorFragment,gestionJugadorFragment,getRegistroUsuario,fragment_consultar_lista_usuario;
 
@@ -30,13 +28,11 @@ public class MainActivity3 extends AppCompatActivity implements IComunicaFragmen
         setContentView(R.layout.activity_main2);
         //Se realiza el llamado a Utilidades con el fin de llenar la lista de avatars
         Utilidades.obtenerListaAvatars();
-        Utilidades.consultarListaJugadores(this);
         //Se genera la instancia del fragmento IncioFragment
         fragmentInicio= new IncioFragment();
         //Se genera la instancia del fragmento RegistroJugadorFragment
         registroJugadorFragment=new RegistroJugadorFragment();
         gestionJugadorFragment=new GestionJugadorFragment();
-        ConexionSQLiteHelper conn=new ConexionSQLiteHelper(this,Utilidades.NOMBRE_BD,null,1);
         //Se ubica el  IncioFragment en el contenedorFragments
         getSupportFragmentManager().beginTransaction().replace(R.id.contenedorFragments,registroJugadorFragment).commit();
     }

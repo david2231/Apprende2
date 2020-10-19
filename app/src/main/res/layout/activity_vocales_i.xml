@@ -4,8 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/fondo3"
-    tools:context="gz.app.comdavid.apprende2.vocales.vocales_i">
+    tools:context="gz.app.comdavid.apprende2.Vocales.vocales_i">
 
+    <!-- Declaración del contenedor principal-->
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -13,6 +14,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true">
 
+        <!-- Se declara la imagen -->
         <ImageView
             android:layout_width="500dp"
             android:layout_height="300dp"
@@ -21,6 +23,7 @@
             android:layout_centerHorizontal="true"
             android:background="@drawable/letra1i" />
 
+        <!-- Botón inicio-->
         <Button
             android:layout_width="50dp"
             android:layout_height="50dp"
@@ -30,6 +33,7 @@
             android:layout_alignParentStart="true"
             android:background="@drawable/home" />
 
+        <!-- Botón siguiente-->
         <Button
             android:layout_width="50dp"
             android:layout_height="50dp"
@@ -39,16 +43,18 @@
             android:layout_toRightOf="@+id/anterioir_i"
             android:layout_toEndOf="@+id/anterioir_i" />
 
+
+        <!-- Botón avatar-->
         <Button
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:id="@+id/sonido_i"
             android:layout_alignTop="@+id/siguiente_i"
             android:background="@drawable/sonido"
-
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true" />
 
+        <!-- Botón anterior-->
         <Button
             android:layout_width="50dp"
             android:layout_height="50dp"

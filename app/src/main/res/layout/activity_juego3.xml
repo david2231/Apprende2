@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/fondo3"
-    tools:context="gz.app.comdavid.apprende2.juego3">
+    tools:context="gz.app.comdavid.apprende2.Juegos.Vocales.juego3">
     <!-- Relative Layout que contiene los objetos visuales -->
     <RelativeLayout
         android:layout_width="match_parent"

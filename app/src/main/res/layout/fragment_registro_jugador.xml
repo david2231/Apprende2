@@ -5,17 +5,20 @@
     android:layout_height="match_parent"
     android:id="@+id/contenedores"
     tools:context="gz.app.comdavid.apprende2.fragment.RegistroJugadorFragment">
-<ScrollView
+
+    <!--Perimite deslizar el contenido de la vista-->
+    <ScrollView
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-   <!-- TODO: Update blank fragment layout -->
 
+        <!--Contenedor Principal-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:paddingTop="20dp">
 
-
+        <!-- texto para el usuario-->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -28,18 +31,20 @@
             android:textSize="20dp"
             android:paddingTop="20dp"/>
 
+        <!--Contenedor para el microfono-->
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+            <!-- Ingreso del texto-->
             <EditText
                 android:id="@+id/campoNickName"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="10dp"
-
                 android:shadowColor="@color/colorAmarillo" />
 
+            <!--Botón de audio-->
             <ImageButton
                 android:id="@+id/img_btn_Usuarios"
                 android:layout_width="50dp"
@@ -48,20 +53,34 @@
                 android:background="@drawable/mic"
                 android:contentDescription="@string/app_name" />
         </RelativeLayout>
+        <!--Almacena el usuario-->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Genero"
+            android:text=""
             android:textSize="20dp"
             android:textColor="@android:color/black"
             android:layout_marginLeft="5dp"/>
 
+        <!--Almacena el rol-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/TxtRol"
+            android:text="1002"
+            android:textSize="20dp"
+            android:textColor="@android:color/black"
+            android:visibility="gone"
+            android:layout_marginLeft="5dp"/>
+
+        <!--Botones de genero-->
         <RadioGroup
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_margin="10dp">
 
+            <!--Género Masculino-->
             <RadioButton
                 android:id="@+id/radioM"
                 android:layout_weight="1"
@@ -69,6 +88,7 @@
                 android:layout_height="100dp"
                 android:background="@drawable/man"/>
 
+            <!--Género Femenino-->
             <RadioButton
                 android:id="@+id/radioF"
                 android:layout_width="0dp"
@@ -78,6 +98,7 @@
 
         </RadioGroup>
 
+        <!--Texto edad-->
         <TextView
             android:id="@+id/valoredad"
             android:layout_width="match_parent"
@@ -87,17 +108,17 @@
             android:text="Selecciona tu Edad"
             android:paddingTop="40dp"/>
 
+        <!--Barra de progreso para la edad-->
         <SeekBar
             android:id="@+id/edad"
             android:max="100"
-            android:min="4"
+            android:min="2"
             android:progress="4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="40dp"/>
 
-
-
+        <!--Texto avatar-->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -106,6 +127,7 @@
             android:textColor="@android:color/black"
             android:layout_marginLeft="5dp"/>
 
+        <!--Listado de avatars-->
         <android.support.v7.widget.RecyclerView
             android:id="@+id/recyclerAvatarsId"
             android:layout_width="match_parent"
@@ -118,13 +140,25 @@
     </LinearLayout>
 </ScrollView>
 
+    <!-- Botón avatar-->
+    <Button
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/Avatar_Registro"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:background="@drawable/sonido"
+        android:backgroundTintMode="src_over" />
+
+    <!--Botón flotante Registro-->
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/idFabRegistro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
         android:layout_marginEnd="7dp"
         android:layout_marginRight="7dp"
         android:layout_marginBottom="7dp"

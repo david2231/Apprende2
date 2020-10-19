@@ -9,21 +9,34 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Switch;
+import android.widget.TextView;
+import android.widget.Toast;
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 import gz.app.comdavid.apprende2.abecedario.abc_a;
-import gz.app.comdavid.apprende2.lectura.lectura1;
-import gz.app.comdavid.apprende2.vocales.vocales;
+import gz.app.comdavid.apprende2.Lectura.lectura1;
+import gz.app.comdavid.apprende2.Vocales.vocales;
 
 // Clase MainActivity
 public class MainActivity extends AppCompatActivity {
-    // Se realiza el llamado de los sonidos
+    // Se declaran los sonidos
     MediaPlayer mp;
-    // // Se realiza el llamado al botón silencio
+    //  Se realiza el llamado al botón silencio
     ImageButton silencio;
     // Se realiza el llamado a la imagen sonido activo
     Button silbos;
     // switch que permite cambiar de español a ingles
-    Switch switchingles,switchespannol;
+    Switch switchingles;
+    // Se crea un TextView
+    TextView TxtModuloLectura;
 
     //Metodo onCreate
     @Override
@@ -36,12 +49,13 @@ public class MainActivity extends AppCompatActivity {
         silbos=(Button) findViewById(R.id.sonido);
         // Se realiza el llamado a la imagen sonido inactivo
         silencio=(ImageButton) findViewById(R.id.sonidoo);
-
+        // Se realiza el llamado al valor del campo
+        TxtModuloLectura=(TextView) findViewById(R.id.vocal);
         // sonido lectura
         mp= MediaPlayer.create(this,R.raw.lectura);
-
-
         // evento que permite silenciar el avatar
+        // Se realiza el llamado al servicio
+        ejecutarServicios("https://appprende02.000webhostapp.com/Administradora.php");
         Button sonidoa = (Button)findViewById(R.id.sonido);
         sonidoa.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -187,6 +201,41 @@ public class MainActivity extends AppCompatActivity {
 
 }
     });
+    }
+
+    //Metodo encargado de validar los datos ingresados, contiene un parametro de tipo string para almacenar la URL del web service
+    private void ejecutarServicios(String URL){
+        StringRequest stringRequest=new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                Toast.makeText(MainActivity.this,"exito",Toast.LENGTH_SHORT).show();
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(MainActivity.this,error.toString(),Toast.LENGTH_SHORT).show();
+
+            }
+        }){
+
+
+            // Metodo getParams que contiene los parametros que el servicio necesita para devolver una respuesta
+            protected Map<String, String> getParams() throws AuthFailureError {
+
+                Map<String,String> parametros=new HashMap<String, String>();
+                parametros.put("id_modulo",TxtModuloLectura.getText().toString());
+                //Se retornan todos los datos mediante la instancia parametros
+
+                return parametros;
+
+
+            }
+        };
+        // Haciendo uso de la clase RequestQueue Se crea una instancia de la actividad
+        RequestQueue requestQueue= Volley.newRequestQueue(this);
+        // Se instancia el objeto stringRequest la cual ayuda a procesar las peticiones realizadas
+        requestQueue.add(stringRequest);
     }
 }
 

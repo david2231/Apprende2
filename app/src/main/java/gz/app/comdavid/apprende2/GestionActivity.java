@@ -9,9 +9,7 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
-import gz.app.comdavid.apprende2.clases.vo.ConexionSQLiteHelper;
 import gz.app.comdavid.apprende2.clases.vo.Utilidades;
-import gz.app.comdavid.apprende2.fragment.ConsultarListaUsuarioFragment;
 import gz.app.comdavid.apprende2.fragment.GestionJugadorFragment;
 import gz.app.comdavid.apprende2.fragment.IncioFragment;
 import gz.app.comdavid.apprende2.fragment.RegistroJugadorFragment;
@@ -19,7 +17,7 @@ import gz.app.comdavid.apprende2.interfaces.IComunicaFragments;
 import gz.app.comdavid.apprende2.ui.ContenedorInstrucciones;
 
 
-public class GestionActivity extends AppCompatActivity implements IComunicaFragments,IncioFragment.OnFragmentInteractionListener,RegistroJugadorFragment.OnFragmentInteractionListener,GestionJugadorFragment.OnFragmentInteractionListener,ConsultarListaUsuarioFragment.OnFragmentInteractionListener{
+public class GestionActivity extends AppCompatActivity implements IComunicaFragments,IncioFragment.OnFragmentInteractionListener,RegistroJugadorFragment.OnFragmentInteractionListener,GestionJugadorFragment.OnFragmentInteractionListener{
 
     Fragment fragmentInicio,registroJugadorFragment,gestionJugadorFragment,getRegistroUsuario,fragment_consultar_lista_usuario;
 
@@ -29,11 +27,10 @@ public class GestionActivity extends AppCompatActivity implements IComunicaFragm
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
         Utilidades.obtenerListaAvatars();
-        Utilidades.consultarListaJugadores(this);
         fragmentInicio= new IncioFragment();
         registroJugadorFragment=new RegistroJugadorFragment();
         gestionJugadorFragment=new GestionJugadorFragment();
-        ConexionSQLiteHelper conn=new ConexionSQLiteHelper(this,Utilidades.NOMBRE_BD,null,1);
+
 
         getSupportFragmentManager().beginTransaction().replace(R.id.contenedorFragments,fragmentInicio).commit();
     }
