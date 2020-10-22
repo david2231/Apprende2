@@ -84,8 +84,7 @@ public class juegosil extends  AppCompatActivity implements View.OnClickListener
 
     }
 
-
-    // Metodo onClick
+   // Metodo onClick
     @Override
     public void onClick(View view) {
         // Switch Case dependiendo de la opción del usuario
@@ -111,7 +110,7 @@ public class juegosil extends  AppCompatActivity implements View.OnClickListener
                 casss.setVisibility(View.VISIBLE);
                 // Reproduce el audio exitoso
                 mp3.start();
-                // El audio del objeto
+                // detiene el sonido principal
                 mp4.stop();
                 // Cambia de actividad
                 new Handler().postDelayed(new Runnable() {
