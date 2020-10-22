@@ -1,5 +1,5 @@
 package gz.app.comdavid.apprende2;
-
+//Librerias
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Handler;
@@ -11,17 +11,22 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
+//Clase Juegossilaba
 public class juegosil10 extends AppCompatActivity implements View.OnClickListener  {
 
+    //Se declaran los image view
     ImageView silba,silbas,silbe,err;
+    //Se declaran los sonidos
     MediaPlayer mp,mp2,mp3,mp4;
-
+    //Se declara la vista principal
     RelativeLayout casss;
 
+    //Metodo onCreate
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_juegosil10);
+        //Se llama el audio
         mp4= MediaPlayer.create(this,R.raw.seleccionaelobjeto);
         mp4.start();
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
