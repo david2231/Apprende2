@@ -3,20 +3,49 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:background="@drawable/fondosil3"
-    tools:context="gz.app.comdavid.apprende2.juegosilabas10">
+    tools:context="gz.app.comdavid.apprende2.Juegos.juegosilabas10">
 
+    <!-- Contenedor principal-->
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true">
+        <!-- Puntaje preguntas incorrectas-->
 
+        <TextView
+            android:id="@+id/incorrectassilbas10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="50dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:text="0"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="40dp"
+            app:fontFamily="sans-serif-black" />
+
+        <!-- Puntaje preguntas correctas-->
+        <TextView
+            android:id="@+id/puntajesilabas10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="50dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:text="0"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="40dp"
+            app:fontFamily="sans-serif-black" />
+
+        <!-- Silaba GA-->
         <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="100dp"
@@ -27,6 +56,7 @@
             android:layout_toLeftOf="@+id/juesilca74"
             android:layout_toStartOf="@+id/juesilca74" />
 
+        <!-- Silaba PO-->
         <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="100dp"
@@ -37,6 +67,7 @@
             android:layout_toRightOf="@+id/juesilca75"
             android:layout_toEndOf="@+id/juesilca75" />
 
+        <!-- Silaba FA-->
         <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="100dp"
@@ -47,6 +78,7 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true" />
 
+        <!-- Silaba PU-->
         <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="100dp"
@@ -57,6 +89,7 @@
             android:layout_alignLeft="@+id/juesilca74"
             android:layout_alignStart="@+id/juesilca74" />
 
+        <!-- Silaba SO-->
         <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="100dp"
@@ -67,6 +100,7 @@
             android:layout_toRightOf="@+id/juesilca79"
             android:layout_toEndOf="@+id/juesilca79" />
 
+        <!-- Silaba LI-->
         <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="100dp"
@@ -77,6 +111,7 @@
             android:layout_toRightOf="@+id/juesilca80"
             android:layout_toEndOf="@+id/juesilca80" />
 
+        <!-- Silaba NA-->
         <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="100dp"
@@ -87,6 +122,7 @@
             android:layout_toRightOf="@+id/juesilca76"
             android:layout_toEndOf="@+id/juesilca76" />
 
+        <!-- Silaba GI-->
         <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="100dp"
@@ -97,6 +133,7 @@
             android:layout_alignLeft="@+id/juesilca79"
             android:layout_alignStart="@+id/juesilca79" />
 
+        <!-- Botón inicio-->
         <Button
             android:layout_width="50dp"
             android:layout_height="50dp"
@@ -106,6 +143,7 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true" />
 
+        <!-- Imagen GASOLINA-->
         <ImageView
             android:layout_width="200dp"
             android:layout_height="178dp"
@@ -120,6 +158,7 @@
             android:layout_toRightOf="@+id/juesilca78"
             android:layout_toEndOf="@+id/juesilca78" />
 
+        <!-- Silaba LI-->
         <ImageView
             android:layout_width="100dp"
             android:layout_height="50dp"
@@ -131,6 +170,7 @@
             android:layout_toLeftOf="@+id/juesilca77"
             android:layout_toStartOf="@+id/juesilca77" />
 
+        <!-- Silaba GA-->
         <ImageView
             android:layout_width="100dp"
             android:layout_height="50dp"
@@ -141,6 +181,7 @@
             android:layout_toLeftOf="@+id/imagenesss10"
             android:layout_toStartOf="@+id/imagenesss10" />
 
+        <!-- Imagen error-->
         <ImageView
             android:layout_width="100dp"
             android:layout_height="50dp"
@@ -161,6 +202,7 @@
             android:layout_toLeftOf="@+id/imagensa10"
             android:layout_toStartOf="@+id/imagensa10" />
 
+        <!-- Silaba NA-->
         <ImageView
             android:layout_width="100dp"
             android:layout_height="50dp"
@@ -171,6 +213,7 @@
             android:layout_toEndOf="@+id/imagensa10"
             android:visibility="invisible" />
 
+        <!-- Imagen avatar-->
         <Button
             android:layout_width="50dp"
             android:layout_height="50dp"

@@ -10,6 +10,7 @@
     android:background="@drawable/fondosil2"
     tools:context="gz.app.comdavid.apprende2.Silabas.silaba_s">
 
+    <!--Contendor principal-->
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -17,68 +18,63 @@
         android:layout_centerHorizontal="true"
         android:id="@+id/relativeLayout2">
 
+        <!--Silaba SA-->
         <Button
             android:layout_width="100dp"
             android:layout_height="50dp"
-
             android:id="@+id/sas"
             android:layout_alignParentTop="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:background="@drawable/silasa"
-
             android:textSize="@dimen/abc_dropdownitem_icon_width"
             android:visibility="visible" />
 
+        <!--Silaba SO-->
         <Button
             android:layout_width="100dp"
             android:layout_height="50dp"
-
             android:id="@+id/sos"
             android:layout_below="@+id/sas"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-
             android:textSize="@dimen/abc_action_button_min_width_overflow_material"
             android:background="@drawable/silaso"/>
 
+        <!--Silaba SU-->
         <Button
             android:layout_width="100dp"
             android:layout_height="50dp"
-
             android:id="@+id/sus"
             android:layout_below="@+id/sos"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:textSize="@dimen/abc_action_button_min_width_overflow_material"
-            android:background="@drawable/silasu"
-            />
+            android:background="@drawable/silasu" />
 
+        <!--Silaba SE-->
         <Button
             android:layout_width="100dp"
             android:layout_height="50dp"
             android:id="@+id/ses"
-
             android:layout_below="@+id/sus"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:textSize="@dimen/abc_action_button_min_width_overflow_material"
-            android:background="@drawable/silase"
-            />
+            android:background="@drawable/silase" />
 
+        <!--Silaba SI-->
         <Button
             android:layout_width="100dp"
             android:layout_height="50dp"
-
             android:id="@+id/sis"
             android:layout_below="@+id/ses"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:textSize="@dimen/abc_action_button_min_width_overflow_material"
-            android:background="@drawable/silasi"
+            android:background="@drawable/silasi" />
 
-            />
-
+        <!--Imagen Sapo-->
         <ImageView
             android:layout_width="200dp"
             android:layout_height="100dp"
@@ -91,6 +87,7 @@
             android:layout_marginRight="59dp"
             android:layout_marginEnd="59dp" />
 
+        <!--Imagen Saco-->
         <ImageView
             android:layout_width="200dp"
             android:layout_height="100dp"
@@ -101,6 +98,7 @@
             android:layout_alignLeft="@+id/sapos"
             android:layout_alignStart="@+id/sapos" />
 
+        <!--Imagen Semilla-->
         <ImageView
             android:layout_width="200dp"
             android:layout_height="100dp"
@@ -113,6 +111,7 @@
             android:layout_marginRight="62dp"
             android:layout_marginEnd="62dp" />
 
+        <!--Imagen Seda-->
         <ImageView
             android:layout_width="200dp"
             android:layout_height="100dp"
@@ -123,6 +122,7 @@
             android:layout_alignLeft="@+id/semillas"
             android:layout_alignStart="@+id/semillas" />
 
+        <!--Imagen Silaba-->
         <ImageView
             android:layout_width="200dp"
             android:layout_height="100dp"
@@ -135,6 +135,7 @@
             android:layout_marginRight="62dp"
             android:layout_marginEnd="62dp" />
 
+        <!--Imagen Silla-->
         <ImageButton
             android:layout_width="200dp"
             android:layout_height="100dp"
@@ -145,6 +146,7 @@
             android:layout_alignLeft="@+id/silabas"
             android:layout_alignStart="@+id/silabas" />
 
+        <!--Imagen Sol-->
         <ImageView
             android:layout_width="200dp"
             android:layout_height="100dp"
@@ -157,6 +159,7 @@
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true" />
 
+        <!--Imagen Sombrero-->
         <ImageView
             android:layout_width="200dp"
             android:layout_height="100dp"
@@ -169,6 +172,7 @@
             android:layout_marginRight="64dp"
             android:layout_marginEnd="64dp" />
 
+        <!--Imagen Suelo-->
         <ImageView
             android:layout_width="200dp"
             android:layout_height="100dp"
@@ -179,6 +183,7 @@
             android:layout_alignLeft="@+id/sures"
             android:layout_alignStart="@+id/sures" />
 
+        <!--Imagen Sur-->
         <ImageView
             android:layout_width="200dp"
             android:layout_height="100dp"
@@ -191,6 +196,7 @@
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true" />
 
+        <!--Botón incio-->
         <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="50dp"
@@ -200,7 +206,7 @@
             android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true" />
-
+        <!--Botón siguiente-->
         <Button
             android:layout_width="50dp"
             android:layout_height="50dp"
@@ -209,8 +215,6 @@
             android:layout_above="@+id/ses"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true" />
-
-
 
     </RelativeLayout>
 </RelativeLayout>

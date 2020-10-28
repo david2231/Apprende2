@@ -12,6 +12,8 @@ import android.widget.ImageButton;
 import java.io.IOException;
 
 import gz.app.comdavid.apprende2.Juegos.Vocales.juego;
+import gz.app.comdavid.apprende2.Juegos.juegosilabas1;
+import gz.app.comdavid.apprende2.Juegos.juegosilabas6;
 
 // Clase juegos
 public class juegos extends AppCompatActivity {
@@ -58,7 +60,7 @@ public class juegos extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //Abrir una nueva actividad
-                Intent intent=new Intent(v.getContext(),juegosilabas1.class);
+                Intent intent=new Intent(v.getContext(), juegosilabas1.class);
                 startActivityForResult(intent,0);
                 //Transiciones
                 overridePendingTransition(R.anim.left_in, R.anim.left_out);
@@ -71,7 +73,7 @@ public class juegos extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //Abrir una nueva actividad
-                Intent intent=new Intent(v.getContext(),juegosilabas6.class);
+                Intent intent=new Intent(v.getContext(), juegosilabas6.class);
                 startActivityForResult(intent,0);
                 //Transiciones
                 overridePendingTransition(R.anim.left_in, R.anim.left_out);

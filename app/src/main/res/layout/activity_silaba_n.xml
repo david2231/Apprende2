@@ -10,6 +10,7 @@
     android:background="@drawable/fondosil2"
     tools:context="gz.app.comdavid.apprende2.Silabas.silaba_n">
 
+    <!--Contendor principal-->
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -17,68 +18,63 @@
         android:layout_centerHorizontal="true"
         android:id="@+id/relativeLayout2">
 
+        <!--Silaba NA-->
     <Button
         android:layout_width="100dp"
         android:layout_height="50dp"
-
         android:id="@+id/nas"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:background="@drawable/silana"
-
         android:textSize="@dimen/abc_dropdownitem_icon_width"
         android:visibility="visible" />
 
+        <!--Silaba NO-->
     <Button
         android:layout_width="100dp"
         android:layout_height="50dp"
-
         android:id="@+id/nos"
         android:layout_below="@+id/nas"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-
         android:textSize="@dimen/abc_action_button_min_width_overflow_material"
         android:background="@drawable/silano"/>
 
+        <!--Silaba NU-->
     <Button
         android:layout_width="100dp"
         android:layout_height="50dp"
-
         android:id="@+id/nus"
         android:layout_below="@+id/nos"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:textSize="@dimen/abc_action_button_min_width_overflow_material"
-        android:background="@drawable/silanu"
-        />
+        android:background="@drawable/silanu" />
 
+        <!--Silaba NE-->
     <Button
         android:layout_width="100dp"
         android:layout_height="50dp"
         android:id="@+id/nes"
-
         android:layout_below="@+id/nus"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:textSize="@dimen/abc_action_button_min_width_overflow_material"
-        android:background="@drawable/silane"
-        />
+        android:background="@drawable/silane" />
 
+        <!--Silaba NI-->
     <Button
         android:layout_width="100dp"
         android:layout_height="50dp"
-
         android:id="@+id/nis"
         android:layout_below="@+id/nes"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:textSize="@dimen/abc_action_button_min_width_overflow_material"
-        android:background="@drawable/silani"
+        android:background="@drawable/silani" />
 
-        />
-
+        <!--Imagen Nariz-->
         <ImageView
             android:layout_width="200dp"
             android:layout_height="100dp"
@@ -91,6 +87,7 @@
             android:layout_marginRight="59dp"
             android:layout_marginEnd="59dp" />
 
+        <!--Imagen Navidad-->
         <ImageView
             android:layout_width="200dp"
             android:layout_height="100dp"
@@ -101,6 +98,7 @@
             android:layout_alignLeft="@+id/narices"
             android:layout_alignStart="@+id/narices" />
 
+        <!--Imagen Negativo-->
         <ImageView
             android:layout_width="200dp"
             android:layout_height="100dp"
@@ -113,6 +111,7 @@
             android:layout_marginRight="62dp"
             android:layout_marginEnd="62dp" />
 
+        <!--Imagen Nevera-->
         <ImageView
             android:layout_width="200dp"
             android:layout_height="100dp"
@@ -123,6 +122,7 @@
             android:layout_alignLeft="@+id/negativos"
             android:layout_alignStart="@+id/negativos" />
 
+        <!--Imagen Nieve-->
         <ImageView
             android:layout_width="200dp"
             android:layout_height="100dp"
@@ -135,6 +135,7 @@
             android:layout_marginRight="62dp"
             android:layout_marginEnd="62dp" />
 
+        <!--Imagen niño-->
         <ImageButton
             android:layout_width="200dp"
             android:layout_height="100dp"
@@ -145,6 +146,7 @@
             android:layout_alignLeft="@+id/nieves"
             android:layout_alignStart="@+id/nieves" />
 
+        <!--Imagen Noche-->
         <ImageView
             android:layout_width="200dp"
             android:layout_height="100dp"
@@ -157,6 +159,7 @@
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true" />
 
+        <!--Imagen Noticia-->
         <ImageView
             android:layout_width="200dp"
             android:layout_height="100dp"
@@ -169,6 +172,7 @@
             android:layout_marginRight="64dp"
             android:layout_marginEnd="64dp" />
 
+        <!--Imagen Nube-->
         <ImageView
             android:layout_width="200dp"
             android:layout_height="100dp"
@@ -179,6 +183,7 @@
             android:layout_alignLeft="@+id/numeros"
             android:layout_alignStart="@+id/numeros" />
 
+        <!--Imagen Números-->
         <ImageView
             android:layout_width="200dp"
             android:layout_height="100dp"
@@ -191,6 +196,7 @@
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true" />
 
+        <!--Botón incio-->
         <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="50dp"
@@ -201,8 +207,7 @@
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true" />
 
-
-
+        <!--Botón siguiente-->
         <Button
             android:layout_width="50dp"
             android:layout_height="50dp"

@@ -1,4 +1,4 @@
-package gz.app.comdavid.apprende2.Lectura;
+package gz.app.comdavid.apprende2.Juegos;
 //Librerias
 import android.content.Context;
 import android.content.Intent;
@@ -20,12 +20,13 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import java.util.HashMap;
 import java.util.Map;
+
 import gz.app.comdavid.apprende2.R;
 import gz.app.comdavid.apprende2.clases.vo.Utilidades;
 import gz.app.comdavid.apprende2.juegos;
 
-// Clase ResultadoJuegoLectura
-public class ResultadoJuegoLectura extends AppCompatActivity {
+public class ResultadoJuegoSilabas1 extends AppCompatActivity {
+
     // Se realiza la declaración de los textview
     TextView txtResCorrectas,txtResIncorrectas,txtCorrectas,txtIncorrectas,txtResultados,txtPuntaje,textNickName;
     // Se realiza la declaración del botón
@@ -36,28 +37,29 @@ public class ResultadoJuegoLectura extends AppCompatActivity {
     String avatar;
 
     //Metodo onCreate
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_resultado_juego_lectura);
+        setContentView(R.layout.activity_resultado_juego_silabas1);
         //Se mantiene la pantalla activa
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         //Llamado a la texto resultado
-        txtResultados =findViewById(R.id.txtResultadosLectura);
+        txtResultados =findViewById(R.id.txtResultadosSilaba1);
         //Llamado al campo variables correctas
-        txtCorrectas =findViewById(R.id.txtPalabrasCorrectasLectura);
+        txtCorrectas =findViewById(R.id.txtResPalabrasCorrectasJuegoSilaba1);
         //Llamado al campo variables incorrectas
-        txtIncorrectas=findViewById(R.id.txtPalabrasIncorrectasLectura);
+        txtIncorrectas=findViewById(R.id.txtPalabrasIncorrectasSilaba1);
         //Llamado al texto Incorrectas
-        txtResCorrectas =findViewById(R.id.txtResPalabrasCorrectasLectura);
+        txtResCorrectas =findViewById(R.id.txtResPalabrasCorrectasSilaba1);
         //Llamado al campo variables incorrectas
-        txtResIncorrectas=findViewById(R.id.txtResPalabrasIncorrectasLectura);
+        txtResIncorrectas=findViewById(R.id.txtResPalabrasIncorrectasSilaba1);
         //Permite almacenar el id del avatar
-        txtPuntaje =findViewById(R.id.txtPuntajeTituloLectura);
+        txtPuntaje =findViewById(R.id.txtPuntajeTituloSilaba1);
         //Permite almacenar el nombre del usuario
-        textNickName=findViewById(R.id.textNickNameLectura);
+        textNickName=findViewById(R.id.textNickNameSilaba1);
         //llama la Imagen del usuario
-        imagenAvatar=findViewById(R.id.avatarImageLectura);
+        imagenAvatar=findViewById(R.id.avatarImageSilaba1);
         //Actualiza el campo correctas
         txtResCorrectas.setText(Utilidades.correctas+"");
         //Actualiza el campo incorrectas
@@ -69,7 +71,7 @@ public class ResultadoJuegoLectura extends AppCompatActivity {
         asignarValoresPreferencias();
 
         //evento del botón inicio
-        btnInicio=findViewById(R.id.inicioJuego1Lectura);
+        btnInicio=findViewById(R.id.inicioJuegoSilaba1);
         btnInicio.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -194,20 +196,19 @@ public class ResultadoJuegoLectura extends AppCompatActivity {
 
     }
 
-
-       //Metodo encargado de validar los datos ingresados, contiene un parametro de tipo string para almacenar la URL del web service
+    //Metodo encargado de validar los datos ingresados, contiene un parametro de tipo string para almacenar la URL del web service
     private void ejecutarServcios(String URL){
         StringRequest stringRequest=new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                Toast.makeText(ResultadoJuegoLectura.this,"exito",Toast.LENGTH_SHORT).show();
+                Toast.makeText(ResultadoJuegoSilabas1.this,"exito",Toast.LENGTH_SHORT).show();
 
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(ResultadoJuegoLectura.this,error.toString(),Toast.LENGTH_SHORT).show();
-                Toast.makeText(ResultadoJuegoLectura.this,error.toString(),Toast.LENGTH_SHORT).show();
+                Toast.makeText(ResultadoJuegoSilabas1.this,error.toString(),Toast.LENGTH_SHORT).show();
+                Toast.makeText(ResultadoJuegoSilabas1.this,error.toString(),Toast.LENGTH_SHORT).show();
             }
         }){
 

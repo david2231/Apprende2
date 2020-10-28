@@ -186,7 +186,7 @@ public class lectura1 extends AppCompatActivity  implements View.OnClickListener
         // Intent del Reconocimiento de Voz
         Intent intentActionRecognizeSpeech = new Intent(
                 RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
-
+        azul.pause();
         // Se selecciona  el Lenguaje  (Español)
         intentActionRecognizeSpeech.putExtra(
                 RecognizerIntent.EXTRA_LANGUAGE_MODEL, "es-419");
