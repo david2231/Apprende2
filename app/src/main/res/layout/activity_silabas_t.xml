@@ -10,6 +10,7 @@
     android:background="@drawable/fondosil2"
     tools:context="gz.app.comdavid.apprende2.Silabas.silabas_t">
 
+    <!--Contendor principal-->
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -17,68 +18,63 @@
         android:layout_centerHorizontal="true"
         android:id="@+id/relativeLayout2">
 
+        <!--Silaba TA-->
         <Button
             android:layout_width="100dp"
             android:layout_height="50dp"
-
             android:id="@+id/tas"
             android:layout_alignParentTop="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:background="@drawable/silata"
-
             android:textSize="@dimen/abc_dropdownitem_icon_width"
             android:visibility="visible" />
 
+        <!--Silaba TO-->
         <Button
             android:layout_width="100dp"
             android:layout_height="50dp"
-
             android:id="@+id/tos"
             android:layout_below="@+id/tas"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-
             android:textSize="@dimen/abc_action_button_min_width_overflow_material"
             android:background="@drawable/silato"/>
 
+        <!--Silaba TU-->
         <Button
             android:layout_width="100dp"
             android:layout_height="50dp"
-
             android:id="@+id/tus"
             android:layout_below="@+id/tos"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:textSize="@dimen/abc_action_button_min_width_overflow_material"
-            android:background="@drawable/silatu"
-            />
+            android:background="@drawable/silatu"/>
 
+        <!--Silaba TE-->
         <Button
             android:layout_width="100dp"
             android:layout_height="50dp"
             android:id="@+id/tes"
-
             android:layout_below="@+id/tus"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:textSize="@dimen/abc_action_button_min_width_overflow_material"
-            android:background="@drawable/silate"
-            />
+            android:background="@drawable/silate"/>
 
+        <!--Silaba TI-->
         <Button
             android:layout_width="100dp"
             android:layout_height="50dp"
-
             android:id="@+id/tis"
             android:layout_below="@+id/tes"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:textSize="@dimen/abc_action_button_min_width_overflow_material"
-            android:background="@drawable/silati"
+            android:background="@drawable/silati" />
 
-            />
-
+        <!--Imagen Tabla-->
         <ImageView
             android:layout_width="200dp"
             android:layout_height="100dp"
@@ -91,6 +87,7 @@
             android:layout_marginRight="59dp"
             android:layout_marginEnd="59dp" />
 
+        <!--Imagen Tarjeta-->
         <ImageView
             android:layout_width="200dp"
             android:layout_height="100dp"
@@ -101,6 +98,7 @@
             android:layout_alignLeft="@+id/tablas"
             android:layout_alignStart="@+id/tablas" />
 
+        <!--Imagen Tetero-->
         <ImageView
             android:layout_width="200dp"
             android:layout_height="100dp"
@@ -113,6 +111,7 @@
             android:layout_marginRight="62dp"
             android:layout_marginEnd="62dp" />
 
+        <!--Imagen Telefono-->
         <ImageView
             android:layout_width="200dp"
             android:layout_height="100dp"
@@ -123,6 +122,7 @@
             android:layout_alignLeft="@+id/teteros"
             android:layout_alignStart="@+id/teteros" />
 
+        <!--Imagen Tiburón-->
         <ImageView
             android:layout_width="200dp"
             android:layout_height="100dp"
@@ -135,6 +135,7 @@
             android:layout_marginRight="62dp"
             android:layout_marginEnd="62dp" />
 
+        <!--Imagen Tigre-->
         <ImageButton
             android:layout_width="200dp"
             android:layout_height="100dp"
@@ -144,6 +145,8 @@
             android:layout_below="@+id/tus"
             android:layout_alignLeft="@+id/tiburones"
             android:layout_alignStart="@+id/tiburones" />
+
+        <!--Imagen Tomaté-->
         <ImageView
             android:layout_width="200dp"
             android:layout_height="100dp"
@@ -156,6 +159,7 @@
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true" />
 
+        <!--Imagen Toro-->
         <ImageView
             android:layout_width="200dp"
             android:layout_height="100dp"
@@ -168,6 +172,7 @@
             android:layout_marginRight="64dp"
             android:layout_marginEnd="64dp" />
 
+        <!--Imagen Tubo-->
         <ImageView
             android:layout_width="200dp"
             android:layout_height="100dp"
@@ -178,6 +183,7 @@
             android:layout_alignLeft="@+id/tucanes"
             android:layout_alignStart="@+id/tucanes" />
 
+        <!--Imagen Tucan-->
         <ImageView
             android:layout_width="200dp"
             android:layout_height="100dp"
@@ -189,7 +195,9 @@
             android:layout_below="@+id/tus"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true" />
-        <Button
+
+        <!--Botón incio-->
+        <B-utton
             style="?android:attr/buttonStyleSmall"
             android:layout_width="50dp"
             android:layout_height="50dp"
@@ -199,6 +207,7 @@
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true" />
 
+        <!--Botón siguiente-->
         <Button
             android:layout_width="50dp"
             android:layout_height="50dp"
@@ -207,8 +216,6 @@
             android:layout_above="@+id/tes"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true" />
-
-
 
     </RelativeLayout>
 </RelativeLayout>

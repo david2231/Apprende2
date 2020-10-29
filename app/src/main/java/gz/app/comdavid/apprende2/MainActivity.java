@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
     // Se crea un TextView
     TextView TxtModuloLectura;
 
-    //Metodo onCreate
+    //Método onCreate
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

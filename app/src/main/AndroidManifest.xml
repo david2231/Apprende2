@@ -18,10 +18,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         android:usesCleartextTraffic="true">
-
-        <activity android:name=".Lectura.ResultadoJuegoLectura"
+        <activity android:name=".Juegos.ResultadoJuegoSilabas2"
             android:screenOrientation="landscape"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
+        <activity
+            android:name=".Juegos.ResultadoJuegoSilabas1"
+            android:screenOrientation="landscape"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".Lectura.ResultadoJuegoLectura"
+            android:screenOrientation="landscape"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".Juegos.Vocales.ResultadoJuegoActivity"
             android:screenOrientation="landscape"
@@ -476,34 +483,34 @@
             android:name=".escribirr6_1"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".juegosilabas1"
+            android:name=".Juegos.juegosilabas1"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".juegosilabas2"
+            android:name=".Juegos.juegosilabas2"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".juegosilabas3"
+            android:name=".Juegos.juegosilabas3"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".juegosilabas4"
+            android:name=".Juegos.juegosilabas4"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".juegosilabas5"
+            android:name=".Juegos.juegosilabas5"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".juegosilabas6"
+            android:name=".Juegos.juegosilabas6"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".juegosilabas7"
+            android:name=".Juegos.juegosilabas7"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".juegosilabas8"
+            android:name=".Juegos.juegosilabas8"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".juegosilabas9"
+            android:name=".Juegos.juegosilabas9"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".juegosilabas10"
+            android:name=".Juegos.juegosilabas10"
             android:screenOrientation="landscape" />
         <activity
             android:name=".juegos"

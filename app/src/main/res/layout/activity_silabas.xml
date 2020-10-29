@@ -10,6 +10,7 @@
     android:background="@drawable/fondosil"
     tools:context="gz.app.comdavid.apprende2.silabas">
 
+    <!--Contendor principal-->
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -17,8 +18,7 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true">
 
-
-
+        <!--Botón Inicio-->
         <Button
             android:layout_width="50dp"
             android:layout_height="50dp"
@@ -28,8 +28,7 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true" />
 
-
-
+        <!--Botón avatar-->
         <Button
             android:layout_width="50dp"
             android:layout_height="50dp"
@@ -39,8 +38,7 @@
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true" />
 
-
-
+        <!--Silaba B-->
         <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="100dp"
@@ -51,6 +49,7 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true" />
 
+        <!--Silaba C-->
         <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="100dp"
@@ -61,6 +60,7 @@
             android:layout_toRightOf="@+id/button"
             android:layout_toEndOf="@+id/button" />
 
+        <!--Silaba D-->
         <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="100dp"
@@ -71,6 +71,7 @@
             android:layout_toRightOf="@+id/button2"
             android:layout_toEndOf="@+id/button2" />
 
+        <!--Silaba F-->
         <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="100dp"
@@ -81,6 +82,7 @@
             android:layout_toRightOf="@+id/button3"
             android:layout_toEndOf="@+id/button3" />
 
+        <!--Silaba G-->
         <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="100dp"
@@ -91,72 +93,73 @@
             android:layout_toRightOf="@+id/button4"
             android:layout_toEndOf="@+id/button4" />
 
+        <!--Silaba L-->
         <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="100dp"
             android:layout_height="50dp"
-
             android:id="@+id/button7"
             android:background="@drawable/letra1n"
             android:layout_below="@+id/button"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true" />
 
+        <!--Silaba M-->
         <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="100dp"
             android:layout_height="50dp"
-
             android:id="@+id/button8"
             android:background="@drawable/letra1m"
             android:layout_alignTop="@+id/button7"
             android:layout_toLeftOf="@+id/button3"
             android:layout_toStartOf="@+id/button3" />
 
+        <!--Silaba P-->
         <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="100dp"
             android:layout_height="50dp"
-
             android:id="@+id/button9"
             android:background="@drawable/letra1p"
             android:layout_below="@+id/button3"
             android:layout_toRightOf="@+id/button3"
             android:layout_toEndOf="@+id/button3" />
 
+        <!--Silaba R-->
         <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="100dp"
             android:layout_height="50dp"
-
             android:id="@+id/button10"
             android:background="@drawable/letra1r"
             android:layout_below="@+id/button4"
             android:layout_toRightOf="@+id/button9"
             android:layout_toEndOf="@+id/button9" />
 
+        <!--Silaba S-->
         <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="100dp"
             android:layout_height="50dp"
-
             android:id="@+id/button11"
             android:background="@drawable/letra1s"
             android:layout_alignTop="@+id/button12"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true" />
 
+        <!--Silaba T-->
         <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="100dp"
             android:layout_height="50dp"
-
             android:id="@+id/button12"
             android:background="@drawable/letra1t"
             android:layout_alignTop="@+id/button13"
             android:layout_toLeftOf="@+id/button13"
             android:layout_toStartOf="@+id/button13" />
 
+        <!--Silaba V-->
         <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="100dp"
@@ -167,6 +170,7 @@
             android:layout_toLeftOf="@+id/button14"
             android:layout_toStartOf="@+id/button14" />
 
+        <!--Silaba Y-->
         <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="100dp"
@@ -177,6 +181,7 @@
             android:layout_toLeftOf="@+id/button15"
             android:layout_toStartOf="@+id/button15" />
 
+        <!--Silaba Z-->
         <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="100dp"
@@ -187,16 +192,16 @@
             android:layout_toRightOf="@+id/button9"
             android:layout_toEndOf="@+id/button9" />
 
+        <!--Silaba N-->
         <Button
             android:layout_width="100dp"
             android:layout_height="50dp"
-
             android:background="@drawable/letras1n"
             android:id="@+id/button17"
             android:layout_below="@+id/button3"
             android:layout_toRightOf="@+id/button8"
             android:layout_toEndOf="@+id/button8" />
-
+        <!--Contenedor-->
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"

@@ -37,6 +37,8 @@
             android:id="@+id/siguiente_aa"
             android:layout_width="50dp"
             android:layout_height="50dp"
+            android:text="55"
+            android:textColor="@color/colorTransparente"
             android:layout_centerHorizontal="true"
             android:layout_alignTop="@+id/casa_aa"
             android:background="@drawable/ant"
@@ -45,12 +47,33 @@
         <!-- Botón avatar-->
         <Button
             android:id="@+id/sonido_aa"
+            android:text="1"
+            android:textColor="@color/colorTransparente"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentBottom="true"
             android:background="@drawable/sonido" />
+
+        <!-- Perimte almacenar el nombre de usuario-->
+        <TextView
+            android:id="@+id/Nombre_user_Abecedario"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:visibility="gone">
+        </TextView>
+
+        <!-- Perimte almacenar el modulo -->
+        <TextView
+            android:id="@+id/Modulo_Lectura_Abecedario"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="101"
+            android:visibility="gone">
+        </TextView>
+
 
     </RelativeLayout>
 </RelativeLayout>

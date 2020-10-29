@@ -9,6 +9,8 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:background="@drawable/fondosil2"
     tools:context="gz.app.comdavid.apprende2.Silabas.silaba_m">
+
+    <!--Contendor principal-->
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -16,68 +18,63 @@
         android:layout_centerHorizontal="true"
         android:id="@+id/relativeLayout2">
 
+        <!--Silaba MA-->
         <Button
             android:layout_width="100dp"
             android:layout_height="50dp"
-
             android:id="@+id/mas"
             android:layout_alignParentTop="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:background="@drawable/silama"
-
             android:textSize="@dimen/abc_dropdownitem_icon_width"
             android:visibility="visible" />
 
+        <!--Silaba Mo-->
         <Button
             android:layout_width="100dp"
             android:layout_height="50dp"
-
             android:id="@+id/mos"
             android:layout_below="@+id/mas"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-
             android:textSize="@dimen/abc_action_button_min_width_overflow_material"
             android:background="@drawable/silamo"/>
 
+        <!--Silaba Mu-->
         <Button
             android:layout_width="100dp"
             android:layout_height="50dp"
-
             android:id="@+id/mus"
             android:layout_below="@+id/mos"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:textSize="@dimen/abc_action_button_min_width_overflow_material"
-            android:background="@drawable/silamu"
-            />
+            android:background="@drawable/silamu"/>
 
+        <!--Silaba ME-->
         <Button
             android:layout_width="100dp"
             android:layout_height="50dp"
             android:id="@+id/mes"
-
             android:layout_below="@+id/mus"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:textSize="@dimen/abc_action_button_min_width_overflow_material"
-            android:background="@drawable/silame"
-            />
+            android:background="@drawable/silame" />
 
+        <!--Silaba MI-->
         <Button
             android:layout_width="100dp"
             android:layout_height="50dp"
-
             android:id="@+id/mis"
             android:layout_below="@+id/mes"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:textSize="@dimen/abc_action_button_min_width_overflow_material"
-            android:background="@drawable/silami"
+            android:background="@drawable/silami" />
 
-            />
-
+        <!--Imagen Mamá-->
         <ImageView
             android:layout_width="200dp"
             android:layout_height="100dp"
@@ -90,6 +87,7 @@
             android:layout_marginRight="59dp"
             android:layout_marginEnd="59dp" />
 
+        <!--Imagen Mangos-->
         <ImageView
             android:layout_width="200dp"
             android:layout_height="100dp"
@@ -100,6 +98,7 @@
             android:layout_alignLeft="@+id/mamas"
             android:layout_alignStart="@+id/mamas" />
 
+        <!--Imagen Medallas-->
         <ImageView
             android:layout_width="200dp"
             android:layout_height="100dp"
@@ -112,6 +111,7 @@
             android:layout_marginRight="62dp"
             android:layout_marginEnd="62dp" />
 
+        <!--Imagen Measas-->
         <ImageView
             android:layout_width="200dp"
             android:layout_height="100dp"
@@ -122,6 +122,7 @@
             android:layout_alignLeft="@+id/medallas"
             android:layout_alignStart="@+id/medallas" />
 
+        <!--Imagen Miel-->
         <ImageView
             android:layout_width="200dp"
             android:layout_height="100dp"
@@ -134,6 +135,7 @@
             android:layout_marginRight="62dp"
             android:layout_marginEnd="62dp" />
 
+        <!--Imagen Mico-->
         <ImageView
             android:layout_width="200dp"
             android:layout_height="100dp"
@@ -144,8 +146,7 @@
             android:layout_alignLeft="@+id/mieles"
             android:layout_alignStart="@+id/mieles" />
 
-
-
+        <!--Imagen Monedas-->
         <ImageView
             android:layout_width="200dp"
             android:layout_height="100dp"
@@ -158,6 +159,7 @@
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true" />
 
+        <!--Imagen Montañas-->
         <ImageView
             android:layout_width="200dp"
             android:layout_height="100dp"
@@ -170,6 +172,7 @@
             android:layout_marginRight="64dp"
             android:layout_marginEnd="64dp" />
 
+        <!--Imagen Muñecas-->
         <ImageView
             android:layout_width="200dp"
             android:layout_height="100dp"
@@ -180,6 +183,7 @@
             android:layout_alignLeft="@+id/murcielagos"
             android:layout_alignStart="@+id/murcielagos" />
 
+        <!--Imagen murcielagos-->
         <ImageView
             android:layout_width="200dp"
             android:layout_height="100dp"
@@ -192,6 +196,7 @@
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true" />
 
+        <!--Botón inicio-->
         <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="50dp"
@@ -202,6 +207,7 @@
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true" />
 
+        <!--Botón siguiente-->
         <Button
             android:layout_width="50dp"
             android:layout_height="50dp"
@@ -212,7 +218,4 @@
             android:layout_alignParentEnd="true" />
 
     </RelativeLayout>
-
-
-
 </RelativeLayout>

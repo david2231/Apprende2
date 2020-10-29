@@ -10,6 +10,7 @@
     android:background="@drawable/fondosil2"
     tools:context="gz.app.comdavid.apprende2.Silabas.silaba_z">
 
+    <!--Contendor principal-->
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -17,62 +18,60 @@
         android:layout_centerHorizontal="true"
         android:id="@+id/relativeLayout2">
 
+        <!--Silaba ZA-->
         <Button
             android:layout_width="100dp"
             android:layout_height="50dp"
-
             android:id="@+id/zas"
             android:background="@drawable/silaza"
-
             android:textSize="@dimen/abc_dropdownitem_icon_width"
             android:visibility="visible"
             android:layout_alignParentTop="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true" />
 
+        <!--Silaba ZO-->
         <Button
             android:layout_width="100dp"
             android:layout_height="50dp"
-
             android:id="@+id/zos"
-
             android:textSize="@dimen/abc_action_button_min_width_overflow_material"
             android:background="@drawable/silazo"
             android:layout_below="@+id/zas"
             android:layout_alignParentLeft="true" />
 
+        <!--Silaba ZU-->
         <Button
             android:layout_width="100dp"
             android:layout_height="50dp"
-
             android:id="@+id/zus"
             android:textSize="@dimen/abc_action_button_min_width_overflow_material"
             android:background="@drawable/silazu"
             android:layout_below="@+id/zos"
             android:layout_alignParentLeft="true" />
 
+        <!--Silaba ZE-->
         <Button
             android:layout_width="100dp"
             android:layout_height="50dp"
             android:id="@+id/zes"
-
             android:textSize="@dimen/abc_action_button_min_width_overflow_material"
             android:background="@drawable/silaze"
             android:layout_below="@+id/zus"
             android:layout_alignParentLeft="true" />
 
+        <!--Silaba ZI-->
         <Button
             android:layout_width="100dp"
             android:layout_height="50dp"
-
             android:id="@+id/zis"
             android:textSize="@dimen/abc_action_button_min_width_overflow_material"
             android:background="@drawable/silazi"
-
             android:layout_alignParentStart="true"
             android:layout_below="@+id/zes"
             android:layout_alignParentLeft="true" />
 
+        <!--Imagen Zanahoria-->
         <ImageView
             android:layout_width="200dp"
             android:layout_height="100dp"
@@ -85,6 +84,7 @@
             android:layout_marginRight="59dp"
             android:layout_marginEnd="59dp" />
 
+        <!--Imagen Zapato-->
         <ImageView
             android:layout_width="200dp"
             android:layout_height="100dp"
@@ -95,6 +95,7 @@
             android:layout_alignLeft="@+id/zanahorias"
             android:layout_alignStart="@+id/zanahorias" />
 
+        <!--Imagen Zebra-->
         <ImageView
             android:layout_width="200dp"
             android:layout_height="100dp"
@@ -107,6 +108,7 @@
             android:layout_marginRight="62dp"
             android:layout_marginEnd="62dp" />
 
+        <!--Imagen Zinc-->
         <ImageView
             android:layout_width="200dp"
             android:layout_height="100dp"
@@ -119,7 +121,7 @@
             android:layout_marginRight="62dp"
             android:layout_marginEnd="62dp" />
 
-
+        <!--Imagen Zorro-->
         <ImageView
             android:layout_width="200dp"
             android:layout_height="100dp"
@@ -130,6 +132,7 @@
             android:layout_toLeftOf="@+id/sigz"
             android:layout_toStartOf="@+id/sigz" />
 
+        <!--Imagen Zumbido-->
         <ImageView
             android:layout_width="200dp"
             android:layout_height="100dp"
@@ -140,6 +143,7 @@
             android:layout_alignLeft="@+id/zumos"
             android:layout_alignStart="@+id/zumos" />
 
+        <!--Imagen Zumo-->
         <ImageView
             android:layout_width="200dp"
             android:layout_height="100dp"
@@ -152,7 +156,7 @@
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true" />
 
-
+        <!--Botón incio-->
         <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="50dp"
@@ -162,7 +166,7 @@
             android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true" />
-
+        <!--Botón siguiente-->
         <Button
             android:layout_width="50dp"
             android:layout_height="50dp"

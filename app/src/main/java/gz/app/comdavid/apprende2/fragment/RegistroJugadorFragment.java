@@ -17,6 +17,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -117,6 +118,7 @@ public class RegistroJugadorFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         // llama a la clase onCreate para completar la creación de una actividad
         super.onCreate(savedInstanceState);
+
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
@@ -130,6 +132,8 @@ public class RegistroJugadorFragment extends Fragment {
         //Se infla el layout con el contenido del fragmento registro_jugador
         vista=inflater.inflate(R.layout.fragment_registro_jugador, container, false);
         //Se infla la lista de los avatars
+        //Se mantiene la pantalla activa
+        getActivity().getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         recyclerAvatars=vista.findViewById(R.id.recyclerAvatarsId);
         //Boton flotante de registro
         fabregistro=vista.findViewById(R.id.idFabRegistro);
@@ -151,7 +155,8 @@ public class RegistroJugadorFragment extends Fragment {
         // Botón que habilita el microfono en el dispositivo
         img_btn_Usuarios=(ImageButton)vista.findViewById(R.id.img_btn_Usuarios);
         Button sonidoavatar = (Button)vista.findViewById(R.id.Avatar_Registro);
-        mp.start();
+        //Audio Bien
+
         // Llamamos el método recuperarDatos que contiene las preferencias del nombre del usuario
         recuperarDatos();
 

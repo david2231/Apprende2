@@ -35,11 +35,11 @@ public class vocales extends AppCompatActivity {
     MediaPlayer mp;
     //Declaración a los textview
     TextView txtIdentificador,txtIdentificadorSubmodulo,textNickName,ModuloVocal;
-    //Metodo onCreate
     // Se obtiene la fecha actual
     SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault());
     Date date = new Date();
     String fecha = dateFormat.format(date);
+    //Metodo onCreate
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
