@@ -1,5 +1,5 @@
 package gz.app.comdavid.apprende2;
-
+//Librerias
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Handler;
@@ -11,40 +11,52 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
+//Clase Juegossilaba
 public class juegosil32 extends AppCompatActivity implements View.OnClickListener  {
 
+    //Se declaran los image view
     ImageView silba,silbas,silbe,err;
+    //Se declaran los sonidos
     MediaPlayer mp,mp2,mp3,mp4;
-
+    //Se declara la vista principal
     RelativeLayout casss;
 
+    //Metodo onCreate
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_juegosil32);
+        //Se llama el audio
         mp4= MediaPlayer.create(this,R.raw.seleccioname);
+        //Reproduce el audio
         mp4.start();
+        //Mantiene la pantalla activa
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+        //Se llaman las 5 silabas de la vista
         silba=(ImageView) findViewById(R.id.siljuegome3);
         silbas=(ImageView) findViewById(R.id.siljuegomu);
         silbe=(ImageView) findViewById(R.id.siljuegomo);
         err=(ImageView) findViewById(R.id.silerror32);
+        //Se llaman el contenedor
         casss=(RelativeLayout) findViewById(R.id.vista32);
+        //Audio Bien
         mp= MediaPlayer.create(this,R.raw.bien);
+        //Audio Mal
         mp2= MediaPlayer.create(this,R.raw.mal);
+        // Sonido Casa
         mp3= MediaPlayer.create(this,R.raw.medalla);
-
+        // se llaman las Imagenes
         findViewById(R.id.siljuegome3).setOnClickListener(this);
         findViewById(R.id.siljuegome2).setOnClickListener(this);
         findViewById(R.id.siljuegomu).setOnClickListener(this);
         findViewById(R.id.siljuegomo).setOnClickListener(this);
 
-
+        // sonido de la silaba 1
         Button sonidoa = (Button)findViewById(R.id.sonidosilabas32);
         sonidoa.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                // inicia el sonido
                 mp4.start();
 
             }
