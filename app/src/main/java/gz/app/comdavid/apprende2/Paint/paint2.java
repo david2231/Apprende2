@@ -1,24 +1,46 @@
 package gz.app.comdavid.apprende2.Paint;
 //Librerias
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Locale;
+import java.util.Map;
 import java.util.UUID;
 import android.provider.MediaStore;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.view.View.OnClickListener;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
+import gz.app.comdavid.apprende2.ABC_Drawable.Drawable_letter_aa;
 import gz.app.comdavid.apprende2.ABC_Drawable.escribirinicio;
 import gz.app.comdavid.apprende2.R;
 
 //Clase panit2 la cula implementa el evento OnclickListener
 public class paint2 extends AppCompatActivity implements OnClickListener{
+
+    // Se realiza la declaración de los TexView de la interfaz
+    TextView txtIdentificador,txtIdentificadorSubmodulo,textNickName,Modulo;
     // Vista que muestra al usuario
     private paint drawView;
     // Se declaran los botones
@@ -27,7 +49,10 @@ public class paint2 extends AppCompatActivity implements OnClickListener{
     private float smallBrush, mediumBrush, largeBrush;
     //Se establcen los sonidos que se van a utilizar
     MediaPlayer Marron,Amarillo,Azul,Azulclaro,Gris,Naranja,Negro,Rojo,Rosado,Verde,Blanco,Empezar_Dibujo,Pequeno,Grande,Mediano,Si,No,Borrador,Guardar,Pincel;
-
+    // Se obtiene la fecha actual
+    SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault());
+    Date date = new Date();
+    String fecha = dateFormat.format(date);
     @Override
     //Método OnCreate
     protected void onCreate(Bundle savedInstanceState) {
@@ -176,9 +201,6 @@ public class paint2 extends AppCompatActivity implements OnClickListener{
             if(color.equals("#FF000000")){
                 Negro.start();
             }
-
-            Toast.makeText(this,color,Toast.LENGTH_LONG).show();
-
 
             //Se muestra en la interfaz del usuario
             imgView.setImageDrawable(getResources().getDrawable(R.drawable.paint_pressed));
@@ -400,5 +422,48 @@ public class paint2 extends AppCompatActivity implements OnClickListener{
             });
             saveDialog.show();
         }
+    }
+
+    //Metodo encargado de validar los datos ingresados, contiene un parametro de tipo string para almacenar la URL del web service
+    private void ejecutarServicios(String URL){
+        StringRequest stringRequest=new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(paint2.this,error.toString(),Toast.LENGTH_SHORT).show();
+
+            }
+        }){
+
+
+            // Metodo getParams que contiene los parametros que el servicio necesita para devolver una respuesta
+            protected Map<String, String> getParams() throws AuthFailureError {
+
+                //Llamado a la preferencia nombre de uusario
+                SharedPreferences preferences= getSharedPreferences("iniciousuario", Context.MODE_PRIVATE);
+                //Se actualiza el campo nombre usuario con la preferencia
+                textNickName.setText(preferences.getString("usuario", "ingrese usuario"));
+                //Se actualiza el campo con el ID del avatar
+                Map<String,String> parametros=new HashMap<String, String>();
+                parametros.put("fecha_ingreso",fecha);
+                parametros.put("Nombre_Usuario",textNickName.getText().toString());
+                parametros.put("id_Modulo",Modulo.getText().toString());
+                parametros.put("id_categoria",txtIdentificador.getText().toString());
+                parametros.put("id_categoria_submodulo",txtIdentificadorSubmodulo.getText().toString());
+                //Se retornan todos los datos mediante la instancia parametros
+
+                return parametros;
+
+            }
+        };
+        // Haciendo uso de la clase RequestQueue Se crea una instancia de la actividad
+        RequestQueue requestQueue= Volley.newRequestQueue(this);
+        // Se instancia el objeto stringRequest la cual ayuda a procesar las peticiones realizadas
+        requestQueue.add(stringRequest);
     }
 }

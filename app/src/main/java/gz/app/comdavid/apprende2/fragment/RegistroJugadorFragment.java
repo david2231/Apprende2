@@ -249,7 +249,6 @@ edad.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
                     // Actualiza el valor del campoNick
                     grabar.setText(strSpeech2Text);
                     campoNick.setText(strSpeech2Text);
-
                 }
                 break;
             default:
@@ -385,7 +384,7 @@ edad.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
         //Se realiza el llamado de la preferencia como se definio en el metodo guardarPreferencias
         SharedPreferences preferences= actividad.getSharedPreferences("iniciousuario",Context.MODE_PRIVATE);
         //Se asignan las preferencias guardadas en el activity
-        campoNick.setText(preferences.getString("usuario", "ingrese usuario"));
+        campoNick.setText(preferences.getString("", ""));
 
     }
 

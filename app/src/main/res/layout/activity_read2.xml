@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="gz.app.comdavid.apprende2.read1">
+    tools:context="gz.app.comdavid.apprende2.Lectura.Ingles.read1">
 
     <VideoView
         android:id="@+id/videobees"

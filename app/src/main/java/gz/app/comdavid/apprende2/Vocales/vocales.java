@@ -49,12 +49,15 @@ public class vocales extends AppCompatActivity {
         Button inicio= (Button) findViewById(R.id.casa);
         //Declaración del identificador de la categoría
         txtIdentificador=(TextView) findViewById(R.id.sonido_a);
+        //Declaración del identificador del submodulo
         txtIdentificadorSubmodulo=(TextView) findViewById(R.id.siguiente_a);
+        //Declaración del identificador del usuario
         textNickName=(TextView)findViewById(R.id.Nombre_user_vocales);
+        //Declaración del modulo
         ModuloVocal=(TextView)findViewById(R.id.Modulo_Vocal);
         //Se llama el metodo ejecutar servicios
         ejecutarServicios("https://appprende02.000webhostapp.com/Administradora.php");
-        //Se llama el metodo ejecutar servicios
+
 
         //Metodo OnClick
         inicio.setOnClickListener(new View.OnClickListener() {

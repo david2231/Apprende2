@@ -3,17 +3,81 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="gz.app.comdavid.apprende2.juegosil56">
+    tools:context="gz.app.comdavid.apprende2.Juegos.Silabas3.juegosil56">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true">
+
+        <!-- Puntaje preguntas incorrectas-->
+
+        <TextView
+            android:id="@+id/incorrectassilbast1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="50dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:text="0"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="40dp"
+            app:fontFamily="sans-serif-black" />
+
+        <!-- Perimte almacenar el nombre de usuario-->
+        <TextView
+            android:id="@+id/Nombre_user_JuegoT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:visibility="gone"/>
+
+
+        <!-- Perimte almacenar el modulo -->
+        <TextView
+            android:id="@+id/Modulo_LecturaT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="101"
+            android:visibility="gone">
+        </TextView>
+
+        <!-- Perimte almacenar el la categoria -->
+        <TextView
+            android:id="@+id/Categoria_T"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3"
+            android:visibility="gone">
+        </TextView>
+
+        <!-- Perimte almacenar el submodulo -->
+        <TextView
+            android:id="@+id/SubmoduloT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="53"
+            android:visibility="gone">
+        </TextView>
+
+        <!-- Puntaje preguntas correctas-->
+        <TextView
+            android:id="@+id/puntajesilabast1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="50dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:text="0"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="40dp"
+            app:fontFamily="sans-serif-black" />
 
         <ImageView
             android:layout_width="300dp"

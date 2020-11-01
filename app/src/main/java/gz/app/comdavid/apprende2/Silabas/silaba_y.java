@@ -9,8 +9,8 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import gz.app.comdavid.apprende2.R;
-import gz.app.comdavid.apprende2.juegosil66;
-import gz.app.comdavid.apprende2.silabas;
+import gz.app.comdavid.apprende2.Juegos.Silabas3.juegosil66;
+
 //Clase
 public class silaba_y extends AppCompatActivity  implements View.OnClickListener{
     //Declaramos las variables de imagenes

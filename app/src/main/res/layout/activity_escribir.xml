@@ -33,6 +33,43 @@
         android:textSize="40dp"
         app:fontFamily="sans-serif-black" />
 
+    <!-- Perimte almacenar el nombre de usuario-->
+    <TextView
+        android:id="@+id/Nombre_user_lectura"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:visibility="gone"/>
+
+
+    <!-- Perimte almacenar el modulo -->
+    <TextView
+        android:id="@+id/Modulo_lectura"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="101"
+        android:visibility="gone">
+    </TextView>
+
+    <!-- Perimte almacenar el la categoria -->
+    <TextView
+        android:id="@+id/Categoria_lectura"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2"
+        android:visibility="gone">
+    </TextView>
+
+    <!-- Perimte almacenar el submodulo -->
+    <TextView
+        android:id="@+id/Submodulo_lectura"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="52"
+        android:visibility="gone">
+    </TextView>
+
+
     <!-- Botón microfono-->
     <ImageButton
         android:id="@+id/img_btn_hablar"

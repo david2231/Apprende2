@@ -9,8 +9,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import gz.app.comdavid.apprende2.R;
-import gz.app.comdavid.apprende2.juegosil;
-import gz.app.comdavid.apprende2.silabas;
+import gz.app.comdavid.apprende2.Juegos.Silabas3.juegosil;
 
 //Clase
 public class silaba_c extends AppCompatActivity implements View.OnClickListener {

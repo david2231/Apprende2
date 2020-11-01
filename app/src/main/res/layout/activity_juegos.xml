@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="gz.app.comdavid.apprende2.juegos"
+    tools:context="gz.app.comdavid.apprende2.Juegos.juegos"
     android:background="@drawable/juegos">
 
     <!-- Contenedor principal-->
@@ -13,6 +13,42 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true">
+
+        <!-- Perimte almacenar el nombre de usuario-->
+        <TextView
+            android:id="@+id/Nombre_user_juegos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:visibility="gone"/>
+
+
+        <!-- Perimte almacenar el modulo -->
+        <TextView
+            android:id="@+id/Modulo_juegos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="102"
+            android:visibility="gone">
+        </TextView>
+
+        <!-- Perimte almacenar el la categoria -->
+        <TextView
+            android:id="@+id/Categoria_juegos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3"
+            android:visibility="gone">
+        </TextView>
+
+        <!-- Perimte almacenar el submodulo -->
+        <TextView
+            android:id="@+id/Submodulo_juegos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="56"
+            android:visibility="gone">
+        </TextView>
 
         <!-- Botón juegos silabas-->
         <Button

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="gz.app.comdavid.apprende2.Juegos.ResultadoJuegoSilabas2">
+    tools:context="gz.app.comdavid.apprende2.Juegos.Silabas2.ResultadoJuegoSilabas2">
     <!--Contenedor izquierda-->
 
     <LinearLayout

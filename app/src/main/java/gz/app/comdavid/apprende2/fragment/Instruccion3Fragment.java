@@ -1,7 +1,9 @@
 package gz.app.comdavid.apprende2.fragment;
 //Librerias
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +11,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.VideoView;
 import gz.app.comdavid.apprende2.R;
+import gz.app.comdavid.apprende2.Registro.MainActivity3;
+
 import android.net.Uri;
 import android.view.WindowManager;
 
@@ -78,18 +82,44 @@ public class Instruccion3Fragment extends Fragment {
         String path=("android.resource://"+getActivity().getPackageName()+"/"+R.raw.fragment3);
         fragment3.setVideoURI(Uri.parse(path));
 
-        //Llamar el boton
-        Button btnLanzarActivity = (Button) vista.findViewById(R.id.botoninicio);
-        //Evento Onclick
-        btnLanzarActivity.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //Abrir una nueva actividad
-                Intent intent = new Intent(getActivity(), gz.app.comdavid.apprende2.MainActivity3.class);
-                startActivity(intent);
+        SharedPreferences preferences= PreferenceManager.getDefaultSharedPreferences(getActivity());
+        SharedPreferences.Editor editor=preferences.edit();
 
-            }
-        });
+        int bandera=Integer.parseInt(preferences.getString("bandera","0"));
+
+        if (bandera==1){
+            //Llamar el boton
+            Button btnLanzarActivity = (Button) vista.findViewById(R.id.botoninicio);
+            //Evento Onclick
+            btnLanzarActivity.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    //Abrir una nueva actividad
+                    Intent intent = new Intent(getActivity(), gz.app.comdavid.apprende2.inicio.class);
+                    startActivity(intent);
+
+                }
+            });
+        }else{
+            editor.putString("bandera","1");
+            editor.commit();
+
+            //Llamar el boton
+            Button btnLanzarActivity2 = (Button) vista.findViewById(R.id.botoninicio2);
+            btnLanzarActivity2.setVisibility(View.VISIBLE);
+            //Evento Onclick
+            btnLanzarActivity2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    //Abrir una nueva actividad
+                    Intent intent = new Intent(getActivity(), MainActivity3.class);
+                    startActivity(intent);
+
+                }
+            });
+        }
+
+
         // Retorna la vista
         return vista;
     }

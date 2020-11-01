@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="gz.app.comdavid.apprende2.Juegos.Silabas3.ResultadoJuegoSilabasl">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- Imagen avatar-->
+
+        <ImageView
+            android:id="@+id/avatarImageSilabal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/avatar2" />
+
+        <!--Nombre usuario-->
+        <TextView
+            android:id="@+id/textNickNameSilabal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="{Apprende}"
+            android:layout_below="@+id/avatarImage"
+            android:textColor="@color/colorAzul"
+            android:textSize="30sp"
+            android:layout_marginTop="10dp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+    <!-- Perimte almacenar el modulo juego -->
+    <TextView
+        android:id="@+id/IdentificadorJuegosl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="509"
+        android:visibility="gone">
+    </TextView>
+
+    <!--Contenedor derecho-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- Texto Resultados-->
+        <TextView
+            android:id="@+id/txtResultadosSilabal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginRight="10dp"
+            android:gravity="center"
+            android:text="RESULTADOS"
+            android:textColor="@color/colorAzul"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <!-- Palabras correctas-->
+        <TextView
+            android:id="@+id/txtResPalabrasCorrectasJuegoSilabal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtResultados"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginRight="10dp"
+            android:gravity="center"
+            android:text="Palabras Correctas"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <!-- Contador palabras correctas-->
+        <TextView
+            android:id="@+id/txtResPalabrasCorrectasSilabal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtPalabrasCorrectas"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginRight="10dp"
+            android:gravity="center"
+            android:text="0"
+            android:textColor="@color/colorAzul"
+            android:textSize="30sp" />
+
+        <!-- Texto palabras incorrectas-->
+        <TextView
+            android:id="@+id/txtPalabrasIncorrectasSilabal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtResPalabrasCorrectas"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:gravity="center"
+            android:text="Palabras incorrectas"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <!-- Contador palabras incorrectas-->
+        <TextView
+            android:id="@+id/txtResPalabrasIncorrectasSilabal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtPalabrasIncorrectas"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:gravity="center"
+            android:text="0"
+            android:textColor="@color/colorAzul"
+            android:textSize="30sp" />
+
+        <!-- Puntaje Obtenido-->
+        <TextView
+            android:id="@+id/txtPuntajeTituloSilabal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtResPalabrasIncorrectas"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:gravity="center"
+            android:text="Puntaje Obtenido"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            tools:visibility="invisible" />
+    </LinearLayout>
+
+    <!-- Botón inicio-->
+    <Button
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/inicioJuegoSilabal"
+        android:background="@drawable/home"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+</RelativeLayout>

@@ -1,11 +1,14 @@
 package gz.app.comdavid.apprende2;
 //Librerias
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.media.MediaPlayer;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -21,6 +24,8 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import java.io.IOException;
 import gz.app.comdavid.apprende2.ABC_Drawable.escribirinicio;
+import gz.app.comdavid.apprende2.ui.ContenedorInstrucciones;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
@@ -49,8 +54,6 @@ public class inicio extends AppCompatActivity {
 
         //Se mantiene la pantalla activa
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
-
-        Toast.makeText(inicio.this,"exito"+fecha,Toast.LENGTH_SHORT).show();
         //Permite almacenar el nombre del usuario
         textNickName=findViewById(R.id.Nombre_user);
         // Se realiza el llamado a la imagen sonido activo
@@ -107,7 +110,7 @@ public class inicio extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //Abrir una nueva actividad
-                Intent intent=new Intent(v.getContext(),GestionActivity.class);
+                Intent intent=new Intent(v.getContext(), ContenedorInstrucciones.class);
                 startActivityForResult(intent,0);
                 //Transiciones
                 overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
@@ -157,22 +160,74 @@ public class inicio extends AppCompatActivity {
 
         // evento del botón salir
         ImageButton salir =(ImageButton) findViewById(R.id.imageButton3);
+
         salir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Abrir una nueva actividad
-                Intent intent = new Intent(Intent.ACTION_MAIN);
-                intent.addCategory(Intent.CATEGORY_HOME);
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                startActivity(intent);
-                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
-                mp2.stop();
-                // finaliza la actividad
-                finish();
+
+                // alert dialog que muestra 2 opciones
+                AlertDialog.Builder builder=new AlertDialog.Builder(inicio.this);
+                builder.setMessage("¿Quiere salir de la aplicación?").setPositiveButton("Si", new DialogInterface.OnClickListener() {
+                    // cierra la aplicación
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        Intent intent=new Intent (Intent.ACTION_MAIN);
+                        intent.addCategory(Intent.CATEGORY_HOME);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        startActivity(intent);
+                        mp2.stop();
+                        finish();
+
+                    }
+                })
+                        // cierra el aletrt dialog
+                        .setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        });
+                builder.show();
 
             }
         });
 
+
+
+    }
+
+
+
+    // evento del botón atras
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        // si se presiona el botón atras
+        if(keyCode==event.KEYCODE_BACK){
+            // alert dialog que muestra 2 opciones
+            AlertDialog.Builder builder=new AlertDialog.Builder(this);
+    builder.setMessage("¿Quiere salir de la aplicación?").setPositiveButton("Si", new DialogInterface.OnClickListener() {
+        // cierra la aplicación
+    @Override
+    public void onClick(DialogInterface dialogInterface, int i) {
+        Intent intent=new Intent (Intent.ACTION_MAIN);
+        intent.addCategory(Intent.CATEGORY_HOME);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
+        mp2.stop();
+        finish();
+    }
+})
+            // cierra el aletrt dialog
+        .setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+        builder.show();
+        }
+
+        return super.onKeyDown(keyCode, event);
     }
 
     //Metodo encargado de validar los datos ingresados, contiene un parametro de tipo string para almacenar la URL del web service
@@ -180,7 +235,6 @@ public class inicio extends AppCompatActivity {
         StringRequest stringRequest=new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                Toast.makeText(inicio.this,"exito",Toast.LENGTH_SHORT).show();
 
             }
         }, new Response.ErrorListener() {

@@ -15,17 +15,32 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"/>
+    <!-- Botón siguiente-->
+    <Button
+    android:id="@+id/botoninicio"
+    android:layout_width="50dp"
+    android:layout_height="50dp"
+    android:layout_alignParentEnd="true"
+    android:layout_alignParentRight="true"
+    android:layout_alignParentBottom="true"
+    android:layout_marginEnd="17dp"
+    android:layout_marginRight="17dp"
+    android:layout_marginBottom="16dp"
+    android:background="@drawable/ant">
+
+</Button>
 
     <Button
-        android:id="@+id/botoninicio"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:id="@+id/botoninicio2"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="17dp"
         android:layout_marginRight="17dp"
         android:layout_marginBottom="16dp"
+        android:visibility="gone"
         android:background="@drawable/ant">
 
     </Button>

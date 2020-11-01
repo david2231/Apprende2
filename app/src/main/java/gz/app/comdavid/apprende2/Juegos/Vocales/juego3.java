@@ -14,7 +14,7 @@ import android.widget.TextView;
 
 import gz.app.comdavid.apprende2.R;
 import gz.app.comdavid.apprende2.clases.vo.Utilidades;
-import gz.app.comdavid.apprende2.juegos;
+import gz.app.comdavid.apprende2.Juegos.juegos;
 
 // Clase de la actividad juego
 public class juego3 extends AppCompatActivity {

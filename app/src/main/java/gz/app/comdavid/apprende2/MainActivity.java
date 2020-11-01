@@ -21,6 +21,10 @@ import com.android.volley.toolbox.Volley;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+
+import gz.app.comdavid.apprende2.Juegos.juegos;
+import gz.app.comdavid.apprende2.Lectura.Ingles.mainactivity2;
+import gz.app.comdavid.apprende2.Silabas.silabas;
 import gz.app.comdavid.apprende2.abecedario.abc_a;
 import gz.app.comdavid.apprende2.Lectura.lectura1;
 import gz.app.comdavid.apprende2.Vocales.vocales;
@@ -143,7 +147,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //Abrir una nueva actividad
-                Intent intent=new Intent(v.getContext(),juegos.class);
+                Intent intent=new Intent(v.getContext(), juegos.class);
                 startActivityForResult(intent,0);
                 //Transiciones
                 overridePendingTransition(R.anim.zoom_forward_in, R.anim.zoom_forward_out);
@@ -158,7 +162,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //Abrir una nueva actividad
-                Intent intent=new Intent(v.getContext(),silabas.class);
+                Intent intent=new Intent(v.getContext(), silabas.class);
                 startActivityForResult(intent,0);
                 //Transiciones
                 overridePendingTransition(R.anim.zoom_forward_in, R.anim.left_out);
@@ -191,7 +195,7 @@ public class MainActivity extends AppCompatActivity {
                     // validación si el botón  selaccionado
                     if(switchingles.isChecked()){
             //Abrir una nueva actividad
-            Intent intent=new Intent(v.getContext(),mainactivity2.class);
+            Intent intent=new Intent(v.getContext(), mainactivity2.class);
             startActivityForResult(intent,0);
             //Detiene los sonidos  que puedan estar reproduciendose
             mp.stop();
@@ -208,7 +212,7 @@ public class MainActivity extends AppCompatActivity {
         StringRequest stringRequest=new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                Toast.makeText(MainActivity.this,"exito",Toast.LENGTH_SHORT).show();
+
 
             }
         }, new Response.ErrorListener() {

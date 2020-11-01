@@ -9,7 +9,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:background="@drawable/fondosil3"
-    tools:context="gz.app.comdavid.apprende2.Juegos.juegosilabas2">
+    tools:context="gz.app.comdavid.apprende2.Juegos.Silabas1.juegosilabas2">
 
     <!-- Contenedor principal-->
     <RelativeLayout

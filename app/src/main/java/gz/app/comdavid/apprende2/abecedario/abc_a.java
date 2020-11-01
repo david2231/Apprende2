@@ -35,9 +35,9 @@ import gz.app.comdavid.apprende2.Vocales.vocales;
 public class abc_a extends AppCompatActivity {
     //Declaramos las variables
     MediaPlayer mp;
-    // Se obtiene la fecha actual
     //Declaración a los textview
     TextView txtIdentificador,txtIdentificadorSubmodulo,textNickName,ModuloAbecedario;
+    // Se obtiene la fecha actual
     SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault());
     Date date = new Date();
     String fecha = dateFormat.format(date);
@@ -50,8 +50,8 @@ public class abc_a extends AppCompatActivity {
         //Declaración del identificador de la categoría
         txtIdentificador=(TextView) findViewById(R.id.sonido_aa);
         txtIdentificadorSubmodulo=(TextView) findViewById(R.id.siguiente_aa);
-        textNickName=(TextView)findViewById(R.id.Nombre_user_Abecedario);
-        ModuloAbecedario=(TextView)findViewById(R.id.Modulo_Lectura_Abecedario);
+        textNickName=(TextView)findViewById(R.id.Nombre_user_abc);
+        ModuloAbecedario=(TextView)findViewById(R.id.Modulo_abc);
         //Se llama el metodo ejecutar servicios
         ejecutarServicios("https://appprende02.000webhostapp.com/Administradora.php");
         //Llamar el boton
