@@ -30,7 +30,7 @@ import gz.app.comdavid.apprende2.Juegos.juegos;
 public class ResultadoJuegoActivity extends AppCompatActivity {
 
     // Se realiza la declaración de los textview
-    TextView txtResCorrectas,txtResIncorrectas,txtCorrectas,txtIncorrectas,txtResultados,txtPuntaje,textNickName;
+    TextView txtResCorrectas,txtResIncorrectas,txtCorrectas,txtIncorrectas,txtResultados,txtPuntaje,textNickName,textId,txtId_juegos;
     // Se realiza la declaración del botón
     Button btnInicio;
     // Imagenes de los avatars
@@ -61,6 +61,10 @@ public class ResultadoJuegoActivity extends AppCompatActivity {
         textNickName=findViewById(R.id.textNickName);
         //llama la Imagen del usuario
         imagenAvatar=findViewById(R.id.avatarImage);
+        //llamado del identificador del usuario
+        textId=(TextView)findViewById(R.id.Id_user_juegovocal);
+        //llamado del identificador del juego
+        txtId_juegos=(TextView)findViewById(R.id.Id_juegos_vocales);
         //Actualiza el campo correctas
         txtResCorrectas.setText(Utilidades.correctas+"");
         //Actualiza el campo incorrectas
@@ -198,29 +202,32 @@ public class ResultadoJuegoActivity extends AppCompatActivity {
         StringRequest stringRequest=new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-            Toast.makeText(ResultadoJuegoActivity.this,"exito",Toast.LENGTH_SHORT).show();
+
 
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
                 Toast.makeText(ResultadoJuegoActivity.this,error.toString(),Toast.LENGTH_SHORT).show();
-                Toast.makeText(ResultadoJuegoActivity.this,error.toString(),Toast.LENGTH_SHORT).show();
+
             }
         }){
 
 
                 // Metodo getParams que contiene los parametros que el servicio necesita para devolver una respuesta
                 protected Map<String, String> getParams() throws AuthFailureError {
-
+                    //Llamado a la preferencia nombre de uusario
+                    SharedPreferences preferences= getSharedPreferences("iniciousuario", Context.MODE_PRIVATE);
+                    //Se actualiza el campo id usuario con la preferencia
+                    textId.setText(preferences.getString("Id_Usuario", "ingrese usuario"));
                     Map<String,String> parametros=new HashMap<String, String>();
                     String Correctas = parametros.put("Correctas",String.valueOf(Utilidades.correctas));
                     String Incorrectas = parametros.put("Incorrectas",String.valueOf(Utilidades.incorrectas));
-                    parametros.put("nombre_usuario",textNickName.getText().toString());
+                    parametros.put("Id_usuario",textId.getText().toString());
+                    parametros.put("Id_juego",txtId_juegos.getText().toString());
                     //Se retornan todos los datos mediante la instancia parametros
 
                     return parametros;
-
 
                 }
             };

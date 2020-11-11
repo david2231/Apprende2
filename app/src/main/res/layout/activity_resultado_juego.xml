@@ -31,6 +31,23 @@
                 android:textSize="25sp"
                 android:textStyle="bold" />
 
+
+            <!-- Perimte almacenar el id de usuario-->
+            <TextView
+                android:id="@+id/Id_user_juegovocal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:visibility="gone"/>
+
+            <!-- Perimte almacenar el id del juego-->
+            <TextView
+                android:id="@+id/Id_juegos_vocales"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="503"
+                android:visibility="gone"/>
+
         </LinearLayout>
 
     <!--Contenedor derecho-->

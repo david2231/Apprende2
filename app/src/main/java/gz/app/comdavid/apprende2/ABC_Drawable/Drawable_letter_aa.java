@@ -34,8 +34,8 @@ import gz.app.comdavid.apprende2.R;
 
 public class Drawable_letter_aa extends AppCompatActivity implements Main_drawable.DrawFinishListener {
     // Se realiza la declaración de los TexView de la interfaz
-    TextView txtIdentificador,txtIdentificadorSubmodulo,textNickName,Modulo;
-    MediaPlayer mp,mp2;
+    TextView txtIdentificador,txtIdentificadorSubmodulo,textId,Modulo;
+    MediaPlayer mp,mp2,mp3;
     Button button;
     // Se obtiene la fecha actual
     SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault());
@@ -52,7 +52,7 @@ public class Drawable_letter_aa extends AppCompatActivity implements Main_drawab
         //Declaración del identificador del submodulo
         txtIdentificadorSubmodulo=(TextView) findViewById(R.id.Submodulo_escribir);
         //Declaración del identificador del usuario
-        textNickName=(TextView)findViewById(R.id.Nombre_user_escribir);
+        textId=(TextView)findViewById(R.id.Id_user_escritura);
         //Declaración del modulo
         Modulo=(TextView)findViewById(R.id.Modulo_escribir);
         //Se llama el metodo ejecutar servicios
@@ -66,10 +66,26 @@ public class Drawable_letter_aa extends AppCompatActivity implements Main_drawab
                 Intent intent=new Intent(v.getContext(),escribirinicio.class);
                 startActivityForResult(intent,0);
                 overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+                mp3.stop();
                 finish();
 
             }
         });
+
+        //Llamar el boton
+        Button sonidoa = (Button)findViewById(R.id.sonido_letras);
+        //Llamar el audio
+        mp3= MediaPlayer.create(this,R.raw.rellenar);
+        //Metodo OnClick
+        sonidoa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Iniciar audio
+                mp3.start();
+
+            }
+        });
+
         button = (Button)findViewById(R.id.botonreset);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -82,8 +98,7 @@ public class Drawable_letter_aa extends AppCompatActivity implements Main_drawab
                         Intent intent=new Intent(Drawable_letter_aa.this, Drawable_letter_aa.class);
                         startActivity(intent);
                         overridePendingTransition(R.anim.zoom_forward_in, R.anim.zoom_forward_in);
-
-
+                        mp3.stop();
 
                     }
                 },10);
@@ -117,7 +132,7 @@ public class Drawable_letter_aa extends AppCompatActivity implements Main_drawab
                 Intent intent=new Intent(Drawable_letter_aa.this, Drawable_letter_bb.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.zoom_forward_in, R.anim.zoom_forward_in);
-
+                mp3.stop();
                 finish();
 
             }
@@ -156,12 +171,12 @@ public class Drawable_letter_aa extends AppCompatActivity implements Main_drawab
 
                 //Llamado a la preferencia nombre de uusario
                 SharedPreferences preferences= getSharedPreferences("iniciousuario", Context.MODE_PRIVATE);
-                //Se actualiza el campo nombre usuario con la preferencia
-                textNickName.setText(preferences.getString("usuario", "ingrese usuario"));
+                //Se actualiza el campo id usuario con la preferencia
+                textId.setText(preferences.getString("Id_Usuario", "ingrese usuario"));
                 //Se actualiza el campo con el ID del avatar
                 Map<String,String> parametros=new HashMap<String, String>();
                 parametros.put("fecha_ingreso",fecha);
-                parametros.put("Nombre_Usuario",textNickName.getText().toString());
+                parametros.put("Nombre_Usuario",textId.getText().toString());
                 parametros.put("id_Modulo",Modulo.getText().toString());
                 parametros.put("id_categoria",txtIdentificador.getText().toString());
                 parametros.put("id_categoria_submodulo",txtIdentificadorSubmodulo.getText().toString());

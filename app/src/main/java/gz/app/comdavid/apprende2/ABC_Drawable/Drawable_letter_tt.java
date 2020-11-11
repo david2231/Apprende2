@@ -14,7 +14,6 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import gz.app.comdavid.apprende2.R;
-import gz.app.comdavid.apprende2.escribirr3_1;
 
 public class Drawable_letter_tt extends AppCompatActivity implements Main_drawable.DrawFinishListener {
     MediaPlayer mp,mp2;

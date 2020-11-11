@@ -293,9 +293,6 @@
             android:name=".ABC_Drawable.Drawable_letter_aa"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".escribirr3_1"
-            android:screenOrientation="landscape" />
-        <activity
             android:name=".Juegos.Silabas3.juegosil"
             android:screenOrientation="landscape" />
         <activity
@@ -519,15 +516,6 @@
             android:screenOrientation="landscape" />
         <activity
             android:name=".Juegos.Silabas3.juegosil75"
-            android:screenOrientation="landscape" />
-        <activity
-            android:name=".escribir4_1"
-            android:screenOrientation="landscape" />
-        <activity
-            android:name=".escribirr5_1"
-            android:screenOrientation="landscape" />
-        <activity
-            android:name=".escribirr6_1"
             android:screenOrientation="landscape" />
         <activity
             android:name=".Juegos.Silabas1.juegosilabas1"

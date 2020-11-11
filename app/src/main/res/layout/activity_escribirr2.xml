@@ -4,7 +4,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/activity_escribirr2"
-
     tools:context="gz.app.comdavid.apprende2.ABC_Drawable.Drawable_letter_aa">
 
     <ImageView
@@ -13,9 +12,9 @@
         android:scaleType="centerCrop"
         android:src="@drawable/fondo1" />
 
-    <!-- Perimte almacenar el nombre de usuario-->
+    <!-- Perimte almacenar el id de usuario-->
     <TextView
-        android:id="@+id/Nombre_user_escribir"
+        android:id="@+id/Id_user_escritura"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text=""
@@ -73,5 +72,17 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
+
+    <!-- Botón avatar-->
+    <Button
+        android:id="@+id/sonido_letras"
+        android:text="1"
+        android:textColor="@color/colorTransparente"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/sonido" />
 
 </RelativeLayout>

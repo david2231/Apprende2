@@ -46,14 +46,13 @@
             android:background="@drawable/sonido"
             android:backgroundTintMode="src_over" />
 
-        <!-- Perimte almacenar el nombre de usuario-->
+        <!-- Perimte almacenar el id de usuario-->
         <TextView
-            android:id="@+id/Nombre_user_vocales"
+            android:id="@+id/Id_user_vocal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text=""
-            android:visibility="gone">
-        </TextView>
+            android:visibility="gone"/>
 
         <!-- Perimte almacenar el modulo -->
         <TextView

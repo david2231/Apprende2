@@ -20,16 +20,31 @@
 
         <!-- texto para el usuario-->
         <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/usuariotext"
+        android:text="Ingresa tu Usuario"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:phoneNumber="false"
+        android:textSize="20dp"
+        android:paddingTop="20dp"/>
+
+        <!--Almacena el id del usuario-->
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/usuariotext"
+            android:id="@+id/usuarioid"
             android:text="Ingresa tu Usuario"
             android:layout_alignParentTop="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:phoneNumber="false"
             android:textSize="20dp"
-            android:paddingTop="20dp"/>
+            android:paddingTop="20dp"
+            android:visibility="gone"
+            />
 
         <!--Contenedor para el microfono-->
         <RelativeLayout
@@ -117,6 +132,20 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="40dp"/>
+
+
+        <!--Checkbox-->
+        <CheckBox
+            android:id="@+id/seleccion_ley"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:paddingTop="30dp"
+            android:paddingBottom="20dp"
+            android:text="Está de acuerdo con que sus datos sean tratados conforme a la ley 1281 de 2012" />
+
+
 
         <!--Texto avatar-->
         <TextView

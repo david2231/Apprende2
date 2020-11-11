@@ -110,6 +110,7 @@ public class MainActivity extends AppCompatActivity {
                 overridePendingTransition(R.anim.right_in, R.anim.right_out);
                 //Detiene los sonidos  que puedan estar reproduciendose
                 mp.stop();
+                finish();
             }
         });
 

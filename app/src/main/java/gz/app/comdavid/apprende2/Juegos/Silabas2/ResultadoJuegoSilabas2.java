@@ -30,7 +30,7 @@ import gz.app.comdavid.apprende2.Juegos.juegos;
 public class ResultadoJuegoSilabas2 extends AppCompatActivity {
 
     // Se realiza la declaración de los textview
-    TextView txtResCorrectas,txtResIncorrectas,txtCorrectas,txtIncorrectas,txtResultados,txtPuntaje,textNickName;
+    TextView txtResCorrectas,txtResIncorrectas,txtCorrectas,txtIncorrectas,txtResultados,txtPuntaje,textNickName,textId,txtId_juegos;
     // Se realiza la declaración del botón
     Button btnInicio;
     // Imagenes de los avatars
@@ -66,7 +66,10 @@ public class ResultadoJuegoSilabas2 extends AppCompatActivity {
         txtResCorrectas.setText(Utilidades.correctas+"");
         //Actualiza el campo incorrectas
         txtResIncorrectas.setText(Utilidades.incorrectas+"");
-
+        //llamado del identificador del usuario
+        textId=(TextView)findViewById(R.id.Id_user_silabares2);
+        //llamado del identificador del juego
+        txtId_juegos=(TextView)findViewById(R.id.Id_juegos_silaba2);
         //Se llama el metodo ejecutar servicios
         ejecutarServcios("https://appprende02.000webhostapp.com/insertar_puntaje.php");
         //Llamado al metodo asignarValoresPreferencias
@@ -203,13 +206,13 @@ public class ResultadoJuegoSilabas2 extends AppCompatActivity {
         StringRequest stringRequest=new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                Toast.makeText(ResultadoJuegoSilabas2.this,"exito",Toast.LENGTH_SHORT).show();
+
 
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(ResultadoJuegoSilabas2.this,error.toString(),Toast.LENGTH_SHORT).show();
+
                 Toast.makeText(ResultadoJuegoSilabas2.this,error.toString(),Toast.LENGTH_SHORT).show();
             }
         }){
@@ -218,10 +221,15 @@ public class ResultadoJuegoSilabas2 extends AppCompatActivity {
             // Metodo getParams que contiene los parametros que el servicio necesita para devolver una respuesta
             protected Map<String, String> getParams() throws AuthFailureError {
 
+                //Llamado a la preferencia nombre de usario
+                SharedPreferences preferences= getSharedPreferences("iniciousuario", Context.MODE_PRIVATE);
+                //Se actualiza el campo id usuario con la preferencia
+                textId.setText(preferences.getString("Id_Usuario", "ingrese usuario"));
                 Map<String,String> parametros=new HashMap<String, String>();
                 String Correctas = parametros.put("Correctas",String.valueOf(Utilidades.correctas));
                 String Incorrectas = parametros.put("Incorrectas",String.valueOf(Utilidades.incorrectas));
-                parametros.put("nombre_usuario",textNickName.getText().toString());
+                parametros.put("Id_usuario",textId.getText().toString());
+                parametros.put("Id_juego",txtId_juegos.getText().toString());
                 //Se retornan todos los datos mediante la instancia parametros
 
                 return parametros;

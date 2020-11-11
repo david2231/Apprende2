@@ -33,9 +33,10 @@
         android:textSize="40dp"
         app:fontFamily="sans-serif-black" />
 
-    <!-- Perimte almacenar el nombre de usuario-->
+
+    <!-- Perimte almacenar el id de usuario-->
     <TextView
-        android:id="@+id/Nombre_user_lectura"
+        android:id="@+id/Id_user_frases"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text=""

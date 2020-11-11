@@ -30,6 +30,22 @@
             android:textSize="25sp"
             android:textStyle="bold" />
 
+        <!-- Perimte almacenar el id de usuario-->
+        <TextView
+            android:id="@+id/Id_user_juegolectura"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:visibility="gone"/>
+
+        <!-- Perimte almacenar el id del juego-->
+        <TextView
+            android:id="@+id/Id_juegos_lectura"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="519"
+            android:visibility="gone"/>
+
     </LinearLayout>
 
     <!--Contenedor derecho-->

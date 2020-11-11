@@ -31,6 +31,13 @@
             android:text=""
             android:visibility="gone"/>
 
+        <!-- Perimte almacenar el nombre de usuario-->
+        <TextView
+            android:id="@+id/Id_user_abc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:visibility="gone"/>
 
         <!-- Perimte almacenar el modulo -->
         <TextView

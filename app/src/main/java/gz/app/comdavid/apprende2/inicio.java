@@ -36,10 +36,10 @@ import java.util.Map;
 public class inicio extends AppCompatActivity {
 
     Button imageButton4;
-    // // Se realiza el llamado al los botones
+    // Se realiza el llamado al los botones
     ImageButton silbos,silencio;
     // Se realiza el llamado de los sonidos
-    MediaPlayer mp2;
+    MediaPlayer mp2,mp3;
     // Se obtiene la fecha actual
     SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault());
     Date date = new Date();
@@ -62,6 +62,7 @@ public class inicio extends AppCompatActivity {
         silencio=(ImageButton) findViewById(R.id.imageButton5);
         // sonido inicio
         mp2= MediaPlayer.create(this,R.raw.bienvenido);
+        mp3= MediaPlayer.create(this,R.raw.saliraplicacion);
         // se inicia el sonido
         mp2.start();
         // Se realiza el llamado al servicio
@@ -164,7 +165,8 @@ public class inicio extends AppCompatActivity {
         salir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                mp2.stop();
+                mp3.start();
                 // alert dialog que muestra 2 opciones
                 AlertDialog.Builder builder=new AlertDialog.Builder(inicio.this);
                 builder.setMessage("¿Quiere salir de la aplicación?").setPositiveButton("Si", new DialogInterface.OnClickListener() {
@@ -176,6 +178,7 @@ public class inicio extends AppCompatActivity {
                         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                         startActivity(intent);
                         mp2.stop();
+                        mp3.stop();
                         finish();
 
                     }
@@ -185,6 +188,7 @@ public class inicio extends AppCompatActivity {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 dialog.dismiss();
+                                mp3.stop();
                             }
                         });
                 builder.show();

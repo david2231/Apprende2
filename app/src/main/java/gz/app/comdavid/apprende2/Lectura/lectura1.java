@@ -39,7 +39,7 @@ import gz.app.comdavid.apprende2.clases.vo.Utilidades;
 // Clase de la actividad lectura
 public class lectura1 extends AppCompatActivity  implements View.OnClickListener{
     // Se realiza la declaración de los TexView de la interfaz
-    TextView txtIdentificador,txtIdentificadorSubmodulo,textNickName,Modulo;
+    TextView txtIdentificador,txtIdentificadorSubmodulo,textId,Modulo;
     // Se realiza la declaración de los TexView de la interfaz
     TextView grabar,puntajes,incorrecta,bien;
     // Se realiza la declaración de los sonidos
@@ -87,7 +87,7 @@ public class lectura1 extends AppCompatActivity  implements View.OnClickListener
         //Declaración del identificador del submodulo
         txtIdentificadorSubmodulo=(TextView) findViewById(R.id.Submodulo_lectura);
         //Declaración del identificador del usuario
-        textNickName=(TextView)findViewById(R.id.Nombre_user_lectura);
+        textId=(TextView)findViewById(R.id.Id_user_frases);
         //Declaración del modulo
         Modulo=(TextView)findViewById(R.id.Modulo_lectura);
         //Se llama el metodo ejecutar servicios
@@ -257,12 +257,12 @@ public class lectura1 extends AppCompatActivity  implements View.OnClickListener
 
                 //Llamado a la preferencia nombre de uusario
                 SharedPreferences preferences= getSharedPreferences("iniciousuario", Context.MODE_PRIVATE);
-                //Se actualiza el campo nombre usuario con la preferencia
-                textNickName.setText(preferences.getString("usuario", "ingrese usuario"));
+                //Se actualiza el campo id usuario con la preferencia
+                textId.setText(preferences.getString("Id_Usuario", "ingrese usuario"));
                 //Se actualiza el campo con el ID del avatar
                 Map<String,String> parametros=new HashMap<String, String>();
                 parametros.put("fecha_ingreso",fecha);
-                parametros.put("Nombre_Usuario",textNickName.getText().toString());
+                parametros.put("Id_usuario",textId.getText().toString());
                 parametros.put("id_Modulo",Modulo.getText().toString());
                 parametros.put("id_categoria",txtIdentificador.getText().toString());
                 parametros.put("id_categoria_submodulo",txtIdentificadorSubmodulo.getText().toString());

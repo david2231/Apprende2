@@ -31,6 +31,22 @@
             android:layout_marginTop="10dp"
             android:textStyle="bold" />
 
+        <!-- Perimte almacenar el id de usuario-->
+        <TextView
+            android:id="@+id/Id_user_silabaresb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:visibility="gone"/>
+
+        <!-- Perimte almacenar el id del juego-->
+        <TextView
+            android:id="@+id/Id_juegos_silabab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="505"
+            android:visibility="gone"/>
+
     </LinearLayout>
     <!-- Perimte almacenar el modulo juego -->
     <TextView

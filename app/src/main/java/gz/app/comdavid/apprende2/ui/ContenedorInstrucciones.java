@@ -1,5 +1,7 @@
 package gz.app.comdavid.apprende2.ui;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -38,7 +40,7 @@ public class ContenedorInstrucciones extends AppCompatActivity implements Instru
         SectionsPagerAdapter sectionsPagerAdapter = new SectionsPagerAdapter(this, getSupportFragmentManager());
         mViewPager  = (ViewPager) findViewById(R.id.view_pager);
         mViewPager.setAdapter(mSectionsPagerAdapter);
-
+        SharedPreferences preferences= getSharedPreferences("registros", Context.MODE_PRIVATE);
         //Se instancian el layout linearPuntos
         linearpuntos=findViewById(R.id.LinearPuntos);
         //Se realiza el llamdo al metodo agregarIndicadorPuntos y se envia una posición inicial de 0

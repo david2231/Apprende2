@@ -19,6 +19,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.RadioButton;
@@ -38,6 +39,7 @@ import java.util.Map;
 import gz.app.comdavid.apprende2.R;
 import gz.app.comdavid.apprende2.adapters.AdaptadorAvatar;
 import gz.app.comdavid.apprende2.clases.vo.Utilidades;
+import gz.app.comdavid.apprende2.inicio;
 import gz.app.comdavid.apprende2.interfaces.IComunicaFragments;
 
 
@@ -78,13 +80,15 @@ public class RegistroJugadorFragment extends Fragment {
     // Barra de progresoEdad
     SeekBar edad;
     // Texto que trae valores ingresados por el usuario
-    TextView valoredad,grabar,TxtRol;
+    TextView valoredad,grabar,TxtRol,id;
     // Radio Button
     RadioButton radioM,radioF;
     // Nombre Usuario
-    String usuario;
+    String usuario,Id;
     // Sonido Avatar
-    MediaPlayer mp;
+    MediaPlayer mp,mp2,mp3;
+    // CheckBox
+    private CheckBox seleccionLey;
     public static String nickName;
 
     private static final int RECOGNIZE_SPEECH_ACTIVITY = 1;
@@ -152,18 +156,24 @@ public class RegistroJugadorFragment extends Fragment {
         valoredad=(TextView) vista.findViewById(R.id.valoredad);
         // Campo de texo para almacenar  el nombre de usuario por medio de voz
         grabar = (TextView) vista.findViewById(R.id.usuariotext);
+        // Campo alamcenar el id
+        id=vista.findViewById(R.id.usuarioid);
         // Botón que habilita el microfono en el dispositivo
         img_btn_Usuarios=(ImageButton)vista.findViewById(R.id.img_btn_Usuarios);
-        Button sonidoavatar = (Button)vista.findViewById(R.id.Avatar_Registro);
-        //Audio Bien
 
+        // CheckBox
+        seleccionLey= (CheckBox) vista.findViewById(R.id.seleccion_ley);
+        //Audio Bien
         // Llamamos el método recuperarDatos que contiene las preferencias del nombre del usuario
         recuperarDatos();
 
-
         //Se declara una variable para llamar el audio
-        mp= MediaPlayer.create(getContext(),R.raw.sonidoa);
+        mp= MediaPlayer.create(getContext(),R.raw.registro);
+        mp2= MediaPlayer.create(getContext(),R.raw.yaregistrado);
+        mp3= MediaPlayer.create(getContext(),R.raw.campovacios);
+
         //evento del botón avatar
+        Button sonidoavatar = (Button)vista.findViewById(R.id.Avatar_Registro);
         sonidoavatar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -172,6 +182,7 @@ public class RegistroJugadorFragment extends Fragment {
 
             }
         });
+
         // Creamos el evento para el boton img_btn_Usuarios
         img_btn_Usuarios.setOnClickListener(new View.OnClickListener() {
 
@@ -221,6 +232,8 @@ edad.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             public void onClick(View view) {
                 // Guardamos la preferencia del nombre usuario
                 usuario=campoNick.getText().toString();
+                Id=id.getText().toString();
+                mp.stop();
                 //Llamamos el método ejecutarServicio y colocamos la url del servicio php
                 ejecutarServcio("https://appprende02.000webhostapp.com/insertar_jugador.php");
 
@@ -259,6 +272,9 @@ edad.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
 
 //Metodo encargado de validar los datos ingresados, contiene un parametro de tipo string para almacenar la URL del web service
     private void ejecutarServcio(String URL){
+
+
+        final String ley2012 = "" + (seleccionLey.isChecked() ? "Acepto" : "No Acepto");
         // Creación de una variable tipo string para vacia
         String genero="";
         // Opción Masculino marcada
@@ -274,7 +290,7 @@ edad.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             genero="No";
         }
         // Validación que los campos no esten vacios Genero, Nombre, Edad
-        if (!genero.equals("No")&&!campoNick.getText().toString().trim().equals("")&&!valoredad.getText().toString().trim().equals("Selecciona tu Edad")){
+        if (!genero.equals("No")&&!campoNick.getText().toString().trim().equals("")&&!valoredad.getText().toString().trim().equals("Selecciona tu Edad")&&!ley2012.equals("No Acepto")){
 
             // Almacena el valor seleccionado en el radio button
         final String finalGenero = genero;
@@ -289,9 +305,15 @@ edad.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
                 if (response.equals("El usuario ya se encuentra registrado")) {
                     Toast.makeText(actividad.getApplicationContext(), "El usuario ya existe, por favor intenta de nuevo ", Toast.LENGTH_SHORT).show();
 
+                    mp2.start();
+
                 }
+
+
                 // En caso de que no exista se guardan los datos
                 else{
+                    Id=response.substring(0,response.length());
+                    id.setText(Id);
                     // Ejecuta el metodo guardarPreferencias
                     guardarPreferencias();
                     //Muestra el mensaje de registro exitoso
@@ -299,6 +321,7 @@ edad.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
                     //Abrir una nueva actividad
                     Intent intent = new Intent(getActivity(), gz.app.comdavid.apprende2.inicio.class);
                     actividad.finish();
+                    mp.stop();
                     startActivity(intent);
 
                 }
@@ -328,6 +351,7 @@ edad.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
                 String avatar = parametros.put("avatar", String.valueOf(avatarId));
                 parametros.put("rol",TxtRol.getText().toString());
                 parametros.put("edad",valoredad.getText().toString());
+                parametros.put("ley",ley2012.toString());
                 SharedPreferences preferencias= actividad.getSharedPreferences("avatars",Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor=preferencias.edit();
                 editor.putString("avatar", String.valueOf(avatarId));
@@ -351,6 +375,8 @@ edad.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
         // Mensaje de error solicitando la validación de los datos ingresados
         else {
             Toast.makeText(actividad.getApplicationContext(), "Verifica los datos, no se puede dejar ningún campo vacío", Toast.LENGTH_SHORT).show();
+            mp3.start();
+
         }
     }
 
@@ -375,6 +401,7 @@ edad.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
         SharedPreferences.Editor editor=preferences.edit();
         //Se agrega el campo que se almacenara en la preferencia
         editor.putString("usuario",usuario);
+        editor.putString("Id_Usuario",Id);
         editor.putBoolean("session",true);
         //Mediante el metodo commit se guardan todos los cambios
         editor.commit();

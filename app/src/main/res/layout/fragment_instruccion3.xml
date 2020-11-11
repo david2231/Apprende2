@@ -29,7 +29,13 @@
     android:background="@drawable/ant">
 
 </Button>
-
+    <!-- Txt Preferencia-->
+    <TextView
+        android:id="@+id/Id_videoss"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:visibility="gone"/>
     <Button
         android:id="@+id/botoninicio2"
         android:layout_width="50dp"

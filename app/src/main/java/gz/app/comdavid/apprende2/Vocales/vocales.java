@@ -34,7 +34,7 @@ public class vocales extends AppCompatActivity {
     //Declaramos las variables
     MediaPlayer mp;
     //Declaración a los textview
-    TextView txtIdentificador,txtIdentificadorSubmodulo,textNickName,ModuloVocal;
+    TextView txtIdentificador,txtIdentificadorSubmodulo,textId,ModuloVocal;
     // Se obtiene la fecha actual
     SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault());
     Date date = new Date();
@@ -52,7 +52,7 @@ public class vocales extends AppCompatActivity {
         //Declaración del identificador del submodulo
         txtIdentificadorSubmodulo=(TextView) findViewById(R.id.siguiente_a);
         //Declaración del identificador del usuario
-        textNickName=(TextView)findViewById(R.id.Nombre_user_vocales);
+        textId=(TextView)findViewById(R.id.Id_user_vocal);
         //Declaración del modulo
         ModuloVocal=(TextView)findViewById(R.id.Modulo_Vocal);
         //Se llama el metodo ejecutar servicios
@@ -137,12 +137,12 @@ public class vocales extends AppCompatActivity {
 
                 //Llamado a la preferencia nombre de uusario
                 SharedPreferences preferences= getSharedPreferences("iniciousuario", Context.MODE_PRIVATE);
-                //Se actualiza el campo nombre usuario con la preferencia
-                textNickName.setText(preferences.getString("usuario", "ingrese usuario"));
+                //Se actualiza el campo id usuario con la preferencia
+                textId.setText(preferences.getString("Id_Usuario", "ingrese usuario"));
                 //Se actualiza el campo con el ID del avatar
                 Map<String,String> parametros=new HashMap<String, String>();
                 parametros.put("fecha_ingreso",fecha);
-                parametros.put("Nombre_Usuario",textNickName.getText().toString());
+                parametros.put("Id_usuario",textId.getText().toString());
                 parametros.put("id_Modulo",ModuloVocal.getText().toString());
                 parametros.put("id_categoria",txtIdentificador.getText().toString());
                 parametros.put("id_categoria_submodulo",txtIdentificadorSubmodulo.getText().toString());

@@ -70,6 +70,9 @@ public class juego9 extends AppCompatActivity {
                 mp.stop();
                 sonidoavatar.stop();
                 mp2.stop();
+                //Reinicia las variables globales
+                Utilidades.correctas=0;
+                Utilidades.incorrectas=0;
                 //Finaliza la actividad
                 finish();
             }

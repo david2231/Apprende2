@@ -1,14 +1,18 @@
 package gz.app.comdavid.apprende2.fragment;
 //Librerias
+import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.provider.MediaStore;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.VideoView;
 import gz.app.comdavid.apprende2.R;
 import gz.app.comdavid.apprende2.Registro.MainActivity3;
@@ -36,7 +40,9 @@ public class Instruccion3Fragment extends Fragment {
     private VideoView fragment3;
     // Se declara la vista de la actividad
     View vista;
-
+    Activity actividad;
+    TextView Videos;
+    String Videoss;
 
     public Instruccion3Fragment() {
         // Required empty public constructor
@@ -78,16 +84,21 @@ public class Instruccion3Fragment extends Fragment {
         getActivity().getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         // se llama  el video view ubicado en la vista
         fragment3=(VideoView) vista.findViewById(R.id.Fragment3) ;
+        // se llama al que controla que actividad mostar
+
         // Se añade el video de instrucción 3
         String path=("android.resource://"+getActivity().getPackageName()+"/"+R.raw.fragment3);
         fragment3.setVideoURI(Uri.parse(path));
+        Videos=(TextView) vista.findViewById(R.id.Id_videoss) ;
+        // se llama la preferencia
+        SharedPreferences preferences = this.getActivity().getSharedPreferences("registros", Context.MODE_PRIVATE);
+        Videos.setText(preferences.getString("registro", "0"));
+        //Creación de una variable para almacenar el campo
+        Videoss=Videos.getText().toString();
 
-        SharedPreferences preferences= PreferenceManager.getDefaultSharedPreferences(getActivity());
-        SharedPreferences.Editor editor=preferences.edit();
-
-        int bandera=Integer.parseInt(preferences.getString("bandera","0"));
-
-        if (bandera==1){
+        int  videos= Integer.parseInt(Videoss);
+        //si el valor es 1 llama la actividad de inicio
+        if (videos==1){
             //Llamar el boton
             Button btnLanzarActivity = (Button) vista.findViewById(R.id.botoninicio);
             //Evento Onclick
@@ -101,8 +112,6 @@ public class Instruccion3Fragment extends Fragment {
                 }
             });
         }else{
-            editor.putString("bandera","1");
-            editor.commit();
 
             //Llamar el boton
             Button btnLanzarActivity2 = (Button) vista.findViewById(R.id.botoninicio2);

@@ -78,6 +78,9 @@ public class juego extends AppCompatActivity {
                 mp.stop();
                 mp2.stop();
                 mp3.stop();
+                //Reinicia las variables globales
+                Utilidades.correctas=0;
+                Utilidades.incorrectas=0;
                 //Finaliza la actividad
                 finish();
             }

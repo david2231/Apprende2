@@ -18,14 +18,13 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true">
 
-        <!-- Perimte almacenar el nombre de usuario-->
+        <!-- Perimte almacenar el id de usuario-->
         <TextView
-            android:id="@+id/Nombre_user_silaba"
+            android:id="@+id/Id_user_silabass"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text=""
             android:visibility="gone"/>
-
 
         <!-- Perimte almacenar el modulo -->
         <TextView
